@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Typing Test - Maahi Ki Funshala</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8f0;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+
+            background: #ff6b6b;
+
+            padding: 15px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= PAGE ================= */
+
+        .page {
+
+            max-width: 850px;
+
+            margin: 60px auto;
+
+            padding: 20px;
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            color: #ff6b6b;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ================= TYPING BOX ================= */
+
+        .typing-box {
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.1);
+        }
+
+
+        /* ================= LEVELS ================= */
+
+        .levels {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 20px;
+        }
+
+
+        .level-btn {
+
+            padding: 10px 16px;
+
+            border: none;
+
+            border-radius: 20px;
+
+            background: #fff1e6;
+
+            color: #ff6b6b;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .level-btn:hover {
+
+            background: #ff6b6b;
+
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+
+        .level-btn.active {
+
+            background: #ff6b6b;
+
+            color: white;
+        }
+
+
+        #levelName {
+
+            text-align: center;
+
+            color: #ff9f43;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ================= INFO ================= */
+
+        .info {
+
+            display: flex;
+
+            justify-content:
+                space-around;
+
+            color: #ff6b6b;
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= TEXT ================= */
+
+        .text {
+
+            background: #fff1e6;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+
+            min-height: 90px;
+        }
+
+
+        /* ================= TEXTAREA ================= */
+
+        textarea {
+
+            width: 100%;
+
+            height: 170px;
+
+            padding: 15px;
+
+            font-size: 17px;
+
+            border: 2px solid #eee;
+
+            border-radius: 12px;
+
+            resize: vertical;
+
+            outline: none;
+        }
+
+
+        textarea:focus {
+
+            border-color: #ff6b6b;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn {
+
+            margin-top: 20px;
+
+            padding: 13px 25px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #ff6b6b;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .btn:hover {
+
+            background: #ff5252;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= RESULT ================= */
+
+        #typingResult {
+
+            text-align: center;
+
+            color: #ff6b6b;
+
+            margin-top: 20px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:700px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 12px;
+
+                text-align: center;
+            }
+
+
+            .page {
+
+                margin: 30px auto;
+
+                padding: 15px;
+            }
+
+
+            .typing-box {
+
+                padding: 20px;
+            }
+
+
+            .info {
+
+                flex-direction: column;
+
+                gap: 12px;
+
+                align-items: center;
+            }
+
+
+            .level-btn {
+
+                font-size: 13px;
+
+                padding: 9px 13px;
+            }
+
+
+            textarea {
+
+                height: 150px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <h2>
+            🌈 Maahi Ki Funshala
+        </h2>
+
+        <a href="games.html">
+            🎮 Back to Games
+        </a>
+
+    </nav>
+
+
+    <!-- ================= PAGE ================= -->
+
+    <div class="page">
+
+        <h1 class="title">
+            ⌨️ Typing Speed Test
+        </h1>
+
+
+        <div class="typing-box">
+
+
+            <!-- ================= LEVELS ================= -->
+
+            <div class="levels">
+
+                <button
+                    class="level-btn active"
+                    onclick="selectLevel(1)">
+
+                    🟢 Level 1
+
+                </button>
+
+
+                <button
+                    class="level-btn"
+                    onclick="selectLevel(2)">
+
+                    🟡 Level 2
+
+                </button>
+
+
+                <button
+                    class="level-btn"
+                    onclick="selectLevel(3)">
+
+                    🟠 Level 3
+
+                </button>
+
+
+                <button
+                    class="level-btn"
+                    onclick="selectLevel(4)">
+
+                    🔴 Level 4
+
+                </button>
+
+
+                <button
+                    class="level-btn"
+                    onclick="selectLevel(5)">
+
+                    🟣 Level 5
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= LEVEL NAME ================= -->
+
+            <h3 id="levelName">
+                🟢 Easy
+            </h3>
+
+
+            <!-- ================= INFO ================= -->
+
+            <div class="info">
+
+                <span>
+
+                    ⏱️
+
+                    <span id="time">
+                        30
+                    </span>
+
+                    sec
+
+                </span>
+
+
+                <span>
+
+                    ⚡
+
+                    <span id="wpm">
+                        0
+                    </span>
+
+                    WPM
+
+                </span>
+
+
+                <span>
+
+                    🎯
+
+                    <span id="accuracy">
+                        100
+                    </span>
+
+                    %
+
+                </span>
+
+            </div>
+
+
+            <!-- ================= TEXT ================= -->
+
+            <div
+                class="text"
+                id="typingText">
+
+                Click Start Test to begin!
+
+            </div>
+
+
+            <!-- ================= INPUT ================= -->
+
+            <textarea
+                id="typingInput"
+                placeholder="Start typing here..."
+                disabled>
+            </textarea>
+
+
+            <br>
+
+
+            <!-- ================= BUTTONS ================= -->
+
+            <button
+                class="btn"
+                onclick="startTypingTest()">
+
+                🚀 Start Test
+
+            </button>
+
+
+            <button
+                class="btn"
+                onclick="resetTypingTest()">
+
+                🔄 Reset
+
+            </button>
+
+
+            <!-- ================= RESULT ================= -->
+
+            <h3 id="typingResult"></h3>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

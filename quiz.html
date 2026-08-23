@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Quiz - Maahi Ki Funshala</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8f0;
+        }
+
+        nav {
+
+            background: #ff6b6b;
+
+            padding: 15px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .page {
+
+            max-width: 750px;
+
+            margin: 60px auto;
+
+            padding: 20px;
+        }
+
+        .title {
+
+            text-align: center;
+
+            color: #ff6b6b;
+
+            margin-bottom: 30px;
+        }
+
+        .quiz-box {
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.1);
+        }
+
+        .top {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            color: #ff6b6b;
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+        #question {
+
+            margin-bottom: 25px;
+
+            line-height: 1.5;
+        }
+
+        #options {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+        .option {
+
+            padding: 15px;
+
+            border: 2px solid #eee;
+
+            background: white;
+
+            border-radius: 12px;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+        .option:hover {
+
+            background: #fff1e6;
+
+            border-color: #ff6b6b;
+        }
+
+        .option.correct {
+
+            background: #d4edda;
+
+            border-color: #28a745;
+        }
+
+        .option.wrong {
+
+            background: #f8d7da;
+
+            border-color: #dc3545;
+        }
+
+        .btn {
+
+            margin-top: 25px;
+
+            padding: 13px 25px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #ff6b6b;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .result {
+
+            text-align: center;
+        }
+
+        .result h2 {
+
+            color: #ff6b6b;
+
+            margin: 15px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav>
+
+        <h2>
+            🌈 Maahi Ki Funshala
+        </h2>
+
+        <a href="games.html">
+            🎮 Back to Games
+        </a>
+
+    </nav>
+
+
+    <div class="page">
+
+        <h1 class="title">
+            🧠 Student Quiz
+        </h1>
+
+
+        <div
+            class="quiz-box"
+            id="quizBox">
+
+
+            <div class="top">
+
+                <span id="questionNumber">
+                    Question 1 / 10
+                </span>
+
+                <span id="score">
+                    Score: 0
+                </span>
+
+            </div>
+
+
+            <h2 id="question">
+                Loading...
+            </h2>
+
+
+            <div id="options"></div>
+
+
+            <button
+                class="btn"
+                id="nextBtn"
+                onclick="nextQuestion()"
+                style="display:none;">
+
+                Next Question ➡️
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        startQuiz();
+
+    </script>
+
+
+</body>
+
+</html>
