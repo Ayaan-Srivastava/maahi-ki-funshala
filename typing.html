@@ -23,7 +23,6 @@
             background: #fff8f0;
         }
 
-
         /* ================= NAVBAR ================= */
 
         nav {
@@ -45,7 +44,6 @@
             font-weight: bold;
         }
 
-
         /* ================= PAGE ================= */
 
         .page {
@@ -60,7 +58,6 @@
             margin-bottom: 30px;
         }
 
-
         /* ================= TYPING BOX ================= */
 
         .typing-box {
@@ -70,9 +67,8 @@
 
             box-shadow:
                 0 8px 25px
-                rgba(0,0,0,0.1);
+                rgba(0, 0, 0, 0.1);
         }
-
 
         /* ================= LEVELS ================= */
 
@@ -108,7 +104,6 @@
             color: white;
         }
 
-
         /* ================= LEVEL NAME ================= */
 
         #levelName {
@@ -116,7 +111,6 @@
             color: #ff9f43;
             margin-bottom: 20px;
         }
-
 
         /* ================= INFO ================= */
 
@@ -129,7 +123,6 @@
 
             margin-bottom: 25px;
         }
-
 
         /* ================= TEXT ================= */
 
@@ -146,7 +139,6 @@
 
             min-height: 90px;
         }
-
 
         /* ================= TEXTAREA ================= */
 
@@ -170,7 +162,6 @@
         textarea:focus {
             border-color: #ff6b6b;
         }
-
 
         /* ================= BUTTON ================= */
 
@@ -196,12 +187,10 @@
 
         .btn:hover {
             background: #ff5252;
-
             transform: translateY(-2px);
         }
 
-
-        /* ================= SUBMIT BUTTON ================= */
+        /* ================= SUBMIT ================= */
 
         #submitBtn {
             background: #28a745;
@@ -212,7 +201,6 @@
             background: #218838;
         }
 
-
         /* ================= RESULT ================= */
 
         #typingResult {
@@ -222,13 +210,12 @@
 
             margin-top: 20px;
 
-            line-height: 1.6;
+            line-height: 1.8;
         }
-
 
         /* ================= MOBILE ================= */
 
-        @media(max-width:700px) {
+        @media(max-width: 700px) {
 
             nav {
                 flex-direction: column;
@@ -364,41 +351,23 @@
             <div class="info">
 
                 <span>
-
                     ⏱️
-
-                    <span id="time">
-                        30
-                    </span>
-
+                    <span id="time">30</span>
                     sec
-
                 </span>
 
 
                 <span>
-
                     ⚡
-
-                    <span id="wpm">
-                        0
-                    </span>
-
+                    <span id="wpm">0</span>
                     WPM
-
                 </span>
 
 
                 <span>
-
                     🎯
-
-                    <span id="accuracy">
-                        100
-                    </span>
-
+                    <span id="accuracy">100</span>
                     %
-
                 </span>
 
             </div>
@@ -420,8 +389,7 @@
             <textarea
                 id="typingInput"
                 placeholder="Start typing here..."
-                disabled>
-            </textarea>
+                disabled></textarea>
 
 
             <br>
@@ -447,8 +415,6 @@
             </button>
 
 
-            <!-- ================= SUBMIT BUTTON ================= -->
-
             <button
                 class="btn"
                 id="submitBtn"
@@ -472,7 +438,6 @@
     <!-- ================= JAVASCRIPT ================= -->
 
     <script src="script.js"></script>
-
 
 </body>
 

@@ -12,210 +12,166 @@ const questions = [
 
     {
         question: "What is the capital of India?",
-
         options: [
             "Mumbai",
             "New Delhi",
             "Kolkata",
             "Chennai"
         ],
-
         answer: "New Delhi"
     },
 
-
     {
         question: "Which language is used to style a web page?",
-
         options: [
             "Python",
             "CSS",
             "C++",
             "Java"
         ],
-
         answer: "CSS"
     },
 
-
     {
         question: "How many days are there in a week?",
-
         options: [
             "5",
             "6",
             "7",
             "8"
         ],
-
         answer: "7"
     },
 
-
     {
         question: "Which planet is known as the Red Planet?",
-
         options: [
             "Earth",
             "Mars",
             "Jupiter",
             "Venus"
         ],
-
         answer: "Mars"
     },
 
-
     {
         question: "What does HTML stand for?",
-
         options: [
             "Hyper Text Markup Language",
             "High Text Machine Language",
             "Hyper Tool Markup Language",
             "Home Tool Markup Language"
         ],
-
         answer: "Hyper Text Markup Language"
     },
 
-
     {
         question: "Which device is used to type text?",
-
         options: [
             "Monitor",
             "Keyboard",
             "Speaker",
             "Printer"
         ],
-
         answer: "Keyboard"
     },
 
-
     {
         question: "How many months are there in a year?",
-
         options: [
             "10",
             "11",
             "12",
             "13"
         ],
-
         answer: "12"
     },
 
-
     {
         question: "Which one is a programming language?",
-
         options: [
             "Python",
             "HTML",
             "CSS",
             "JPEG"
         ],
-
         answer: "Python"
     },
 
-
     {
         question: "Which is the largest ocean?",
-
         options: [
             "Atlantic Ocean",
             "Indian Ocean",
             "Pacific Ocean",
             "Arctic Ocean"
         ],
-
         answer: "Pacific Ocean"
     },
 
-
     {
         question: "What is 10 + 5?",
-
         options: [
             "12",
             "15",
             "20",
             "25"
         ],
-
         answer: "15"
     },
 
-
     {
         question: "Which animal is known as the King of the Jungle?",
-
         options: [
             "Tiger",
             "Lion",
             "Elephant",
             "Bear"
         ],
-
         answer: "Lion"
     },
 
-
     {
         question: "How many hours are there in a day?",
-
         options: [
             "12",
             "18",
             "24",
             "48"
         ],
-
         answer: "24"
     },
 
-
     {
         question: "Which is the fastest land animal?",
-
         options: [
             "Lion",
             "Horse",
             "Cheetah",
             "Tiger"
         ],
-
         answer: "Cheetah"
     },
 
-
     {
         question: "What is 5 × 5?",
-
         options: [
             "10",
             "20",
             "25",
             "30"
         ],
-
         answer: "25"
     },
 
-
     {
         question: "Which planet is closest to the Sun?",
-
         options: [
             "Earth",
             "Mars",
             "Mercury",
             "Venus"
         ],
-
         answer: "Mercury"
     }
 
@@ -227,9 +183,7 @@ const questions = [
 // ============================================
 
 let quizQuestions = [];
-
 let currentQuestion = 0;
-
 let score = 0;
 
 const totalQuestions = 10;
@@ -243,11 +197,7 @@ function shuffle(array) {
 
     let result = [...array];
 
-    for (
-        let i = result.length - 1;
-        i > 0;
-        i--
-    ) {
+    for (let i = result.length - 1; i > 0; i--) {
 
         let j =
             Math.floor(
@@ -266,7 +216,6 @@ function shuffle(array) {
     }
 
     return result;
-
 }
 
 
@@ -281,15 +230,19 @@ function startQuiz() {
         .slice(0, totalQuestions);
 
     currentQuestion = 0;
-
     score = 0;
 
-    document.getElementById("score")
-        .innerText =
-        "Score: 0";
+    let scoreElement =
+        document.getElementById("score");
+
+    if (scoreElement) {
+
+        scoreElement.innerText =
+            "Score: 0";
+
+    }
 
     showQuestion();
-
 }
 
 
@@ -302,19 +255,33 @@ function showQuestion() {
     let current =
         quizQuestions[currentQuestion];
 
-    document.getElementById("questionNumber")
-        .innerText =
+    let questionNumber =
+        document.getElementById(
+            "questionNumber"
+        );
+
+    let question =
+        document.getElementById(
+            "question"
+        );
+
+    let options =
+        document.getElementById(
+            "options"
+        );
+
+    if (!questionNumber || !question || !options) {
+        return;
+    }
+
+    questionNumber.innerText =
         "Question " +
         (currentQuestion + 1) +
         " / " +
         totalQuestions;
 
-    document.getElementById("question")
-        .innerText =
+    question.innerText =
         current.question;
-
-    let options =
-        document.getElementById("options");
 
     options.innerHTML = "";
 
@@ -322,7 +289,9 @@ function showQuestion() {
         function(option) {
 
             let button =
-                document.createElement("button");
+                document.createElement(
+                    "button"
+                );
 
             button.className =
                 "option";
@@ -346,14 +315,22 @@ function showQuestion() {
     );
 
 
-    document.getElementById("nextBtn")
-        .style.display =
-        "none";
+    let nextBtn =
+        document.getElementById(
+            "nextBtn"
+        );
 
+    if (nextBtn) {
 
-    // Submit button hide on every new question
+        nextBtn.style.display =
+            "none";
+
+    }
+
     let submitBtn =
-        document.getElementById("submitBtn");
+        document.getElementById(
+            "submitBtn"
+        );
 
     if (submitBtn) {
 
@@ -378,7 +355,9 @@ function checkAnswer(
         quizQuestions[currentQuestion];
 
     let allOptions =
-        document.querySelectorAll(".option");
+        document.querySelectorAll(
+            ".option"
+        );
 
     allOptions.forEach(
         function(option) {
@@ -400,9 +379,17 @@ function checkAnswer(
 
         score++;
 
-        document.getElementById("score")
-            .innerText =
-            "Score: " + score;
+        let scoreElement =
+            document.getElementById(
+                "score"
+            );
+
+        if (scoreElement) {
+
+            scoreElement.innerText =
+                "Score: " + score;
+
+        }
 
     }
 
@@ -432,23 +419,38 @@ function checkAnswer(
     }
 
 
-    // Last question par Submit dikhao
     if (
         currentQuestion ===
         totalQuestions - 1
     ) {
 
-        document.getElementById("submitBtn")
-            .style.display =
-            "inline-block";
+        let submitBtn =
+            document.getElementById(
+                "submitBtn"
+            );
+
+        if (submitBtn) {
+
+            submitBtn.style.display =
+                "inline-block";
+
+        }
 
     }
 
     else {
 
-        document.getElementById("nextBtn")
-            .style.display =
-            "inline-block";
+        let nextBtn =
+            document.getElementById(
+                "nextBtn"
+            );
+
+        if (nextBtn) {
+
+            nextBtn.style.display =
+                "inline-block";
+
+        }
 
     }
 
@@ -497,11 +499,16 @@ function showResult() {
             "quizBox"
         );
 
+    if (!quizBox) {
+        return;
+    }
+
     let percentage =
         Math.round(
-            (score /
-            totalQuestions) *
-            100
+            (
+                score /
+                totalQuestions
+            ) * 100
         );
 
 
@@ -655,7 +662,7 @@ const typingLevels = {
 // TYPING VARIABLES
 // ============================================
 
-let typingTimer;
+let typingTimer = null;
 
 let typingTime = 30;
 
@@ -688,29 +695,68 @@ function selectLevel(level) {
         levelData.time;
 
 
-    document.getElementById("levelName")
-        .innerText =
-        levelData.name;
+    let levelName =
+        document.getElementById(
+            "levelName"
+        );
+
+    if (levelName) {
+
+        levelName.innerText =
+            levelData.name;
+
+    }
 
 
-    document.getElementById("time")
-        .innerText =
-        levelData.time;
+    let time =
+        document.getElementById(
+            "time"
+        );
+
+    if (time) {
+
+        time.innerText =
+            levelData.time;
+
+    }
 
 
-    document.getElementById("wpm")
-        .innerText =
-        "0";
+    let wpm =
+        document.getElementById(
+            "wpm"
+        );
+
+    if (wpm) {
+
+        wpm.innerText = "0";
+
+    }
 
 
-    document.getElementById("accuracy")
-        .innerText =
-        "100";
+    let accuracy =
+        document.getElementById(
+            "accuracy"
+        );
+
+    if (accuracy) {
+
+        accuracy.innerText =
+            "100";
+
+    }
 
 
-    document.getElementById("typingText")
-        .innerText =
-        "Click Start Test to begin!";
+    let typingText =
+        document.getElementById(
+            "typingText"
+        );
+
+    if (typingText) {
+
+        typingText.innerText =
+            "Click Start Test to begin!";
+
+    }
 
 
     let input =
@@ -718,35 +764,34 @@ function selectLevel(level) {
             "typingInput"
         );
 
-    input.value = "";
+    if (input) {
 
-    input.disabled = true;
+        input.value = "";
 
-
-    document.getElementById(
-        "typingResult"
-    ).innerText = "";
-
-
-    // Hide submit button
-    let submitBtn =
-        document.getElementById(
-            "submitBtn"
-        );
-
-    if (submitBtn) {
-
-        submitBtn.style.display =
-            "none";
+        input.disabled = true;
 
     }
+
+
+    let result =
+        document.getElementById(
+            "typingResult"
+        );
+
+    if (result) {
+
+        result.innerHTML = "";
+
+    }
+
+
+    hideSubmitButton();
 
 
     let buttons =
         document.querySelectorAll(
             ".level-btn"
         );
-
 
     buttons.forEach(
         function(button) {
@@ -772,7 +817,7 @@ function selectLevel(level) {
 
 
 // ============================================
-// START TYPING
+// START TYPING TEST
 // ============================================
 
 function startTypingTest() {
@@ -789,29 +834,31 @@ function startTypingTest() {
     totalLevelTime =
         levelData.time;
 
-
     typingTime =
         levelData.time;
 
 
-    document.getElementById("time")
-        .innerText =
+    document.getElementById(
+        "time"
+    ).innerText =
         typingTime;
 
 
-    document.getElementById("wpm")
-        .innerText =
+    document.getElementById(
+        "wpm"
+    ).innerText =
         "0";
 
 
-    document.getElementById("accuracy")
-        .innerText =
+    document.getElementById(
+        "accuracy"
+    ).innerText =
         "100";
 
 
     document.getElementById(
         "typingResult"
-    ).innerText = "";
+    ).innerHTML = "";
 
 
     let randomIndex =
@@ -840,7 +887,10 @@ function startTypingTest() {
     input.focus();
 
 
-    // Show Submit button
+    // ========================================
+    // SHOW SUBMIT BUTTON
+    // ========================================
+
     let submitBtn =
         document.getElementById(
             "submitBtn"
@@ -896,6 +946,10 @@ function calculateTyping() {
             "typingInput"
         );
 
+    if (!input) {
+        return;
+    }
+
 
     let typedText =
         input.value;
@@ -911,6 +965,10 @@ function calculateTyping() {
         typedText.length === 0
     ) {
 
+        document.getElementById(
+            "wpm"
+        ).innerText = "0";
+
         return;
 
     }
@@ -921,8 +979,11 @@ function calculateTyping() {
         .trim()
         .split(/\s+/)
         .filter(
-            word =>
-                word.length > 0
+            function(word) {
+
+                return word.length > 0;
+
+            }
         );
 
 
@@ -951,8 +1012,9 @@ function calculateTyping() {
         );
 
 
-    document.getElementById("wpm")
-        .innerText =
+    document.getElementById(
+        "wpm"
+    ).innerText =
         wpm;
 
 
@@ -986,6 +1048,13 @@ function calculateTyping() {
         );
 
 
+    accuracy =
+        Math.min(
+            accuracy,
+            100
+        );
+
+
     document.getElementById(
         "accuracy"
     ).innerText =
@@ -1000,7 +1069,11 @@ function calculateTyping() {
 
 function submitTypingTest() {
 
-    // Stop timer
+    if (!typingStarted) {
+        return;
+    }
+
+
     clearInterval(typingTimer);
 
     typingStarted = false;
@@ -1012,11 +1085,9 @@ function submitTypingTest() {
         );
 
 
-    // Disable typing
     input.disabled = true;
 
 
-    // Calculate final result
     calculateFinalTypingResult();
 
 
@@ -1047,19 +1118,7 @@ function submitTypingTest() {
         "%";
 
 
-    // Hide submit button
-    let submitBtn =
-        document.getElementById(
-            "submitBtn"
-        );
-
-
-    if (submitBtn) {
-
-        submitBtn.style.display =
-            "none";
-
-    }
+    hideSubmitButton();
 
 }
 
@@ -1092,12 +1151,14 @@ function calculateFinalTypingResult() {
 
         document.getElementById(
             "wpm"
-        ).innerText = "0";
+        ).innerText =
+            "0";
 
 
         document.getElementById(
             "accuracy"
-        ).innerText = "0";
+        ).innerText =
+            "0";
 
 
         return;
@@ -1105,23 +1166,26 @@ function calculateFinalTypingResult() {
     }
 
 
-    // -----------------------------
+    // ========================================
     // WORD COUNT
-    // -----------------------------
+    // ========================================
 
     let words =
         typedText
         .trim()
         .split(/\s+/)
         .filter(
-            word =>
-                word.length > 0
+            function(word) {
+
+                return word.length > 0;
+
+            }
         );
 
 
-    // -----------------------------
+    // ========================================
     // TIME USED
-    // -----------------------------
+    // ========================================
 
     let elapsedSeconds =
         totalLevelTime -
@@ -1139,9 +1203,9 @@ function calculateFinalTypingResult() {
         actualSeconds / 60;
 
 
-    // -----------------------------
+    // ========================================
     // WPM
-    // -----------------------------
+    // ========================================
 
     let wpm =
         Math.round(
@@ -1150,9 +1214,9 @@ function calculateFinalTypingResult() {
         );
 
 
-    // -----------------------------
+    // ========================================
     // ACCURACY
-    // -----------------------------
+    // ========================================
 
     let correctCharacters = 0;
 
@@ -1184,7 +1248,6 @@ function calculateFinalTypingResult() {
         );
 
 
-    // Maximum accuracy 100%
     accuracy =
         Math.min(
             accuracy,
@@ -1207,7 +1270,8 @@ function calculateFinalTypingResult() {
 
 
 // ============================================
-// FINISH TYPING
+// FINISH TYPING TEST
+// TIME OVER
 // ============================================
 
 function finishTypingTest() {
@@ -1245,38 +1309,24 @@ function finishTypingTest() {
         "typingResult"
     ).innerHTML =
 
-        "🎉 " +
-        typingLevels[selectedLevel].name +
-        " Completed!<br>" +
+        "⏰ Time's Up!<br>" +
 
-        "⚡ " +
+        "⚡ Speed: " +
         wpm +
-        " WPM | " +
+        " WPM<br>" +
 
-        "🎯 " +
+        "🎯 Accuracy: " +
         accuracy +
-        "% Accuracy";
+        "%";
 
 
-    // Hide Submit button
-    let submitBtn =
-        document.getElementById(
-            "submitBtn"
-        );
-
-
-    if (submitBtn) {
-
-        submitBtn.style.display =
-            "none";
-
-    }
+    hideSubmitButton();
 
 }
 
 
 // ============================================
-// RESET TYPING
+// RESET TYPING TEST
 // ============================================
 
 function resetTypingTest() {
@@ -1298,18 +1348,21 @@ function resetTypingTest() {
         levelData.time;
 
 
-    document.getElementById("time")
-        .innerText =
+    document.getElementById(
+        "time"
+    ).innerText =
         levelData.time;
 
 
-    document.getElementById("wpm")
-        .innerText =
+    document.getElementById(
+        "wpm"
+    ).innerText =
         "0";
 
 
-    document.getElementById("accuracy")
-        .innerText =
+    document.getElementById(
+        "accuracy"
+    ).innerText =
         "100";
 
 
@@ -1332,10 +1385,20 @@ function resetTypingTest() {
 
     document.getElementById(
         "typingResult"
-    ).innerText = "";
+    ).innerHTML = "";
 
 
-    // Hide Submit button
+    hideSubmitButton();
+
+}
+
+
+// ============================================
+// HIDE SUBMIT BUTTON
+// ============================================
+
+function hideSubmitButton() {
+
     let submitBtn =
         document.getElementById(
             "submitBtn"
