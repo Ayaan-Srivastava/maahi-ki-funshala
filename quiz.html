@@ -10,7 +10,6 @@
 
     <title>Student Quiz - Maahi Ki Funshala</title>
 
-
     <style>
 
         * {
@@ -23,6 +22,8 @@
         body {
             background: #fff8f0;
         }
+
+        /* ================= NAVBAR ================= */
 
         nav {
 
@@ -50,6 +51,8 @@
             font-weight: bold;
         }
 
+        /* ================= PAGE ================= */
+
         .page {
 
             max-width: 750px;
@@ -68,6 +71,8 @@
             margin-bottom: 30px;
         }
 
+        /* ================= QUIZ BOX ================= */
+
         .quiz-box {
 
             background: white;
@@ -80,6 +85,109 @@
                 0 8px 25px
                 rgba(0,0,0,0.1);
         }
+
+        /* ================= SUBJECT SELECTION ================= */
+
+        .subject-selection {
+
+            text-align: center;
+        }
+
+        .subject-selection h2 {
+
+            color: #ff6b6b;
+
+            margin-bottom: 10px;
+        }
+
+        .subject-selection p {
+
+            color: #666;
+
+            margin-bottom: 25px;
+        }
+
+        .subjects {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .subject-btn {
+
+            padding: 18px;
+
+            border: 2px solid #eee;
+
+            background: white;
+
+            border-radius: 15px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            color: #444;
+        }
+
+        .subject-btn:hover {
+
+            background: #fff1e6;
+
+            border-color: #ff6b6b;
+
+            transform: translateY(-2px);
+        }
+
+        .subject-btn.active {
+
+            background: #ff6b6b;
+
+            color: white;
+
+            border-color: #ff6b6b;
+        }
+
+        #startQuizBtn {
+
+            margin-top: 10px;
+
+            padding: 13px 30px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #ff6b6b;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        #startQuizBtn:hover {
+
+            background: #ff5252;
+
+            transform: translateY(-2px);
+        }
+
+        /* ================= QUIZ TOP ================= */
 
         .top {
 
@@ -95,12 +203,16 @@
             margin-bottom: 25px;
         }
 
+        /* ================= QUESTION ================= */
+
         #question {
 
             margin-bottom: 25px;
 
             line-height: 1.5;
         }
+
+        /* ================= OPTIONS ================= */
 
         #options {
 
@@ -149,6 +261,8 @@
             border-color: #dc3545;
         }
 
+        /* ================= BUTTON ================= */
+
         .btn {
 
             margin-top: 25px;
@@ -168,6 +282,8 @@
             cursor: pointer;
         }
 
+        /* ================= RESULT ================= */
+
         .result {
 
             text-align: center;
@@ -180,6 +296,47 @@
             margin: 15px;
         }
 
+        /* ================= MOBILE ================= */
+
+        @media(max-width:700px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 12px;
+
+                text-align: center;
+            }
+
+            .page {
+
+                margin: 30px auto;
+
+                padding: 15px;
+            }
+
+            .quiz-box {
+
+                padding: 20px;
+            }
+
+            .subjects {
+
+                grid-template-columns: 1fr;
+            }
+
+            .top {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+                text-align: center;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -187,6 +344,8 @@
 
 <body>
 
+
+    <!-- ================= NAVBAR ================= -->
 
     <nav>
 
@@ -201,6 +360,8 @@
     </nav>
 
 
+    <!-- ================= PAGE ================= -->
+
     <div class="page">
 
         <h1 class="title">
@@ -213,36 +374,121 @@
             id="quizBox">
 
 
-            <div class="top">
+            <!-- ================= SUBJECT SELECTION ================= -->
 
-                <span id="questionNumber">
-                    Question 1 / 10
-                </span>
+            <div
+                class="subject-selection"
+                id="subjectSelection">
 
-                <span id="score">
-                    Score: 0
-                </span>
+                <h2>
+                    📚 Choose Your Subject
+                </h2>
+
+                <p>
+                    Select a subject to start your quiz.
+                </p>
+
+
+                <div class="subjects">
+
+                    <button
+                        class="subject-btn"
+                        onclick="selectSubject('English', this)">
+
+                        📘 English
+
+                    </button>
+
+
+                    <button
+                        class="subject-btn"
+                        onclick="selectSubject('Hindi', this)">
+
+                        🪔 Hindi
+
+                    </button>
+
+
+                    <button
+                        class="subject-btn"
+                        onclick="selectSubject('Mathematics', this)">
+
+                        🔢 Mathematics
+
+                    </button>
+
+
+                    <button
+                        class="subject-btn"
+                        onclick="selectSubject('Science', this)">
+
+                        🔬 Science
+
+                    </button>
+
+
+                    <button
+                        class="subject-btn"
+                        onclick="selectSubject('Social Science', this)">
+
+                        🌍 Social Science
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    id="startQuizBtn"
+                    onclick="beginSelectedQuiz()">
+
+                    🚀 Start Quiz
+
+                </button>
 
             </div>
 
 
-            <h2 id="question">
-                Loading...
-            </h2>
+            <!-- ================= QUIZ AREA ================= -->
 
-
-            <div id="options"></div>
-
-
-            <button
-                class="btn"
-                id="nextBtn"
-                onclick="nextQuestion()"
+            <div
+                id="quizArea"
                 style="display:none;">
 
-                Next Question ➡️
 
-            </button>
+                <div class="top">
+
+                    <span id="questionNumber">
+                        Question 1 / 10
+                    </span>
+
+                    <span id="score">
+                        Score: 0
+                    </span>
+
+                </div>
+
+
+                <h2 id="question">
+                    Loading...
+                </h2>
+
+
+                <div id="options"></div>
+
+
+                <button
+                    class="btn"
+                    id="nextBtn"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+
+                    Next Question ➡️
+
+                </button>
+
+
+            </div>
 
 
         </div>
@@ -250,14 +496,9 @@
     </div>
 
 
+    <!-- ================= JAVASCRIPT ================= -->
+
     <script src="script.js"></script>
-
-
-    <script>
-
-        startQuiz();
-
-    </script>
 
 
 </body>

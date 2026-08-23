@@ -1,181 +1,610 @@
 // ============================================
-// Maahi Ki Funshala
+// 🌈 Maahi Ki Funshala
 // COMPLETE JAVASCRIPT
 // ============================================
 
 
 // ============================================
-// 🧠 QUIZ QUESTIONS
+// 🧠 SUBJECT-WISE QUIZ QUESTIONS
 // ============================================
 
-const questions = [
+const subjectQuestions = {
 
-    {
-        question: "What is the capital of India?",
-        options: [
-            "Mumbai",
-            "New Delhi",
-            "Kolkata",
-            "Chennai"
-        ],
-        answer: "New Delhi"
-    },
+    // ========================================
+    // 📘 ENGLISH
+    // ========================================
 
-    {
-        question: "Which language is used to style a web page?",
-        options: [
-            "Python",
-            "CSS",
-            "C++",
-            "Java"
-        ],
-        answer: "CSS"
-    },
+    English: [
 
-    {
-        question: "How many days are there in a week?",
-        options: [
-            "5",
-            "6",
-            "7",
-            "8"
-        ],
-        answer: "7"
-    },
+        {
+            question: "What is the opposite of 'Hot'?",
+            options: [
+                "Warm",
+                "Cold",
+                "Heat",
+                "Cool"
+            ],
+            answer: "Cold"
+        },
 
-    {
-        question: "Which planet is known as the Red Planet?",
-        options: [
-            "Earth",
-            "Mars",
-            "Jupiter",
-            "Venus"
-        ],
-        answer: "Mars"
-    },
+        {
+            question: "Which word is a noun?",
+            options: [
+                "Run",
+                "Beautiful",
+                "School",
+                "Quickly"
+            ],
+            answer: "School"
+        },
 
-    {
-        question: "What does HTML stand for?",
-        options: [
-            "Hyper Text Markup Language",
-            "High Text Machine Language",
-            "Hyper Tool Markup Language",
-            "Home Tool Markup Language"
-        ],
-        answer: "Hyper Text Markup Language"
-    },
+        {
+            question: "What is the plural of 'Child'?",
+            options: [
+                "Childs",
+                "Children",
+                "Childes",
+                "Child"
+            ],
+            answer: "Children"
+        },
 
-    {
-        question: "Which device is used to type text?",
-        options: [
-            "Monitor",
-            "Keyboard",
-            "Speaker",
-            "Printer"
-        ],
-        answer: "Keyboard"
-    },
+        {
+            question: "Which word is a verb?",
+            options: [
+                "Jump",
+                "Beautiful",
+                "Book",
+                "Happy"
+            ],
+            answer: "Jump"
+        },
 
-    {
-        question: "How many months are there in a year?",
-        options: [
-            "10",
-            "11",
-            "12",
-            "13"
-        ],
-        answer: "12"
-    },
+        {
+            question: "What is the past tense of 'Go'?",
+            options: [
+                "Goed",
+                "Gone",
+                "Went",
+                "Going"
+            ],
+            answer: "Went"
+        },
 
-    {
-        question: "Which one is a programming language?",
-        options: [
-            "Python",
-            "HTML",
-            "CSS",
-            "JPEG"
-        ],
-        answer: "Python"
-    },
+        {
+            question: "Which punctuation mark is used at the end of a question?",
+            options: [
+                ".",
+                ",",
+                "?",
+                "!"
+            ],
+            answer: "?"
+        },
 
-    {
-        question: "Which is the largest ocean?",
-        options: [
-            "Atlantic Ocean",
-            "Indian Ocean",
-            "Pacific Ocean",
-            "Arctic Ocean"
-        ],
-        answer: "Pacific Ocean"
-    },
+        {
+            question: "Choose the correct spelling.",
+            options: [
+                "Beautifull",
+                "Beautiful",
+                "Beutiful",
+                "Beautifol"
+            ],
+            answer: "Beautiful"
+        },
 
-    {
-        question: "What is 10 + 5?",
-        options: [
-            "12",
-            "15",
-            "20",
-            "25"
-        ],
-        answer: "15"
-    },
+        {
+            question: "Which word is an adjective?",
+            options: [
+                "Run",
+                "Beautiful",
+                "Slowly",
+                "School"
+            ],
+            answer: "Beautiful"
+        },
 
-    {
-        question: "Which animal is known as the King of the Jungle?",
-        options: [
-            "Tiger",
-            "Lion",
-            "Elephant",
-            "Bear"
-        ],
-        answer: "Lion"
-    },
+        {
+            question: "What is the synonym of 'Happy'?",
+            options: [
+                "Sad",
+                "Angry",
+                "Joyful",
+                "Tired"
+            ],
+            answer: "Joyful"
+        },
 
-    {
-        question: "How many hours are there in a day?",
-        options: [
-            "12",
-            "18",
-            "24",
-            "48"
-        ],
-        answer: "24"
-    },
+        {
+            question: "Which article is used before 'apple'?",
+            options: [
+                "A",
+                "An",
+                "The",
+                "No article"
+            ],
+            answer: "An"
+        }
 
-    {
-        question: "Which is the fastest land animal?",
-        options: [
-            "Lion",
-            "Horse",
-            "Cheetah",
-            "Tiger"
-        ],
-        answer: "Cheetah"
-    },
+    ],
 
-    {
-        question: "What is 5 × 5?",
-        options: [
-            "10",
-            "20",
-            "25",
-            "30"
-        ],
-        answer: "25"
-    },
 
-    {
-        question: "Which planet is closest to the Sun?",
-        options: [
-            "Earth",
-            "Mars",
-            "Mercury",
-            "Venus"
-        ],
-        answer: "Mercury"
-    }
+    // ========================================
+    // 🪔 HINDI
+    // ========================================
 
-];
+    Hindi: [
+
+        {
+            question: "हिंदी वर्णमाला में कितने स्वर माने जाते हैं?",
+            options: [
+                "10",
+                "11",
+                "12",
+                "13"
+            ],
+            answer: "11"
+        },
+
+        {
+            question: "'सुंदर' का विलोम शब्द क्या है?",
+            options: [
+                "अच्छा",
+                "कुरूप",
+                "मधुर",
+                "सरल"
+            ],
+            answer: "कुरूप"
+        },
+
+        {
+            question: "'जल' का पर्यायवाची शब्द क्या है?",
+            options: [
+                "आग",
+                "पानी",
+                "हवा",
+                "धरती"
+            ],
+            answer: "पानी"
+        },
+
+        {
+            question: "'लड़का' का स्त्रीलिंग क्या है?",
+            options: [
+                "लड़की",
+                "बालक",
+                "बच्चा",
+                "नारी"
+            ],
+            answer: "लड़की"
+        },
+
+        {
+            question: "'राम स्कूल जाता है।' इस वाक्य में क्रिया कौन सी है?",
+            options: [
+                "राम",
+                "स्कूल",
+                "जाता है",
+                "है"
+            ],
+            answer: "जाता है"
+        },
+
+        {
+            question: "'दिन' का विलोम क्या है?",
+            options: [
+                "सुबह",
+                "शाम",
+                "रात",
+                "दोपहर"
+            ],
+            answer: "रात"
+        },
+
+        {
+            question: "'आकाश' का पर्यायवाची क्या है?",
+            options: [
+                "गगन",
+                "जल",
+                "पर्वत",
+                "धरती"
+            ],
+            answer: "गगन"
+        },
+
+        {
+            question: "'पुस्तक' का अर्थ क्या है?",
+            options: [
+                "किताब",
+                "कलम",
+                "कागज",
+                "विद्यालय"
+            ],
+            answer: "किताब"
+        },
+
+        {
+            question: "'मीठा' किस प्रकार का शब्द है?",
+            options: [
+                "संज्ञा",
+                "सर्वनाम",
+                "विशेषण",
+                "क्रिया"
+            ],
+            answer: "विशेषण"
+        },
+
+        {
+            question: "हिंदी दिवस कब मनाया जाता है?",
+            options: [
+                "15 अगस्त",
+                "26 जनवरी",
+                "14 सितंबर",
+                "2 अक्टूबर"
+            ],
+            answer: "14 सितंबर"
+        }
+
+    ],
+
+
+    // ========================================
+    // 🔢 MATHEMATICS
+    // ========================================
+
+    Mathematics: [
+
+        {
+            question: "What is 5 + 7?",
+            options: [
+                "10",
+                "11",
+                "12",
+                "13"
+            ],
+            answer: "12"
+        },
+
+        {
+            question: "What is 10 × 5?",
+            options: [
+                "40",
+                "50",
+                "60",
+                "55"
+            ],
+            answer: "50"
+        },
+
+        {
+            question: "What is 100 ÷ 10?",
+            options: [
+                "5",
+                "10",
+                "20",
+                "25"
+            ],
+            answer: "10"
+        },
+
+        {
+            question: "What is the square of 5?",
+            options: [
+                "10",
+                "15",
+                "20",
+                "25"
+            ],
+            answer: "25"
+        },
+
+        {
+            question: "How many sides does a triangle have?",
+            options: [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            answer: "3"
+        },
+
+        {
+            question: "What is 15 - 8?",
+            options: [
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            answer: "7"
+        },
+
+        {
+            question: "What is half of 20?",
+            options: [
+                "5",
+                "10",
+                "15",
+                "20"
+            ],
+            answer: "10"
+        },
+
+        {
+            question: "What is 9 × 9?",
+            options: [
+                "72",
+                "81",
+                "90",
+                "99"
+            ],
+            answer: "81"
+        },
+
+        {
+            question: "How many degrees are there in a right angle?",
+            options: [
+                "45°",
+                "60°",
+                "90°",
+                "180°"
+            ],
+            answer: "90°"
+        },
+
+        {
+            question: "What is 25% of 100?",
+            options: [
+                "10",
+                "20",
+                "25",
+                "50"
+            ],
+            answer: "25"
+        }
+
+    ],
+
+
+    // ========================================
+    // 🔬 SCIENCE
+    // ========================================
+
+    Science: [
+
+        {
+            question: "Which planet is known as the Red Planet?",
+            options: [
+                "Earth",
+                "Mars",
+                "Jupiter",
+                "Venus"
+            ],
+            answer: "Mars"
+        },
+
+        {
+            question: "What gas do humans need to breathe?",
+            options: [
+                "Carbon Dioxide",
+                "Oxygen",
+                "Nitrogen",
+                "Hydrogen"
+            ],
+            answer: "Oxygen"
+        },
+
+        {
+            question: "What is the largest organ in the human body?",
+            options: [
+                "Heart",
+                "Brain",
+                "Skin",
+                "Liver"
+            ],
+            answer: "Skin"
+        },
+
+        {
+            question: "How many planets are there in our Solar System?",
+            options: [
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            answer: "8"
+        },
+
+        {
+            question: "Which organ pumps blood through the body?",
+            options: [
+                "Brain",
+                "Heart",
+                "Lungs",
+                "Kidney"
+            ],
+            answer: "Heart"
+        },
+
+        {
+            question: "What is the main source of energy for Earth?",
+            options: [
+                "Moon",
+                "Sun",
+                "Stars",
+                "Wind"
+            ],
+            answer: "Sun"
+        },
+
+        {
+            question: "Which gas do plants take in during photosynthesis?",
+            options: [
+                "Oxygen",
+                "Nitrogen",
+                "Carbon Dioxide",
+                "Hydrogen"
+            ],
+            answer: "Carbon Dioxide"
+        },
+
+        {
+            question: "Which part of a plant absorbs water?",
+            options: [
+                "Leaf",
+                "Flower",
+                "Root",
+                "Stem"
+            ],
+            answer: "Root"
+        },
+
+        {
+            question: "What force pulls objects toward Earth?",
+            options: [
+                "Friction",
+                "Gravity",
+                "Magnetism",
+                "Pressure"
+            ],
+            answer: "Gravity"
+        },
+
+        {
+            question: "Which is the nearest star to Earth?",
+            options: [
+                "Moon",
+                "Sun",
+                "Mars",
+                "Venus"
+            ],
+            answer: "Sun"
+        }
+
+    ],
+
+
+    // ========================================
+    // 🌍 SOCIAL SCIENCE
+    // ========================================
+
+    "Social Science": [
+
+        {
+            question: "What is the capital of India?",
+            options: [
+                "Mumbai",
+                "New Delhi",
+                "Kolkata",
+                "Chennai"
+            ],
+            answer: "New Delhi"
+        },
+
+        {
+            question: "Who is known as the Father of the Nation in India?",
+            options: [
+                "Jawaharlal Nehru",
+                "Mahatma Gandhi",
+                "Sardar Patel",
+                "Subhash Chandra Bose"
+            ],
+            answer: "Mahatma Gandhi"
+        },
+
+        {
+            question: "How many states are there in India?",
+            options: [
+                "26",
+                "27",
+                "28",
+                "29"
+            ],
+            answer: "28"
+        },
+
+        {
+            question: "Which is the largest state of India by area?",
+            options: [
+                "Uttar Pradesh",
+                "Rajasthan",
+                "Maharashtra",
+                "Madhya Pradesh"
+            ],
+            answer: "Rajasthan"
+        },
+
+        {
+            question: "Who was the first Prime Minister of India?",
+            options: [
+                "Mahatma Gandhi",
+                "Jawaharlal Nehru",
+                "Sardar Patel",
+                "Dr. Rajendra Prasad"
+            ],
+            answer: "Jawaharlal Nehru"
+        },
+
+        {
+            question: "Which is the longest river in India?",
+            options: [
+                "Yamuna",
+                "Ganga",
+                "Godavari",
+                "Narmada"
+            ],
+            answer: "Ganga"
+        },
+
+        {
+            question: "When is Independence Day celebrated in India?",
+            options: [
+                "26 January",
+                "15 August",
+                "2 October",
+                "14 November"
+            ],
+            answer: "15 August"
+        },
+
+        {
+            question: "When is Republic Day celebrated in India?",
+            options: [
+                "15 August",
+                "26 January",
+                "2 October",
+                "14 November"
+            ],
+            answer: "26 January"
+        },
+
+        {
+            question: "Which continent is India located in?",
+            options: [
+                "Europe",
+                "Asia",
+                "Africa",
+                "Australia"
+            ],
+            answer: "Asia"
+        },
+
+        {
+            question: "Which is the largest ocean in the world?",
+            options: [
+                "Atlantic Ocean",
+                "Indian Ocean",
+                "Pacific Ocean",
+                "Arctic Ocean"
+            ],
+            answer: "Pacific Ocean"
+        }
+
+    ]
+
+};
 
 
 // ============================================
@@ -183,8 +612,12 @@ const questions = [
 // ============================================
 
 let quizQuestions = [];
+
 let currentQuestion = 0;
+
 let score = 0;
+
+let selectedSubject = "";
 
 const totalQuestions = 10;
 
@@ -197,7 +630,11 @@ function shuffle(array) {
 
     let result = [...array];
 
-    for (let i = result.length - 1; i > 0; i--) {
+    for (
+        let i = result.length - 1;
+        i > 0;
+        i--
+    ) {
 
         let j =
             Math.floor(
@@ -220,20 +657,100 @@ function shuffle(array) {
 
 
 // ============================================
-// START QUIZ
+// SELECT SUBJECT
 // ============================================
 
-function startQuiz() {
+function selectSubject(subject, button) {
+
+    selectedSubject = subject;
+
+
+    let buttons =
+        document.querySelectorAll(
+            ".subject-btn"
+        );
+
+
+    buttons.forEach(
+        function(btn) {
+
+            btn.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    button.classList.add("active");
+
+}
+
+
+// ============================================
+// START SELECTED QUIZ
+// ============================================
+
+function beginSelectedQuiz() {
+
+    if (selectedSubject === "") {
+
+        alert(
+            "Please select a subject first! 📚"
+        );
+
+        return;
+
+    }
+
+
+    let subjectData =
+        subjectQuestions[selectedSubject];
+
 
     quizQuestions =
-        shuffle(questions)
+        shuffle(subjectData)
         .slice(0, totalQuestions);
 
+
     currentQuestion = 0;
+
     score = 0;
 
+
+    let subjectSelection =
+        document.getElementById(
+            "subjectSelection"
+        );
+
+
+    let quizArea =
+        document.getElementById(
+            "quizArea"
+        );
+
+
+    if (subjectSelection) {
+
+        subjectSelection.style.display =
+            "none";
+
+    }
+
+
+    if (quizArea) {
+
+        quizArea.style.display =
+            "block";
+
+    }
+
+
     let scoreElement =
-        document.getElementById("score");
+        document.getElementById(
+            "score"
+        );
+
 
     if (scoreElement) {
 
@@ -242,7 +759,41 @@ function startQuiz() {
 
     }
 
+
     showQuestion();
+
+}
+
+
+// ============================================
+// OLD START QUIZ
+// ============================================
+// Kept for compatibility.
+// If another quiz page calls startQuiz(),
+// it will still work.
+
+function startQuiz() {
+
+    if (
+        !document.getElementById(
+            "quizArea"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    if (selectedSubject === "") {
+
+        return;
+
+    }
+
+
+    beginSelectedQuiz();
+
 }
 
 
@@ -255,24 +806,42 @@ function showQuestion() {
     let current =
         quizQuestions[currentQuestion];
 
+
+    if (!current) {
+
+        return;
+
+    }
+
+
     let questionNumber =
         document.getElementById(
             "questionNumber"
         );
+
 
     let question =
         document.getElementById(
             "question"
         );
 
+
     let options =
         document.getElementById(
             "options"
         );
 
-    if (!questionNumber || !question || !options) {
+
+    if (
+        !questionNumber ||
+        !question ||
+        !options
+    ) {
+
         return;
+
     }
+
 
     questionNumber.innerText =
         "Question " +
@@ -280,10 +849,13 @@ function showQuestion() {
         " / " +
         totalQuestions;
 
+
     question.innerText =
         current.question;
 
+
     options.innerHTML = "";
+
 
     current.options.forEach(
         function(option) {
@@ -293,11 +865,14 @@ function showQuestion() {
                     "button"
                 );
 
+
             button.className =
                 "option";
 
+
             button.innerText =
                 option;
+
 
             button.onclick =
                 function() {
@@ -309,7 +884,10 @@ function showQuestion() {
 
                 };
 
-            options.appendChild(button);
+
+            options.appendChild(
+                button
+            );
 
         }
     );
@@ -320,6 +898,7 @@ function showQuestion() {
             "nextBtn"
         );
 
+
     if (nextBtn) {
 
         nextBtn.style.display =
@@ -327,10 +906,12 @@ function showQuestion() {
 
     }
 
+
     let submitBtn =
         document.getElementById(
             "submitBtn"
         );
+
 
     if (submitBtn) {
 
@@ -354,10 +935,12 @@ function checkAnswer(
     let current =
         quizQuestions[currentQuestion];
 
+
     let allOptions =
         document.querySelectorAll(
             ".option"
         );
+
 
     allOptions.forEach(
         function(option) {
@@ -377,12 +960,15 @@ function checkAnswer(
             "correct"
         );
 
+
         score++;
+
 
         let scoreElement =
             document.getElementById(
                 "score"
             );
+
 
         if (scoreElement) {
 
@@ -398,6 +984,7 @@ function checkAnswer(
         button.classList.add(
             "wrong"
         );
+
 
         allOptions.forEach(
             function(option) {
@@ -419,6 +1006,8 @@ function checkAnswer(
     }
 
 
+    // Last question = Submit
+
     if (
         currentQuestion ===
         totalQuestions - 1
@@ -429,10 +1018,46 @@ function checkAnswer(
                 "submitBtn"
             );
 
+
         if (submitBtn) {
 
             submitBtn.style.display =
                 "inline-block";
+
+        }
+
+        else {
+
+            // If submit button isn't in HTML,
+            // create one automatically.
+
+            let newSubmit =
+                document.createElement(
+                    "button"
+                );
+
+
+            newSubmit.id =
+                "submitBtn";
+
+
+            newSubmit.className =
+                "btn";
+
+
+            newSubmit.innerText =
+                "✅ Submit Quiz";
+
+
+            newSubmit.onclick =
+                submitQuiz;
+
+
+            document.getElementById(
+                "quizArea"
+            ).appendChild(
+                newSubmit
+            );
 
         }
 
@@ -444,6 +1069,7 @@ function checkAnswer(
             document.getElementById(
                 "nextBtn"
             );
+
 
         if (nextBtn) {
 
@@ -464,6 +1090,7 @@ function checkAnswer(
 function nextQuestion() {
 
     currentQuestion++;
+
 
     if (
         currentQuestion <
@@ -499,9 +1126,13 @@ function showResult() {
             "quizBox"
         );
 
+
     if (!quizBox) {
+
         return;
+
     }
+
 
     let percentage =
         Math.round(
@@ -518,6 +1149,10 @@ function showResult() {
 
             <h2>
                 🎉 Quiz Completed!
+            </h2>
+
+            <h2>
+                ${selectedSubject}
             </h2>
 
             <h2>
@@ -685,11 +1320,14 @@ function selectLevel(level) {
 
     selectedLevel = level;
 
+
     let levelData =
         typingLevels[selectedLevel];
 
+
     totalLevelTime =
         levelData.time;
+
 
     typingTime =
         levelData.time;
@@ -699,6 +1337,7 @@ function selectLevel(level) {
         document.getElementById(
             "levelName"
         );
+
 
     if (levelName) {
 
@@ -713,6 +1352,7 @@ function selectLevel(level) {
             "time"
         );
 
+
     if (time) {
 
         time.innerText =
@@ -726,9 +1366,11 @@ function selectLevel(level) {
             "wpm"
         );
 
+
     if (wpm) {
 
-        wpm.innerText = "0";
+        wpm.innerText =
+            "0";
 
     }
 
@@ -737,6 +1379,7 @@ function selectLevel(level) {
         document.getElementById(
             "accuracy"
         );
+
 
     if (accuracy) {
 
@@ -751,6 +1394,7 @@ function selectLevel(level) {
             "typingText"
         );
 
+
     if (typingText) {
 
         typingText.innerText =
@@ -763,6 +1407,7 @@ function selectLevel(level) {
         document.getElementById(
             "typingInput"
         );
+
 
     if (input) {
 
@@ -778,6 +1423,7 @@ function selectLevel(level) {
             "typingResult"
         );
 
+
     if (result) {
 
         result.innerHTML = "";
@@ -792,6 +1438,7 @@ function selectLevel(level) {
         document.querySelectorAll(
             ".level-btn"
         );
+
 
     buttons.forEach(
         function(button) {
@@ -833,6 +1480,7 @@ function startTypingTest() {
 
     totalLevelTime =
         levelData.time;
+
 
     typingTime =
         levelData.time;
@@ -887,14 +1535,13 @@ function startTypingTest() {
     input.focus();
 
 
-    // ========================================
-    // SHOW SUBMIT BUTTON
-    // ========================================
+    // Show Submit Button
 
     let submitBtn =
         document.getElementById(
             "submitBtn"
         );
+
 
     if (submitBtn) {
 
@@ -946,8 +1593,11 @@ function calculateTyping() {
             "typingInput"
         );
 
+
     if (!input) {
+
         return;
+
     }
 
 
@@ -967,7 +1617,8 @@ function calculateTyping() {
 
         document.getElementById(
             "wpm"
-        ).innerText = "0";
+        ).innerText =
+            "0";
 
         return;
 
@@ -1070,7 +1721,9 @@ function calculateTyping() {
 function submitTypingTest() {
 
     if (!typingStarted) {
+
         return;
+
     }
 
 
@@ -1124,7 +1777,7 @@ function submitTypingTest() {
 
 
 // ============================================
-// CALCULATE FINAL RESULT
+// CALCULATE FINAL TYPING RESULT
 // ============================================
 
 function calculateFinalTypingResult() {
@@ -1166,10 +1819,6 @@ function calculateFinalTypingResult() {
     }
 
 
-    // ========================================
-    // WORD COUNT
-    // ========================================
-
     let words =
         typedText
         .trim()
@@ -1182,10 +1831,6 @@ function calculateFinalTypingResult() {
             }
         );
 
-
-    // ========================================
-    // TIME USED
-    // ========================================
 
     let elapsedSeconds =
         totalLevelTime -
@@ -1203,20 +1848,12 @@ function calculateFinalTypingResult() {
         actualSeconds / 60;
 
 
-    // ========================================
-    // WPM
-    // ========================================
-
     let wpm =
         Math.round(
             words.length /
             minutes
         );
 
-
-    // ========================================
-    // ACCURACY
-    // ========================================
 
     let correctCharacters = 0;
 
@@ -1271,7 +1908,6 @@ function calculateFinalTypingResult() {
 
 // ============================================
 // FINISH TYPING TEST
-// TIME OVER
 // ============================================
 
 function finishTypingTest() {
