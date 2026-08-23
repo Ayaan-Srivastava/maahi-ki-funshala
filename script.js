@@ -1,31 +1,22 @@
 // ============================================
 // 🌈 Maahi Ki Funshala
 // COMPLETE JAVASCRIPT
+// QUIZ + TYPING TEST
 // ============================================
 
 
-// ============================================
+
+// ============================================================
 // 🧠 SUBJECT-WISE QUIZ QUESTIONS
-// ============================================
+// ============================================================
 
 const subjectQuestions = {
 
-    // ========================================
-    // 📘 ENGLISH
-    // ========================================
+    // ========================================================
+    // 📘 ENGLISH - GRAMMAR ONLY
+    // ========================================================
 
     English: [
-
-        {
-            question: "What is the opposite of 'Hot'?",
-            options: [
-                "Warm",
-                "Cold",
-                "Heat",
-                "Cool"
-            ],
-            answer: "Cold"
-        },
 
         {
             question: "Which word is a noun?",
@@ -39,17 +30,6 @@ const subjectQuestions = {
         },
 
         {
-            question: "What is the plural of 'Child'?",
-            options: [
-                "Childs",
-                "Children",
-                "Childes",
-                "Child"
-            ],
-            answer: "Children"
-        },
-
-        {
             question: "Which word is a verb?",
             options: [
                 "Jump",
@@ -58,6 +38,28 @@ const subjectQuestions = {
                 "Happy"
             ],
             answer: "Jump"
+        },
+
+        {
+            question: "Which word is an adjective?",
+            options: [
+                "Run",
+                "Beautiful",
+                "Slowly",
+                "School"
+            ],
+            answer: "Beautiful"
+        },
+
+        {
+            question: "What is the plural of 'Child'?",
+            options: [
+                "Childs",
+                "Children",
+                "Childes",
+                "Child"
+            ],
+            answer: "Children"
         },
 
         {
@@ -94,28 +96,6 @@ const subjectQuestions = {
         },
 
         {
-            question: "Which word is an adjective?",
-            options: [
-                "Run",
-                "Beautiful",
-                "Slowly",
-                "School"
-            ],
-            answer: "Beautiful"
-        },
-
-        {
-            question: "What is the synonym of 'Happy'?",
-            options: [
-                "Sad",
-                "Angry",
-                "Joyful",
-                "Tired"
-            ],
-            answer: "Joyful"
-        },
-
-        {
             question: "Which article is used before 'apple'?",
             options: [
                 "A",
@@ -124,14 +104,92 @@ const subjectQuestions = {
                 "No article"
             ],
             answer: "An"
+        },
+
+        {
+            question: "Which sentence is grammatically correct?",
+            options: [
+                "She go to school.",
+                "She going school.",
+                "She goes to school.",
+                "She gone to school."
+            ],
+            answer: "She goes to school."
+        },
+
+        {
+            question: "Choose the correct pronoun: 'Rahul is a student. ___ is intelligent.'",
+            options: [
+                "He",
+                "She",
+                "It",
+                "They"
+            ],
+            answer: "He"
+        },
+
+        {
+            question: "Which word is an adverb?",
+            options: [
+                "Quickly",
+                "Quick",
+                "Runner",
+                "Run"
+            ],
+            answer: "Quickly"
+        },
+
+        {
+            question: "Choose the correct preposition: 'The book is ___ the table.'",
+            options: [
+                "On",
+                "At",
+                "By",
+                "To"
+            ],
+            answer: "On"
+        },
+
+        {
+            question: "Which is a proper noun?",
+            options: [
+                "City",
+                "Boy",
+                "India",
+                "Country"
+            ],
+            answer: "India"
+        },
+
+        {
+            question: "Choose the correct form: 'They ___ playing cricket.'",
+            options: [
+                "Is",
+                "Are",
+                "Am",
+                "Be"
+            ],
+            answer: "Are"
+        },
+
+        {
+            question: "What is the opposite of 'Hot'?",
+            options: [
+                "Warm",
+                "Cold",
+                "Heat",
+                "Fire"
+            ],
+            answer: "Cold"
         }
 
     ],
 
 
-    // ========================================
+
+    // ========================================================
     // 🪔 HINDI
-    // ========================================
+    // ========================================================
 
     Hindi: [
 
@@ -243,14 +301,37 @@ const subjectQuestions = {
                 "2 अक्टूबर"
             ],
             answer: "14 सितंबर"
+        },
+
+        {
+            question: "'सूर्य' का पर्यायवाची शब्द क्या है?",
+            options: [
+                "चंद्रमा",
+                "रवि",
+                "जल",
+                "पवन"
+            ],
+            answer: "रवि"
+        },
+
+        {
+            question: "'अंधकार' का विलोम क्या है?",
+            options: [
+                "रात",
+                "प्रकाश",
+                "छाया",
+                "काला"
+            ],
+            answer: "प्रकाश"
         }
 
     ],
 
 
-    // ========================================
+
+    // ========================================================
     // 🔢 MATHEMATICS
-    // ========================================
+    // ========================================================
 
     Mathematics: [
 
@@ -362,133 +443,405 @@ const subjectQuestions = {
                 "50"
             ],
             answer: "25"
+        },
+
+        {
+            question: "What is 12 × 12?",
+            options: [
+                "124",
+                "144",
+                "154",
+                "164"
+            ],
+            answer: "144"
+        },
+
+        {
+            question: "What is the perimeter of a square with side 5 cm?",
+            options: [
+                "10 cm",
+                "15 cm",
+                "20 cm",
+                "25 cm"
+            ],
+            answer: "20 cm"
         }
 
     ],
 
 
-    // ========================================
+
+    // ========================================================
     // 🔬 SCIENCE
-    // ========================================
+    // ========================================================
 
-    Science: [
+    Science: {
 
-        {
-            question: "Which planet is known as the Red Planet?",
-            options: [
-                "Earth",
-                "Mars",
-                "Jupiter",
-                "Venus"
-            ],
-            answer: "Mars"
-        },
+        // ====================================================
+        // 🟢 EASY
+        // ====================================================
 
-        {
-            question: "What gas do humans need to breathe?",
-            options: [
-                "Carbon Dioxide",
-                "Oxygen",
-                "Nitrogen",
-                "Hydrogen"
-            ],
-            answer: "Oxygen"
-        },
+        Easy: [
 
-        {
-            question: "What is the largest organ in the human body?",
-            options: [
-                "Heart",
-                "Brain",
-                "Skin",
-                "Liver"
-            ],
-            answer: "Skin"
-        },
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: [
+                    "Earth",
+                    "Mars",
+                    "Jupiter",
+                    "Venus"
+                ],
+                answer: "Mars"
+            },
 
-        {
-            question: "How many planets are there in our Solar System?",
-            options: [
-                "7",
-                "8",
-                "9",
-                "10"
-            ],
-            answer: "8"
-        },
+            {
+                question: "What gas do humans need to breathe?",
+                options: [
+                    "Carbon Dioxide",
+                    "Oxygen",
+                    "Nitrogen",
+                    "Hydrogen"
+                ],
+                answer: "Oxygen"
+            },
 
-        {
-            question: "Which organ pumps blood through the body?",
-            options: [
-                "Brain",
-                "Heart",
-                "Lungs",
-                "Kidney"
-            ],
-            answer: "Heart"
-        },
+            {
+                question: "How many planets are there in our Solar System?",
+                options: [
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                answer: "8"
+            },
 
-        {
-            question: "What is the main source of energy for Earth?",
-            options: [
-                "Moon",
-                "Sun",
-                "Stars",
-                "Wind"
-            ],
-            answer: "Sun"
-        },
+            {
+                question: "Which organ pumps blood through the body?",
+                options: [
+                    "Brain",
+                    "Heart",
+                    "Lungs",
+                    "Kidney"
+                ],
+                answer: "Heart"
+            },
 
-        {
-            question: "Which gas do plants take in during photosynthesis?",
-            options: [
-                "Oxygen",
-                "Nitrogen",
-                "Carbon Dioxide",
-                "Hydrogen"
-            ],
-            answer: "Carbon Dioxide"
-        },
+            {
+                question: "What is the main source of energy for Earth?",
+                options: [
+                    "Moon",
+                    "Sun",
+                    "Stars",
+                    "Wind"
+                ],
+                answer: "Sun"
+            },
 
-        {
-            question: "Which part of a plant absorbs water?",
-            options: [
-                "Leaf",
-                "Flower",
-                "Root",
-                "Stem"
-            ],
-            answer: "Root"
-        },
+            {
+                question: "Which part of a plant absorbs water?",
+                options: [
+                    "Leaf",
+                    "Flower",
+                    "Root",
+                    "Stem"
+                ],
+                answer: "Root"
+            },
 
-        {
-            question: "What force pulls objects toward Earth?",
-            options: [
-                "Friction",
-                "Gravity",
-                "Magnetism",
-                "Pressure"
-            ],
-            answer: "Gravity"
-        },
+            {
+                question: "Which is the nearest star to Earth?",
+                options: [
+                    "Moon",
+                    "Sun",
+                    "Mars",
+                    "Venus"
+                ],
+                answer: "Sun"
+            },
 
-        {
-            question: "Which is the nearest star to Earth?",
-            options: [
-                "Moon",
-                "Sun",
-                "Mars",
-                "Venus"
-            ],
-            answer: "Sun"
-        }
+            {
+                question: "Which organ helps us to see?",
+                options: [
+                    "Ear",
+                    "Eye",
+                    "Nose",
+                    "Hand"
+                ],
+                answer: "Eye"
+            },
 
-    ],
+            {
+                question: "Water freezes at what temperature?",
+                options: [
+                    "0°C",
+                    "10°C",
+                    "50°C",
+                    "100°C"
+                ],
+                answer: "0°C"
+            },
+
+            {
+                question: "Which gas do plants take in during photosynthesis?",
+                options: [
+                    "Oxygen",
+                    "Nitrogen",
+                    "Carbon Dioxide",
+                    "Hydrogen"
+                ],
+                answer: "Carbon Dioxide"
+            }
+
+        ],
 
 
-    // ========================================
+
+        // ====================================================
+        // 🟡 MEDIUM
+        // ====================================================
+
+        Medium: [
+
+            {
+                question: "What is the largest organ in the human body?",
+                options: [
+                    "Heart",
+                    "Brain",
+                    "Skin",
+                    "Liver"
+                ],
+                answer: "Skin"
+            },
+
+            {
+                question: "What force pulls objects toward Earth?",
+                options: [
+                    "Friction",
+                    "Gravity",
+                    "Magnetism",
+                    "Pressure"
+                ],
+                answer: "Gravity"
+            },
+
+            {
+                question: "Which organ is mainly responsible for filtering waste from blood?",
+                options: [
+                    "Heart",
+                    "Kidney",
+                    "Lung",
+                    "Stomach"
+                ],
+                answer: "Kidney"
+            },
+
+            {
+                question: "Which process do plants use to make food?",
+                options: [
+                    "Respiration",
+                    "Photosynthesis",
+                    "Digestion",
+                    "Transpiration"
+                ],
+                answer: "Photosynthesis"
+            },
+
+            {
+                question: "Which vitamin is mainly produced in the skin in sunlight?",
+                options: [
+                    "Vitamin A",
+                    "Vitamin B",
+                    "Vitamin C",
+                    "Vitamin D"
+                ],
+                answer: "Vitamin D"
+            },
+
+            {
+                question: "Which blood cells help fight infections?",
+                options: [
+                    "Red blood cells",
+                    "White blood cells",
+                    "Platelets",
+                    "Plasma"
+                ],
+                answer: "White blood cells"
+            },
+
+            {
+                question: "What is the boiling point of water at normal pressure?",
+                options: [
+                    "50°C",
+                    "75°C",
+                    "100°C",
+                    "150°C"
+                ],
+                answer: "100°C"
+            },
+
+            {
+                question: "Which planet is the largest in our Solar System?",
+                options: [
+                    "Earth",
+                    "Mars",
+                    "Jupiter",
+                    "Saturn"
+                ],
+                answer: "Jupiter"
+            },
+
+            {
+                question: "What is the basic unit of life?",
+                options: [
+                    "Tissue",
+                    "Organ",
+                    "Cell",
+                    "Atom"
+                ],
+                answer: "Cell"
+            },
+
+            {
+                question: "Which instrument is used to measure temperature?",
+                options: [
+                    "Barometer",
+                    "Thermometer",
+                    "Speedometer",
+                    "Ammeter"
+                ],
+                answer: "Thermometer"
+            }
+
+        ],
+
+
+
+        // ====================================================
+        // 🔴 HARD
+        // ====================================================
+
+        Hard: [
+
+            {
+                question: "Which part of the cell controls most of its activities?",
+                options: [
+                    "Cell wall",
+                    "Nucleus",
+                    "Cytoplasm",
+                    "Vacuole"
+                ],
+                answer: "Nucleus"
+            },
+
+            {
+                question: "Which gas is most abundant in Earth's atmosphere?",
+                options: [
+                    "Oxygen",
+                    "Nitrogen",
+                    "Carbon Dioxide",
+                    "Hydrogen"
+                ],
+                answer: "Nitrogen"
+            },
+
+            {
+                question: "Which organelle is known as the powerhouse of the cell?",
+                options: [
+                    "Nucleus",
+                    "Ribosome",
+                    "Mitochondria",
+                    "Vacuole"
+                ],
+                answer: "Mitochondria"
+            },
+
+            {
+                question: "What is the SI unit of force?",
+                options: [
+                    "Joule",
+                    "Watt",
+                    "Newton",
+                    "Pascal"
+                ],
+                answer: "Newton"
+            },
+
+            {
+                question: "Which blood group is commonly called the universal donor for red blood cells?",
+                options: [
+                    "AB+",
+                    "O−",
+                    "A+",
+                    "B+"
+                ],
+                answer: "O−"
+            },
+
+            {
+                question: "Which layer of the atmosphere contains most weather phenomena?",
+                options: [
+                    "Stratosphere",
+                    "Troposphere",
+                    "Mesosphere",
+                    "Thermosphere"
+                ],
+                answer: "Troposphere"
+            },
+
+            {
+                question: "Which type of energy is stored in food?",
+                options: [
+                    "Chemical energy",
+                    "Light energy",
+                    "Sound energy",
+                    "Nuclear energy"
+                ],
+                answer: "Chemical energy"
+            },
+
+            {
+                question: "What is the process by which liquid changes into gas?",
+                options: [
+                    "Condensation",
+                    "Freezing",
+                    "Evaporation",
+                    "Melting"
+                ],
+                answer: "Evaporation"
+            },
+
+            {
+                question: "Which planet has the most prominent ring system?",
+                options: [
+                    "Mars",
+                    "Earth",
+                    "Saturn",
+                    "Mercury"
+                ],
+                answer: "Saturn"
+            },
+
+            {
+                question: "Which force opposes motion between two surfaces in contact?",
+                options: [
+                    "Gravity",
+                    "Friction",
+                    "Magnetism",
+                    "Buoyancy"
+                ],
+                answer: "Friction"
+            }
+
+        ]
+
+    },
+
+
+
+    // ========================================================
     // 🌍 SOCIAL SCIENCE
-    // ========================================
+    // ========================================================
 
     "Social Science": [
 
@@ -600,6 +953,192 @@ const subjectQuestions = {
                 "Arctic Ocean"
             ],
             answer: "Pacific Ocean"
+        },
+
+        {
+            question: "Who was the first President of India?",
+            options: [
+                "Dr. Rajendra Prasad",
+                "Jawaharlal Nehru",
+                "Sardar Patel",
+                "Mahatma Gandhi"
+            ],
+            answer: "Dr. Rajendra Prasad"
+        },
+
+        {
+            question: "Which movement was launched by Mahatma Gandhi in 1942?",
+            options: [
+                "Non-Cooperation Movement",
+                "Quit India Movement",
+                "Civil Disobedience Movement",
+                "Swadeshi Movement"
+            ],
+            answer: "Quit India Movement"
+        }
+
+    ],
+
+
+
+    // ========================================================
+    // 🌐 GENERAL STUDIES / GS
+    // ========================================================
+
+    "General Studies": [
+
+        {
+            question: "What is the national animal of India?",
+            options: [
+                "Lion",
+                "Tiger",
+                "Elephant",
+                "Peacock"
+            ],
+            answer: "Tiger"
+        },
+
+        {
+            question: "What is the national bird of India?",
+            options: [
+                "Sparrow",
+                "Peacock",
+                "Eagle",
+                "Parrot"
+            ],
+            answer: "Peacock"
+        },
+
+        {
+            question: "What is the currency of Japan?",
+            options: [
+                "Yuan",
+                "Won",
+                "Yen",
+                "Dollar"
+            ],
+            answer: "Yen"
+        },
+
+        {
+            question: "Which is the largest continent in the world?",
+            options: [
+                "Africa",
+                "Asia",
+                "Europe",
+                "Australia"
+            ],
+            answer: "Asia"
+        },
+
+        {
+            question: "Which is the smallest continent?",
+            options: [
+                "Asia",
+                "Europe",
+                "Australia",
+                "Africa"
+            ],
+            answer: "Australia"
+        },
+
+        {
+            question: "How many days are there in a leap year?",
+            options: [
+                "365",
+                "366",
+                "364",
+                "367"
+            ],
+            answer: "366"
+        },
+
+        {
+            question: "Which is the largest planet in our Solar System?",
+            options: [
+                "Earth",
+                "Jupiter",
+                "Saturn",
+                "Neptune"
+            ],
+            answer: "Jupiter"
+        },
+
+        {
+            question: "Who wrote the Indian national anthem?",
+            options: [
+                "Mahatma Gandhi",
+                "Rabindranath Tagore",
+                "Jawaharlal Nehru",
+                "Bankim Chandra Chattopadhyay"
+            ],
+            answer: "Rabindranath Tagore"
+        },
+
+        {
+            question: "Which is the highest mountain peak in the world?",
+            options: [
+                "K2",
+                "Mount Everest",
+                "Kangchenjunga",
+                "Nanda Devi"
+            ],
+            answer: "Mount Everest"
+        },
+
+        {
+            question: "How many colors are there in a rainbow?",
+            options: [
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            answer: "7"
+        },
+
+        {
+            question: "Which planet is known as the Blue Planet?",
+            options: [
+                "Mars",
+                "Earth",
+                "Venus",
+                "Neptune"
+            ],
+            answer: "Earth"
+        },
+
+        {
+            question: "Which is the fastest land animal?",
+            options: [
+                "Lion",
+                "Horse",
+                "Cheetah",
+                "Tiger"
+            ],
+            answer: "Cheetah"
+        },
+
+        {
+            question: "Which country is known as the Land of the Rising Sun?",
+            options: [
+                "China",
+                "Japan",
+                "India",
+                "Korea"
+            ],
+            answer: "Japan"
+        },
+
+        {
+            question: "How many hours are there in one day?",
+            options: [
+                "12",
+                "18",
+                "24",
+                "36"
+            ],
+            answer: "24"
         }
 
     ]
@@ -607,9 +1146,10 @@ const subjectQuestions = {
 };
 
 
-// ============================================
-// QUIZ VARIABLES
-// ============================================
+
+// ============================================================
+// 🧠 QUIZ VARIABLES
+// ============================================================
 
 let quizQuestions = [];
 
@@ -619,12 +1159,15 @@ let score = 0;
 
 let selectedSubject = "";
 
+let selectedScienceLevel = "";
+
 const totalQuestions = 10;
 
 
-// ============================================
-// SHUFFLE
-// ============================================
+
+// ============================================================
+// 🔀 SHUFFLE
+// ============================================================
 
 function shuffle(array) {
 
@@ -653,30 +1196,108 @@ function shuffle(array) {
     }
 
     return result;
+
 }
 
 
-// ============================================
-// SELECT SUBJECT
-// ============================================
+
+// ============================================================
+// 📚 SELECT SUBJECT
+// ============================================================
 
 function selectSubject(subject, button) {
 
     selectedSubject = subject;
 
+    selectedScienceLevel = "";
+
+
+    // Remove active from all subjects
 
     let buttons =
         document.querySelectorAll(
             ".subject-btn"
         );
 
+    buttons.forEach(
+        function(btn) {
+
+            btn.classList.remove("active");
+
+        }
+    );
+
+
+    // Add active
+
+    button.classList.add("active");
+
+
+    // Science level box
+
+    let scienceBox =
+        document.getElementById(
+            "scienceLevelSelection"
+        );
+
+
+    if (scienceBox) {
+
+        if (subject === "Science") {
+
+            scienceBox.style.display =
+                "block";
+
+        }
+
+        else {
+
+            scienceBox.style.display =
+                "none";
+
+        }
+
+    }
+
+
+    // Reset Science buttons
+
+    let levelButtons =
+        document.querySelectorAll(
+            ".level-btn"
+        );
+
+    levelButtons.forEach(
+        function(btn) {
+
+            btn.classList.remove("active");
+
+        }
+    );
+
+}
+
+
+
+// ============================================================
+// 🔬 SELECT SCIENCE LEVEL
+// ============================================================
+
+function selectScienceLevel(level, button) {
+
+    selectedScienceLevel = level;
+
+
+    let buttons =
+        document.querySelectorAll(
+            ".level-btn"
+        );
+
 
     buttons.forEach(
         function(btn) {
 
-            btn.classList.remove(
-                "active"
-            );
+            btn.classList.remove("active");
 
         }
     );
@@ -687,11 +1308,14 @@ function selectSubject(subject, button) {
 }
 
 
-// ============================================
-// START SELECTED QUIZ
-// ============================================
+
+// ============================================================
+// 🚀 START SELECTED QUIZ
+// ============================================================
 
 function beginSelectedQuiz() {
+
+    // No subject
 
     if (selectedSubject === "") {
 
@@ -704,13 +1328,71 @@ function beginSelectedQuiz() {
     }
 
 
-    let subjectData =
-        subjectQuestions[selectedSubject];
+    // Science needs level
+
+    if (
+        selectedSubject === "Science" &&
+        selectedScienceLevel === ""
+    ) {
+
+        alert(
+            "Please select a Science level! 🔬"
+        );
+
+        return;
+
+    }
+
+
+    let subjectData;
+
+
+    // Science
+
+    if (selectedSubject === "Science") {
+
+        subjectData =
+            subjectQuestions.Science[
+                selectedScienceLevel
+            ];
+
+    }
+
+    // Other subjects
+
+    else {
+
+        subjectData =
+            subjectQuestions[
+                selectedSubject
+            ];
+
+    }
+
+
+    if (
+        !subjectData ||
+        subjectData.length === 0
+    ) {
+
+        alert(
+            "Questions are not available for this section yet."
+        );
+
+        return;
+
+    }
 
 
     quizQuestions =
         shuffle(subjectData)
-        .slice(0, totalQuestions);
+        .slice(
+            0,
+            Math.min(
+                totalQuestions,
+                subjectData.length
+            )
+        );
 
 
     currentQuestion = 0;
@@ -718,15 +1400,11 @@ function beginSelectedQuiz() {
     score = 0;
 
 
+    // Hide subject selection
+
     let subjectSelection =
         document.getElementById(
             "subjectSelection"
-        );
-
-
-    let quizArea =
-        document.getElementById(
-            "quizArea"
         );
 
 
@@ -738,6 +1416,14 @@ function beginSelectedQuiz() {
     }
 
 
+    // Show quiz
+
+    let quizArea =
+        document.getElementById(
+            "quizArea"
+        );
+
+
     if (quizArea) {
 
         quizArea.style.display =
@@ -745,6 +1431,56 @@ function beginSelectedQuiz() {
 
     }
 
+
+    // Update quiz subject
+
+    let quizSubject =
+        document.getElementById(
+            "quizSubject"
+        );
+
+
+    if (quizSubject) {
+
+        if (selectedSubject === "Science") {
+
+            quizSubject.innerText =
+                "🔬 Science - " +
+                selectedScienceLevel;
+
+        }
+
+        else if (
+            selectedSubject ===
+            "General Studies"
+        ) {
+
+            quizSubject.innerText =
+                "🌐 General Studies (GS)";
+
+        }
+
+        else if (
+            selectedSubject ===
+            "English"
+        ) {
+
+            quizSubject.innerText =
+                "📘 English - Grammar";
+
+        }
+
+        else {
+
+            quizSubject.innerText =
+                selectedSubject;
+
+        }
+
+    }
+
+
+    // Reset score
 
     let scoreElement =
         document.getElementById(
@@ -765,12 +1501,10 @@ function beginSelectedQuiz() {
 }
 
 
-// ============================================
-// OLD START QUIZ
-// ============================================
-// Kept for compatibility.
-// If another quiz page calls startQuiz(),
-// it will still work.
+
+// ============================================================
+// ▶️ OLD START QUIZ
+// ============================================================
 
 function startQuiz() {
 
@@ -797,9 +1531,10 @@ function startQuiz() {
 }
 
 
-// ============================================
-// SHOW QUESTION
-// ============================================
+
+// ============================================================
+// ❓ SHOW QUESTION
+// ============================================================
 
 function showQuestion() {
 
@@ -847,7 +1582,7 @@ function showQuestion() {
         "Question " +
         (currentQuestion + 1) +
         " / " +
-        totalQuestions;
+        quizQuestions.length;
 
 
     question.innerText =
@@ -856,6 +1591,8 @@ function showQuestion() {
 
     options.innerHTML = "";
 
+
+    // Create options
 
     current.options.forEach(
         function(option) {
@@ -893,9 +1630,23 @@ function showQuestion() {
     );
 
 
+    // Hide buttons
+
     let nextBtn =
         document.getElementById(
             "nextBtn"
+        );
+
+
+    let submitBtn =
+        document.getElementById(
+            "quizSubmitBtn"
+        );
+
+
+    let backBtn =
+        document.getElementById(
+            "backSubjectBtn"
         );
 
 
@@ -907,12 +1658,6 @@ function showQuestion() {
     }
 
 
-    let submitBtn =
-        document.getElementById(
-            "submitBtn"
-        );
-
-
     if (submitBtn) {
 
         submitBtn.style.display =
@@ -920,12 +1665,21 @@ function showQuestion() {
 
     }
 
+
+    if (backBtn) {
+
+        backBtn.style.display =
+            "none";
+
+    }
+
 }
 
 
-// ============================================
-// CHECK ANSWER
-// ============================================
+
+// ============================================================
+// ✅ CHECK ANSWER
+// ============================================================
 
 function checkAnswer(
     button,
@@ -942,6 +1696,8 @@ function checkAnswer(
         );
 
 
+    // Disable all options
+
     allOptions.forEach(
         function(option) {
 
@@ -950,6 +1706,8 @@ function checkAnswer(
         }
     );
 
+
+    // Correct answer
 
     if (
         selectedAnswer ===
@@ -979,6 +1737,9 @@ function checkAnswer(
 
     }
 
+
+    // Wrong answer
+
     else {
 
         button.classList.add(
@@ -1006,16 +1767,16 @@ function checkAnswer(
     }
 
 
-    // Last question = Submit
+    // Last question
 
     if (
         currentQuestion ===
-        totalQuestions - 1
+        quizQuestions.length - 1
     ) {
 
         let submitBtn =
             document.getElementById(
-                "submitBtn"
+                "quizSubmitBtn"
             );
 
 
@@ -1026,42 +1787,10 @@ function checkAnswer(
 
         }
 
-        else {
-
-            // If submit button isn't in HTML,
-            // create one automatically.
-
-            let newSubmit =
-                document.createElement(
-                    "button"
-                );
-
-
-            newSubmit.id =
-                "submitBtn";
-
-
-            newSubmit.className =
-                "btn";
-
-
-            newSubmit.innerText =
-                "✅ Submit Quiz";
-
-
-            newSubmit.onclick =
-                submitQuiz;
-
-
-            document.getElementById(
-                "quizArea"
-            ).appendChild(
-                newSubmit
-            );
-
-        }
-
     }
+
+
+    // Other questions
 
     else {
 
@@ -1083,9 +1812,10 @@ function checkAnswer(
 }
 
 
-// ============================================
-// NEXT QUESTION
-// ============================================
+
+// ============================================================
+// ➡️ NEXT QUESTION
+// ============================================================
 
 function nextQuestion() {
 
@@ -1094,7 +1824,7 @@ function nextQuestion() {
 
     if (
         currentQuestion <
-        totalQuestions
+        quizQuestions.length
     ) {
 
         showQuestion();
@@ -1104,9 +1834,10 @@ function nextQuestion() {
 }
 
 
-// ============================================
-// SUBMIT QUIZ
-// ============================================
+
+// ============================================================
+// 📤 SUBMIT QUIZ
+// ============================================================
 
 function submitQuiz() {
 
@@ -1115,9 +1846,10 @@ function submitQuiz() {
 }
 
 
-// ============================================
-// QUIZ RESULT
-// ============================================
+
+// ============================================================
+// 🏆 SHOW RESULT
+// ============================================================
 
 function showResult() {
 
@@ -1134,13 +1866,60 @@ function showResult() {
     }
 
 
+    let total =
+        quizQuestions.length;
+
+
+    let wrong =
+        total - score;
+
+
     let percentage =
         Math.round(
             (
                 score /
-                totalQuestions
+                total
             ) * 100
         );
+
+
+    let subjectName;
+
+
+    if (selectedSubject === "Science") {
+
+        subjectName =
+            "🔬 Science - " +
+            selectedScienceLevel;
+
+    }
+
+    else if (
+        selectedSubject ===
+        "General Studies"
+    ) {
+
+        subjectName =
+            "🌐 General Studies (GS)";
+
+    }
+
+    else if (
+        selectedSubject ===
+        "English"
+    ) {
+
+        subjectName =
+            "📘 English - Grammar";
+
+    }
+
+    else {
+
+        subjectName =
+            selectedSubject;
+
+    }
 
 
     quizBox.innerHTML = `
@@ -1152,25 +1931,54 @@ function showResult() {
             </h2>
 
             <h2>
-                ${selectedSubject}
+                ${subjectName}
             </h2>
 
-            <h2>
-                ${score} / ${totalQuestions}
-            </h2>
 
-            <p>
-                Your Score:
-                ${percentage}%
-            </p>
+            <div class="result-card">
 
-            <button
-                class="btn"
-                onclick="location.reload()">
+                <div class="result-score">
+                    ${score} / ${total}
+                </div>
 
-                🔄 Play Again
+                <p>
+                    ✅ Correct Answers:
+                    <b>${score}</b>
+                </p>
 
-            </button>
+                <p>
+                    ❌ Wrong Answers:
+                    <b>${wrong}</b>
+                </p>
+
+                <p>
+                    📊 Percentage:
+                    <b>${percentage}%</b>
+                </p>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button
+                    class="btn"
+                    onclick="location.reload()">
+
+                    🔄 Play Again
+
+                </button>
+
+
+                <button
+                    class="btn"
+                    onclick="location.href='games.html'">
+
+                    🎮 Back to Games
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -1179,14 +1987,30 @@ function showResult() {
 }
 
 
-// ============================================
+
+// ============================================================
+// 📚 BACK TO SUBJECTS
+// ============================================================
+
+function backToSubjects() {
+
+    location.reload();
+
+}
+
+
+
+// ============================================================
+// ============================================================
 // ⌨️ TYPING TEST
-// ============================================
+// ============================================================
+// ============================================================
 
 
-// ============================================
-// TYPING LEVELS
-// ============================================
+
+// ============================================================
+// ⌨️ TYPING LEVELS
+// ============================================================
 
 const typingLevels = {
 
@@ -1293,9 +2117,10 @@ const typingLevels = {
 };
 
 
-// ============================================
-// TYPING VARIABLES
-// ============================================
+
+// ============================================================
+// ⌨️ TYPING VARIABLES
+// ============================================================
 
 let typingTimer = null;
 
@@ -1308,9 +2133,10 @@ let totalLevelTime = 30;
 let typingStarted = false;
 
 
-// ============================================
-// SELECT LEVEL
-// ============================================
+
+// ============================================================
+// 🔢 SELECT TYPING LEVEL
+// ============================================================
 
 function selectLevel(level) {
 
@@ -1463,9 +2289,10 @@ function selectLevel(level) {
 }
 
 
-// ============================================
-// START TYPING TEST
-// ============================================
+
+// ============================================================
+// 🚀 START TYPING TEST
+// ============================================================
 
 function startTypingTest() {
 
@@ -1506,7 +2333,8 @@ function startTypingTest() {
 
     document.getElementById(
         "typingResult"
-    ).innerHTML = "";
+    ).innerHTML =
+        "";
 
 
     let randomIndex =
@@ -1534,8 +2362,6 @@ function startTypingTest() {
 
     input.focus();
 
-
-    // Show Submit Button
 
     let submitBtn =
         document.getElementById(
@@ -1582,9 +2408,10 @@ function startTypingTest() {
 }
 
 
-// ============================================
-// CALCULATE TYPING
-// ============================================
+
+// ============================================================
+// 📊 CALCULATE TYPING
+// ============================================================
 
 function calculateTyping() {
 
@@ -1714,9 +2541,10 @@ function calculateTyping() {
 }
 
 
-// ============================================
-// SUBMIT TYPING TEST
-// ============================================
+
+// ============================================================
+// 📤 SUBMIT TYPING TEST
+// ============================================================
 
 function submitTypingTest() {
 
@@ -1776,9 +2604,10 @@ function submitTypingTest() {
 }
 
 
-// ============================================
-// CALCULATE FINAL TYPING RESULT
-// ============================================
+
+// ============================================================
+// 📊 FINAL TYPING RESULT
+// ============================================================
 
 function calculateFinalTypingResult() {
 
@@ -1906,9 +2735,10 @@ function calculateFinalTypingResult() {
 }
 
 
-// ============================================
-// FINISH TYPING TEST
-// ============================================
+
+// ============================================================
+// ⏰ FINISH TYPING TEST
+// ============================================================
 
 function finishTypingTest() {
 
@@ -1923,7 +2753,11 @@ function finishTypingTest() {
         );
 
 
-    input.disabled = true;
+    if (input) {
+
+        input.disabled = true;
+
+    }
 
 
     calculateFinalTypingResult();
@@ -1941,19 +2775,27 @@ function finishTypingTest() {
         ).innerText;
 
 
-    document.getElementById(
-        "typingResult"
-    ).innerHTML =
+    let result =
+        document.getElementById(
+            "typingResult"
+        );
 
-        "⏰ Time's Up!<br>" +
 
-        "⚡ Speed: " +
-        wpm +
-        " WPM<br>" +
+    if (result) {
 
-        "🎯 Accuracy: " +
-        accuracy +
-        "%";
+        result.innerHTML =
+
+            "⏰ Time's Up!<br>" +
+
+            "⚡ Speed: " +
+            wpm +
+            " WPM<br>" +
+
+            "🎯 Accuracy: " +
+            accuracy +
+            "%";
+
+    }
 
 
     hideSubmitButton();
@@ -1961,9 +2803,10 @@ function finishTypingTest() {
 }
 
 
-// ============================================
-// RESET TYPING TEST
-// ============================================
+
+// ============================================================
+// 🔄 RESET TYPING TEST
+// ============================================================
 
 function resetTypingTest() {
 
@@ -1984,28 +2827,60 @@ function resetTypingTest() {
         levelData.time;
 
 
-    document.getElementById(
-        "time"
-    ).innerText =
-        levelData.time;
+    let time =
+        document.getElementById(
+            "time"
+        );
 
 
-    document.getElementById(
-        "wpm"
-    ).innerText =
-        "0";
+    if (time) {
+
+        time.innerText =
+            levelData.time;
+
+    }
 
 
-    document.getElementById(
-        "accuracy"
-    ).innerText =
-        "100";
+    let wpm =
+        document.getElementById(
+            "wpm"
+        );
 
 
-    document.getElementById(
-        "typingText"
-    ).innerText =
-        "Click Start Test to begin!";
+    if (wpm) {
+
+        wpm.innerText =
+            "0";
+
+    }
+
+
+    let accuracy =
+        document.getElementById(
+            "accuracy"
+        );
+
+
+    if (accuracy) {
+
+        accuracy.innerText =
+            "100";
+
+    }
+
+
+    let typingText =
+        document.getElementById(
+            "typingText"
+        );
+
+
+    if (typingText) {
+
+        typingText.innerText =
+            "Click Start Test to begin!";
+
+    }
 
 
     let input =
@@ -2014,14 +2889,26 @@ function resetTypingTest() {
         );
 
 
-    input.value = "";
+    if (input) {
 
-    input.disabled = true;
+        input.value = "";
+
+        input.disabled = true;
+
+    }
 
 
-    document.getElementById(
-        "typingResult"
-    ).innerHTML = "";
+    let result =
+        document.getElementById(
+            "typingResult"
+        );
+
+
+    if (result) {
+
+        result.innerHTML = "";
+
+    }
 
 
     hideSubmitButton();
@@ -2029,9 +2916,10 @@ function resetTypingTest() {
 }
 
 
-// ============================================
-// HIDE SUBMIT BUTTON
-// ============================================
+
+// ============================================================
+// 👁️ HIDE TYPING SUBMIT BUTTON
+// ============================================================
 
 function hideSubmitButton() {
 
