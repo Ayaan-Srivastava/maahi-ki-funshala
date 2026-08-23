@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Memory Quiz - Maahi Ki Funshala</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8f0;
+}
+
+nav{
+    background:#ff6b6b;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h2,
+nav a{
+    color:white;
+}
+
+nav a{
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.page{
+    max-width:750px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.title{
+    text-align:center;
+    color:#ff6b6b;
+    margin-bottom:30px;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    color:#ff6b6b;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+#question{
+    margin-bottom:20px;
+    line-height:1.5;
+}
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.option{
+    padding:15px;
+    border:2px solid #eee;
+    border-radius:12px;
+    background:white;
+    cursor:pointer;
+    text-align:left;
+}
+
+.option:hover{
+    border-color:#ff6b6b;
+    background:#fff1e6;
+}
+
+.correct{
+    background:#d4edda !important;
+}
+
+.wrong{
+    background:#f8d7da !important;
+}
+
+.btn{
+    padding:13px 25px;
+    margin-top:25px;
+    border:none;
+    border-radius:25px;
+    background:#ff6b6b;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.result{
+    text-align:center;
+}
+
+.result h2{
+    color:#ff6b6b;
+    margin:15px;
+}
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+    .page{
+        margin:25px auto;
+        padding:15px;
+    }
+
+    .box{
+        padding:20px;
+    }
+
+    .info{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🌈 Maahi Ki Funshala</h2>
+
+<a href="games.html">
+🎮 Back to Games
+</a>
+
+</nav>
+
+
+<div class="page">
+
+<h1 class="title">
+🧠 Memory Quiz
+</h1>
+
+<div class="box" id="box">
+
+<div class="info">
+
+<span>
+Question:
+<span id="number">1</span>/10
+</span>
+
+<span>
+🏆 Score:
+<span id="score">0</span>
+</span>
+
+</div>
+
+<h2 id="question"></h2>
+
+<div class="options" id="options"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+const questions=[
+
+{
+q:"How many days are there in a week?",
+o:["5","6","7","8"],
+a:"7"
+},
+
+{
+q:"Which planet is called the Red Planet?",
+o:["Earth","Mars","Venus","Jupiter"],
+a:"Mars"
+},
+
+{
+q:"How many months are there in a year?",
+o:["10","11","12","13"],
+a:"12"
+},
+
+{
+q:"What is the largest ocean?",
+o:["Indian","Atlantic","Pacific","Arctic"],
+a:"Pacific"
+},
+
+{
+q:"Which gas do humans breathe in?",
+o:["Oxygen","Carbon Dioxide","Hydrogen","Helium"],
+a:"Oxygen"
+},
+
+{
+q:"What is 8 × 8?",
+o:["54","64","72","81"],
+a:"64"
+},
+
+{
+q:"Which is the fastest land animal?",
+o:["Lion","Tiger","Cheetah","Horse"],
+a:"Cheetah"
+},
+
+{
+q:"What is the capital of India?",
+o:["Mumbai","New Delhi","Kolkata","Chennai"],
+a:"New Delhi"
+},
+
+{
+q:"How many sides does a square have?",
+o:["3","4","5","6"],
+a:"4"
+},
+
+{
+q:"Which organ pumps blood?",
+o:["Brain","Heart","Lungs","Kidney"],
+a:"Heart"
+}
+
+];
+
+
+let current=0;
+let score=0;
+
+
+function showQuestion(){
+
+    let q=questions[current];
+
+    document.getElementById("number")
+    .innerText=current+1;
+
+    document.getElementById("score")
+    .innerText=score;
+
+    document.getElementById("question")
+    .innerText=q.q;
+
+    let container=
+    document.getElementById("options");
+
+    container.innerHTML="";
+
+    q.o.forEach(option=>{
+
+        let button=
+        document.createElement("button");
+
+        button.className="option";
+
+        button.innerText=option;
+
+        button.onclick=()=>checkAnswer(button,option);
+
+        container.appendChild(button);
+
+    });
+}
+
+
+function checkAnswer(button,answer){
+
+    let q=questions[current];
+
+    document.querySelectorAll(".option")
+    .forEach(btn=>btn.disabled=true);
+
+    if(answer===q.a){
+
+        button.classList.add("correct");
+
+        score++;
+
+    }else{
+
+        button.classList.add("wrong");
+
+        document.querySelectorAll(".option")
+        .forEach(btn=>{
+
+            if(btn.innerText===q.a)
+                btn.classList.add("correct");
+
+        });
+
+    }
+
+    setTimeout(()=>{
+
+        current++;
+
+        if(current<questions.length){
+
+            showQuestion();
+
+        }else{
+
+            showResult();
+
+        }
+
+    },700);
+}
+
+
+function showResult(){
+
+    let percentage=
+    Math.round((score/questions.length)*100);
+
+    document.getElementById("box").innerHTML=`
+
+        <div class="result">
+
+            <h2>🎉 Quiz Completed!</h2>
+
+            <h2>${score} / ${questions.length}</h2>
+
+            <p>Your Score: ${percentage}%</p>
+
+            <p style="margin-top:10px;">
+                🧠 Great job! Keep learning!
+            </p>
+
+            <button class="btn"
+            onclick="location.reload()">
+
+            🔄 Play Again
+
+            </button>
+
+        </div>
+
+    `;
+}
+
+
+showQuestion();
+
+</script>
+
+</body>
+</html>

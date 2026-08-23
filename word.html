@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Word Scramble - Maahi Ki Funshala</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8f0;
+}
+
+nav{
+    background:#ff6b6b;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h2,
+nav a{
+    color:white;
+}
+
+nav a{
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.page{
+    max-width:700px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.title{
+    text-align:center;
+    color:#ff6b6b;
+    margin-bottom:30px;
+}
+
+.box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+#scrambled{
+    font-size:35px;
+    color:#ff6b6b;
+    letter-spacing:5px;
+    margin:30px 0;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:2px solid #eee;
+    border-radius:12px;
+    font-size:17px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#ff6b6b;
+}
+
+.btn{
+    padding:13px 25px;
+    margin-top:20px;
+    border:none;
+    border-radius:25px;
+    background:#ff6b6b;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#message{
+    margin-top:20px;
+    font-weight:bold;
+}
+
+.info{
+    display:flex;
+    justify-content:space-around;
+    color:#ff6b6b;
+    font-weight:bold;
+}
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .page{
+        margin:25px auto;
+        padding:15px;
+    }
+
+    .box{
+        padding:25px 18px;
+    }
+
+    #scrambled{
+        font-size:27px;
+    }
+
+    .info{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>🌈 Maahi Ki Funshala</h2>
+
+<a href="games.html">
+🎮 Back to Games
+</a>
+
+</nav>
+
+
+<div class="page">
+
+<h1 class="title">
+🔤 Word Scramble
+</h1>
+
+<div class="box">
+
+<div class="info">
+
+<span>
+🏆 Score: <span id="score">0</span>
+</span>
+
+<span>
+⏱️ Time: <span id="time">60</span>
+</span>
+
+</div>
+
+<h2 id="scrambled">
+CLICK START
+</h2>
+
+<p>
+Unscramble the letters and find the correct word!
+</p>
+
+<input
+id="answer"
+placeholder="Type your answer..."
+disabled>
+
+<br>
+
+<button
+class="btn"
+onclick="startGame()">
+🚀 Start Game
+</button>
+
+<button
+class="btn"
+onclick="checkAnswer()">
+✅ Submit
+</button>
+
+<p id="message"></p>
+
+</div>
+
+</div>
+
+
+<script>
+
+const words = [
+
+"school",
+"teacher",
+"student",
+"science",
+"computer",
+"keyboard",
+"planet",
+"library",
+"mathematics",
+"language",
+"knowledge",
+"education",
+"programming",
+"javascript",
+"python"
+
+];
+
+let currentWord="";
+let score=0;
+let time=60;
+let timer;
+
+
+function shuffleWord(word){
+
+    return word
+        .split("")
+        .sort(() => Math.random()-0.5)
+        .join("");
+}
+
+
+function startGame(){
+
+    clearInterval(timer);
+
+    score=0;
+    time=60;
+
+    document.getElementById("score").innerText=score;
+    document.getElementById("time").innerText=time;
+
+    document.getElementById("answer").disabled=false;
+
+    document.getElementById("answer").value="";
+
+    document.getElementById("message").innerText="";
+
+    newWord();
+
+    timer=setInterval(()=>{
+
+        time--;
+
+        document.getElementById("time").innerText=time;
+
+        if(time<=0){
+
+            clearInterval(timer);
+
+            document.getElementById("answer").disabled=true;
+
+            document.getElementById("message")
+            .innerText=
+            `⏰ Time's Up! Final Score: ${score}`;
+
+        }
+
+    },1000);
+}
+
+
+function newWord(){
+
+    currentWord =
+    words[Math.floor(Math.random()*words.length)];
+
+    document.getElementById("scrambled")
+    .innerText =
+    shuffleWord(currentWord);
+
+    document.getElementById("answer").value="";
+}
+
+
+function checkAnswer(){
+
+    if(time<=0) return;
+
+    let answer =
+    document.getElementById("answer")
+    .value
+    .trim()
+    .toLowerCase();
+
+    if(answer === currentWord){
+
+        score++;
+
+        document.getElementById("score")
+        .innerText=score;
+
+        document.getElementById("message")
+        .innerText="🎉 Correct!";
+
+        setTimeout(newWord,500);
+
+    }else{
+
+        document.getElementById("message")
+        .innerText="❌ Try Again!";
+    }
+}
+
+</script>
+
+</body>
+</html>

@@ -3,308 +3,402 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Games - Maahi Ki Funshala</title>
+<title>Games - Maahi Ki Funshala</title>
 
+<style>
 
-    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+body{
+    background:#fff8f0;
+    color:#333;
+}
 
-        body {
-            background: #fff8f0;
-        }
+nav{
+    background:#ff6b6b;
+    padding:15px 8%;
 
-        nav {
-            background: #ff6b6b;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-            padding: 15px 8%;
+nav h2{
+    color:white;
+}
 
-            display: flex;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-            justify-content: space-between;
+.header{
+    text-align:center;
+    padding:70px 20px;
 
-            align-items: center;
-        }
+    background:linear-gradient(
+        135deg,
+        #ffe66d,
+        #ff9f43,
+        #ff6b6b
+    );
 
-        nav h2 {
-            color: white;
-        }
+    color:white;
+}
 
-        nav a {
-            color: white;
+.header h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
 
-            text-decoration: none;
+.header p{
+    font-size:18px;
+}
 
-            font-weight: bold;
-        }
+.games{
 
-        .header {
-            text-align: center;
+    max-width:1100px;
+    margin:50px auto;
+    padding:20px;
 
-            padding: 70px 20px;
+    display:grid;
 
-            background: linear-gradient(
-                135deg,
-                #ffe66d,
-                #ff9f43,
-                #ff6b6b
-            );
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
 
-            color: white;
-        }
+    gap:25px;
+}
 
-        .header h1 {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
+.game-card{
 
-        .games {
+    background:white;
+    padding:30px 20px;
 
-            max-width: 1100px;
+    border-radius:20px;
 
-            margin: 50px auto;
+    text-align:center;
 
-            padding: 20px;
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.1);
 
-            display: grid;
+    transition:.3s;
+}
 
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(250px, 1fr)
-                );
+.game-card:hover{
+    transform:translateY(-8px);
+}
 
-            gap: 25px;
-        }
+.icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
 
-        .game-card {
+.game-card h2{
+    color:#ff6b6b;
+    margin-bottom:10px;
+}
 
-            background: white;
+.game-card p{
+    line-height:1.6;
+    margin-bottom:20px;
+    min-height:50px;
+}
 
-            padding: 30px;
+.game-btn{
 
-            border-radius: 20px;
+    display:inline-block;
 
-            text-align: center;
+    padding:12px 22px;
 
-            box-shadow:
-                0 8px 20px
-                rgba(0,0,0,0.1);
+    background:#ff6b6b;
 
-            transition: 0.3s;
-        }
+    color:white;
 
-        .game-card:hover {
-            transform: translateY(-8px);
-        }
+    border:none;
 
-        .icon {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+    border-radius:25px;
 
-        .game-card h2 {
-            color: #ff6b6b;
-            margin-bottom: 10px;
-        }
+    text-decoration:none;
 
-        .game-card p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+    font-weight:bold;
 
-        .game-btn {
+    cursor:pointer;
+}
 
-            display: inline-block;
+.game-btn:hover{
+    background:#e55050;
+}
 
-            padding: 12px 25px;
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
 
-            background: #ff6b6b;
+@media(max-width:700px){
 
-            color: white;
+    nav{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
 
-            border: none;
+    .header{
+        padding:50px 20px;
+    }
 
-            border-radius: 25px;
+    .header h1{
+        font-size:35px;
+    }
 
-            text-decoration: none;
+    .games{
+        margin:25px auto;
+        padding:15px;
+        grid-template-columns:1fr;
+    }
 
-            font-weight: bold;
+    .game-card{
+        padding:25px 18px;
+    }
 
-            cursor: pointer;
-        }
+}
 
-        .game-btn:hover {
-            background: #e55050;
-        }
-
-        footer {
-
-            background: #222;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 20px;
-        }
-
-    </style>
+</style>
 
 </head>
-
 
 <body>
 
 
-    <nav>
+<nav>
 
-        <h2>
-            🌈 Maahi Ki Funshala
-        </h2>
+<h2>
+🌈 Maahi Ki Funshala
+</h2>
 
-        <a href="index.html">
-            🏠 Home
-        </a>
+<a href="index.html">
+🏠 Home
+</a>
 
-    </nav>
-
-
-    <div class="header">
-
-        <h1>
-            🎮 Student Fun Zone
-        </h1>
-
-        <p>
-            Learn • Play • Challenge Yourself
-        </p>
-
-    </div>
+</nav>
 
 
-    <div class="games">
+<div class="header">
+
+<h1>
+🎮 Student Fun Zone
+</h1>
+
+<p>
+Learn • Play • Challenge Yourself
+</p>
+
+</div>
 
 
-        <div class="game-card">
-
-            <div class="icon">
-                🧠
-            </div>
-
-            <h2>
-                Student Quiz
-            </h2>
-
-            <p>
-                Test your knowledge with
-                random questions.
-            </p>
-
-            <a
-                href="quiz.html"
-                class="game-btn">
-
-                Play Quiz 🚀
-
-            </a>
-
-        </div>
+<div class="games">
 
 
-        <div class="game-card">
+<!-- STUDENT QUIZ -->
 
-            <div class="icon">
-                ⌨️
-            </div>
+<div class="game-card">
 
-            <h2>
-                Typing Speed Test
-            </h2>
+<div class="icon">🧠</div>
 
-            <p>
-                Test your typing speed
-                and accuracy.
-            </p>
+<h2>Student Quiz</h2>
 
-            <a
-                href="typing.html"
-                class="game-btn">
+<p>
+Test your knowledge in English,
+Hindi, Maths, Science and Social Science.
+</p>
 
-                Start Test ⚡
+<a href="quiz.html"
+class="game-btn">
 
-            </a>
+Play Quiz 🚀
 
-        </div>
+</a>
+
+</div>
 
 
-        <div class="game-card">
+<!-- TYPING -->
 
-            <div class="icon">
-                🔢
-            </div>
+<div class="game-card">
 
-            <h2>
-                Math Challenge
-            </h2>
+<div class="icon">⌨️</div>
 
-            <p>
-                Solve quick mathematics
-                questions.
-            </p>
+<h2>Typing Speed Test</h2>
 
-            <button
-                class="game-btn">
+<p>
+Improve your typing speed and accuracy
+with different levels.
+</p>
 
-                Coming Soon
+<a href="typing.html"
+class="game-btn">
 
-            </button>
+Start Test ⚡
 
-        </div>
+</a>
+
+</div>
 
 
-        <div class="game-card">
+<!-- CODING -->
 
-            <div class="icon">
-                💻
-            </div>
+<div class="game-card">
 
-            <h2>
-                Coding Quiz
-            </h2>
+<div class="icon">💻</div>
 
-            <p>
-                Test your programming
-                knowledge.
-            </p>
+<h2>Coding Quiz</h2>
 
-            <button
-                class="game-btn">
+<p>
+Test your knowledge of Python, C, C++,
+Java, JavaScript, HTML and CSS.
+</p>
 
-                Coming Soon
+<a href="coding.html"
+class="game-btn">
 
-            </button>
+Code Challenge 💻
 
-        </div>
+</a>
 
-    </div>
+</div>
 
 
-    <footer>
+<!-- MATH -->
 
-        © 2026 Maahi Ki Funshala ❤️
+<div class="game-card">
 
-    </footer>
+<div class="icon">🔢</div>
+
+<h2>Math Challenge</h2>
+
+<p>
+Solve quick mathematical questions
+and beat the timer!
+</p>
+
+<a href="math.html"
+class="game-btn">
+
+Start Challenge 🧮
+
+</a>
+
+</div>
+
+
+<!-- WORD -->
+
+<div class="game-card">
+
+<div class="icon">🔤</div>
+
+<h2>Word Scramble</h2>
+
+<p>
+Unscramble educational words
+and improve your vocabulary.
+</p>
+
+<a href="word.html"
+class="game-btn">
+
+Play Word Game 🔤
+
+</a>
+
+</div>
+
+
+<!-- MEMORY -->
+
+<div class="game-card">
+
+<div class="icon">🧠</div>
+
+<h2>Memory Quiz</h2>
+
+<p>
+Answer quick educational questions
+and test your memory.
+</p>
+
+<a href="memory.html"
+class="game-btn">
+
+Test Memory 🧠
+
+</a>
+
+</div>
+
+
+<!-- COMING SOON -->
+
+<div class="game-card">
+
+<div class="icon">🧩</div>
+
+<h2>Match the Words</h2>
+
+<p>
+Match related words and concepts
+in a fun learning game.
+</p>
+
+<button class="game-btn">
+
+Coming Soon 🚀
+
+</button>
+
+</div>
+
+
+<div class="game-card">
+
+<div class="icon">🏆</div>
+
+<h2>Daily Challenge</h2>
+
+<p>
+A new educational challenge
+every day!
+</p>
+
+<button class="game-btn">
+
+Coming Soon 🚀
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+© 2026 Maahi Ki Funshala ❤️
+
+</footer>
 
 
 </body>

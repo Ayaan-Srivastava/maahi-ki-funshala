@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Math Challenge - Maahi Ki Funshala</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8f0;
+}
+
+nav{
+    background:#ff6b6b;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h2,
+nav a{
+    color:white;
+}
+
+nav a{
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.page{
+    max-width:750px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.title{
+    text-align:center;
+    color:#ff6b6b;
+    margin-bottom:30px;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+.levels{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.level{
+    padding:12px 20px;
+    border:none;
+    border-radius:20px;
+    background:#fff1e6;
+    color:#ff6b6b;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.level.active,
+.level:hover{
+    background:#ff6b6b;
+    color:white;
+}
+
+.info{
+    display:flex;
+    justify-content:space-around;
+    color:#ff6b6b;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+#question{
+    text-align:center;
+    font-size:32px;
+    margin:30px 0;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.option{
+    padding:15px;
+    border:2px solid #eee;
+    border-radius:12px;
+    background:white;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.option:hover{
+    background:#fff1e6;
+    border-color:#ff6b6b;
+}
+
+.correct{
+    background:#d4edda !important;
+    border-color:#28a745 !important;
+}
+
+.wrong{
+    background:#f8d7da !important;
+    border-color:#dc3545 !important;
+}
+
+.btn{
+    padding:13px 25px;
+    border:none;
+    border-radius:25px;
+    background:#ff6b6b;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:25px;
+}
+
+.result{
+    text-align:center;
+}
+
+.result h2{
+    color:#ff6b6b;
+    margin:15px;
+}
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+    .page{
+        margin:25px auto;
+        padding:15px;
+    }
+
+    .box{
+        padding:20px;
+    }
+
+    .info{
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+    }
+
+    #question{
+        font-size:26px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>🌈 Maahi Ki Funshala</h2>
+
+<a href="games.html">
+🎮 Back to Games
+</a>
+
+</nav>
+
+
+<div class="page">
+
+<h1 class="title">
+🔢 Math Challenge
+</h1>
+
+<div class="box" id="gameBox">
+
+<div class="levels">
+
+<button class="level active"
+onclick="selectLevel('easy',this)">
+🟢 Easy
+</button>
+
+<button class="level"
+onclick="selectLevel('medium',this)">
+🟡 Medium
+</button>
+
+<button class="level"
+onclick="selectLevel('hard',this)">
+🔴 Hard
+</button>
+
+</div>
+
+
+<div class="info">
+
+<span>
+⏱️ Time:
+<span id="time">30</span>
+</span>
+
+<span>
+🏆 Score:
+<span id="score">0</span>
+</span>
+
+</div>
+
+
+<div id="startArea" style="text-align:center">
+
+<p>
+Solve as many questions as you can!
+</p>
+
+<button class="btn"
+onclick="startGame()">
+🚀 Start Challenge
+</button>
+
+</div>
+
+
+<div id="gameArea" style="display:none">
+
+<h2 id="question"></h2>
+
+<div class="options" id="options"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let level = "easy";
+let score = 0;
+let time = 30;
+let timer;
+let currentAnswer;
+
+
+function selectLevel(selected,button){
+
+    level = selected;
+
+    document.querySelectorAll(".level")
+    .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+}
+
+
+function startGame(){
+
+    clearInterval(timer);
+
+    score = 0;
+    time = 30;
+
+    document.getElementById("score")
+    .innerText = score;
+
+    document.getElementById("time")
+    .innerText = time;
+
+    document.getElementById("startArea")
+    .style.display = "none";
+
+    document.getElementById("gameArea")
+    .style.display = "block";
+
+    generateQuestion();
+
+    timer = setInterval(() => {
+
+        time--;
+
+        document.getElementById("time")
+        .innerText = time;
+
+        if(time <= 0){
+
+            clearInterval(timer);
+            finishGame();
+
+        }
+
+    },1000);
+}
+
+
+function generateQuestion(){
+
+    let a,b,question;
+
+    if(level === "easy"){
+
+        a = Math.floor(Math.random()*20)+1;
+        b = Math.floor(Math.random()*20)+1;
+
+        let type = Math.floor(Math.random()*2);
+
+        if(type === 0){
+            question = `${a} + ${b}`;
+            currentAnswer = a+b;
+        }else{
+            question = `${a} - ${b}`;
+            currentAnswer = a-b;
+        }
+
+    }
+
+    else if(level === "medium"){
+
+        a = Math.floor(Math.random()*50)+1;
+        b = Math.floor(Math.random()*20)+1;
+
+        let type = Math.floor(Math.random()*3);
+
+        if(type === 0){
+            question = `${a} + ${b}`;
+            currentAnswer = a+b;
+        }
+        else if(type === 1){
+            question = `${a} - ${b}`;
+            currentAnswer = a-b;
+        }
+        else{
+            question = `${a} × ${b}`;
+            currentAnswer = a*b;
+        }
+
+    }
+
+    else{
+
+        a = Math.floor(Math.random()*100)+1;
+        b = Math.floor(Math.random()*20)+1;
+
+        let type = Math.floor(Math.random()*4);
+
+        if(type === 0){
+            question = `${a} + ${b}`;
+            currentAnswer = a+b;
+        }
+        else if(type === 1){
+            question = `${a} - ${b}`;
+            currentAnswer = a-b;
+        }
+        else if(type === 2){
+            question = `${a} × ${b}`;
+            currentAnswer = a*b;
+        }
+        else{
+
+            a = b * (Math.floor(Math.random()*10)+1);
+
+            question = `${a} ÷ ${b}`;
+            currentAnswer = a/b;
+        }
+    }
+
+
+    document.getElementById("question")
+    .innerText = question;
+
+
+    createOptions(currentAnswer);
+}
+
+
+function createOptions(answer){
+
+    let options = [answer];
+
+    while(options.length < 4){
+
+        let random =
+            answer +
+            Math.floor(Math.random()*21)-10;
+
+        if(!options.includes(random)){
+            options.push(random);
+        }
+    }
+
+    options.sort(() => Math.random()-0.5);
+
+    let container =
+        document.getElementById("options");
+
+    container.innerHTML = "";
+
+    options.forEach(option => {
+
+        let button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.innerText = option;
+
+        button.onclick = function(){
+
+            if(option === currentAnswer){
+
+                button.classList.add("correct");
+                score++;
+
+            }else{
+
+                button.classList.add("wrong");
+            }
+
+            document.getElementById("score")
+            .innerText = score;
+
+            document.querySelectorAll(".option")
+            .forEach(btn => btn.disabled = true);
+
+            setTimeout(generateQuestion,500);
+
+        };
+
+        container.appendChild(button);
+    });
+}
+
+
+function finishGame(){
+
+    document.getElementById("gameBox").innerHTML = `
+
+        <div class="result">
+
+            <h2>🎉 Challenge Completed!</h2>
+
+            <h2>🏆 Score: ${score}</h2>
+
+            <p>Great job! Keep practicing mathematics.</p>
+
+            <button class="btn"
+            onclick="location.reload()">
+
+            🔄 Play Again
+
+            </button>
+
+        </div>
+
+    `;
+}
+
+</script>
+
+</body>
+</html>
