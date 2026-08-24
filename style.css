@@ -1,0 +1,324 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maahi Ki Funshala</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <h2>🌈 Maahi Ki Funshala</h2>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#videos">Videos</a>
+            </li>
+
+            <li>
+                <a href="games.html">🎮 Games</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div>
+
+            <h1>🎉 Maahi Ki Funshala 🎉</h1>
+
+            <p>
+                Learn • Laugh • Create • Have Fun!
+            </p>
+
+            <a href="#videos" class="btn">
+                Explore Videos 🚀
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <h2>
+            About Maahi Ki Funshala
+        </h2>
+
+        <div class="about-box">
+
+            Welcome to <b>Maahi Ki Funshala!</b> 🌈
+
+            <br><br>
+
+            Discover Entertainment, Creativity, Fun Activities
+            & Exciting Videos — All in One Place! ✨
+
+            <br><br>
+
+            Where Learning Meets Fun, Every Moment Becomes
+            an Adventure! ❤️
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= VIDEOS ================= -->
+
+    <section id="videos">
+
+        <h2>
+            🎬 Latest Videos
+        </h2>
+
+        <div class="videos">
+
+
+            <!-- VIDEO 1 -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="https://www.youtube.com/embed/QsgX-40HxIE"
+                    title="Maahi Ki Funshala Video 1"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>
+                    Fun Video 🎉
+                </h3>
+
+            </div>
+
+
+            <!-- VIDEO 2 -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="https://www.youtube.com/embed/9VtL34TlDeo"
+                    title="Maahi Ki Funshala Video 2"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>
+                    Fun Video 😄
+                </h3>
+
+            </div>
+
+
+            <!-- VIDEO 3 -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="https://www.youtube.com/embed/JujEkh6Y1pg"
+                    title="Maahi Ki Funshala Video 3"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>
+                    Fun Short 🎬
+                </h3>
+
+            </div>
+
+
+            <!-- VIDEO 4 -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="https://www.youtube.com/embed/bV3sbrtPhio"
+                    title="Maahi Ki Funshala Video 4"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>
+                    Fun Short ✨
+                </h3>
+
+            </div>
+
+
+            <!-- VIDEO 5 -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="https://www.youtube.com/embed/EtdH0nebA1Q"
+                    title="Maahi Ki Funshala Video 5"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>
+                    Fun Short 🌈
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <h2>
+            📩 Stay Connected
+        </h2>
+
+        <p>
+            Follow Maahi Ki Funshala ❤️
+        </p>
+
+        <div class="social">
+
+
+            <!-- YOUTUBE -->
+
+            <a
+                href="https://www.youtube.com/@MaahikiFunshala"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                🔴 YouTube
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                📸 Instagram
+
+            </a>
+
+
+            <!-- FACEBOOK -->
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                🔵 Facebook
+
+            </a>
+
+
+            <!-- GMAIL -->
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=maahikifunshala@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                📧 Gmail
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 Maahi Ki Funshala ❤️
+
+    </footer>
+
+
+    <!-- ================= SCROLL ANIMATION ================= -->
+
+    <script>
+
+        const videoCards =
+            document.querySelectorAll(".video-card");
+
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.remove("hide");
+
+                        } else {
+
+                            entry.target.classList.add("hide");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        videoCards.forEach(card => {
+
+            observer.observe(card);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+```
