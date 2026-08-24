@@ -1,12 +1,13 @@
+```javascript
 /* =========================================================
    MAAHI KI FUNSHALA
    COMPLETE SCRIPT.JS
-   Quiz + Typing Test
+   Quiz + Science Levels + Typing Test
 ========================================================= */
 
 
 /* =========================================================
-   QUIZ SECTION
+   QUIZ QUESTIONS
 ========================================================= */
 
 const quizQuestions = {
@@ -118,102 +119,52 @@ const quizQuestions = {
     Hindi: [
         {
             question: "हिंदी वर्णमाला में कितने स्वर माने जाते हैं?",
-            options: [
-                "10",
-                "11",
-                "12",
-                "13"
-            ],
+            options: ["10", "11", "12", "13"],
             answer: 1
         },
         {
             question: "'जल' का पर्यायवाची शब्द क्या है?",
-            options: [
-                "अग्नि",
-                "पानी",
-                "वायु",
-                "धरती"
-            ],
+            options: ["अग्नि", "पानी", "वायु", "धरती"],
             answer: 1
         },
         {
             question: "'दिन' का विलोम शब्द क्या है?",
-            options: [
-                "सुबह",
-                "शाम",
-                "रात",
-                "दोपहर"
-            ],
+            options: ["सुबह", "शाम", "रात", "दोपहर"],
             answer: 2
         },
         {
             question: "'सुंदर' का विलोम क्या है?",
-            options: [
-                "अच्छा",
-                "कुरूप",
-                "मीठा",
-                "साफ"
-            ],
+            options: ["अच्छा", "कुरूप", "मीठा", "साफ"],
             answer: 1
         },
         {
             question: "'विद्यालय' का अर्थ क्या है?",
-            options: [
-                "घर",
-                "बाजार",
-                "स्कूल",
-                "अस्पताल"
-            ],
+            options: ["घर", "बाजार", "स्कूल", "अस्पताल"],
             answer: 2
         },
         {
             question: "'कमल' क्या है?",
-            options: [
-                "पक्षी",
-                "फूल",
-                "फल",
-                "जानवर"
-            ],
+            options: ["पक्षी", "फूल", "फल", "जानवर"],
             answer: 1
         },
         {
             question: "'गाय' का बहुवचन क्या है?",
-            options: [
-                "गायों",
-                "गाय",
-                "गाया",
-                "गायें"
-            ],
+            options: ["गायों", "गाय", "गाया", "गायें"],
             answer: 3
         },
         {
             question: "'सूर्य' का पर्यायवाची क्या है?",
-            options: [
-                "चंद्रमा",
-                "रवि",
-                "बादल",
-                "तारा"
-            ],
+            options: ["चंद्रमा", "रवि", "बादल", "तारा"],
             answer: 1
         },
         {
             question: "'बड़ा' का विलोम क्या है?",
-            options: [
-                "लंबा",
-                "छोटा",
-                "ऊँचा",
-                "मोटा"
-            ],
+            options: ["लंबा", "छोटा", "ऊँचा", "मोटा"],
             answer: 1
         },
         {
             question: "हिंदी भाषा की लिपि कौन-सी है?",
-            options: [
-                "रोमन",
-                "देवनागरी",
-                "गुरुमुखी",
-                "उर्दू"
-            ],
+            options: ["रोमन", "देवनागरी", "गुरुमुखी", "उर्दू"],
             answer: 1
         }
     ],
@@ -222,102 +173,52 @@ const quizQuestions = {
     Mathematics: [
         {
             question: "What is 5 + 7?",
-            options: [
-                "10",
-                "11",
-                "12",
-                "13"
-            ],
+            options: ["10", "11", "12", "13"],
             answer: 2
         },
         {
             question: "What is 8 × 6?",
-            options: [
-                "42",
-                "48",
-                "54",
-                "56"
-            ],
+            options: ["42", "48", "54", "56"],
             answer: 1
         },
         {
             question: "What is 100 ÷ 10?",
-            options: [
-                "5",
-                "10",
-                "20",
-                "25"
-            ],
+            options: ["5", "10", "20", "25"],
             answer: 1
         },
         {
             question: "What is the square of 9?",
-            options: [
-                "18",
-                "27",
-                "81",
-                "90"
-            ],
+            options: ["18", "27", "81", "90"],
             answer: 2
         },
         {
             question: "What is 15 - 8?",
-            options: [
-                "5",
-                "6",
-                "7",
-                "8"
-            ],
+            options: ["5", "6", "7", "8"],
             answer: 2
         },
         {
             question: "How many sides does a triangle have?",
-            options: [
-                "2",
-                "3",
-                "4",
-                "5"
-            ],
+            options: ["2", "3", "4", "5"],
             answer: 1
         },
         {
             question: "What is half of 50?",
-            options: [
-                "20",
-                "25",
-                "30",
-                "35"
-            ],
+            options: ["20", "25", "30", "35"],
             answer: 1
         },
         {
             question: "What is 12 × 12?",
-            options: [
-                "124",
-                "134",
-                "144",
-                "154"
-            ],
+            options: ["124", "134", "144", "154"],
             answer: 2
         },
         {
             question: "Which number is even?",
-            options: [
-                "17",
-                "21",
-                "29",
-                "24"
-            ],
+            options: ["17", "21", "29", "24"],
             answer: 3
         },
         {
             question: "What is 50% of 100?",
-            options: [
-                "25",
-                "40",
-                "50",
-                "75"
-            ],
+            options: ["25", "40", "50", "75"],
             answer: 2
         }
     ],
@@ -326,12 +227,7 @@ const quizQuestions = {
     "Social Science": [
         {
             question: "What is the capital of India?",
-            options: [
-                "Mumbai",
-                "New Delhi",
-                "Kolkata",
-                "Chennai"
-            ],
+            options: ["Mumbai", "New Delhi", "Kolkata", "Chennai"],
             answer: 1
         },
         {
@@ -346,32 +242,17 @@ const quizQuestions = {
         },
         {
             question: "Which is the largest continent?",
-            options: [
-                "Africa",
-                "Europe",
-                "Asia",
-                "Australia"
-            ],
+            options: ["Africa", "Europe", "Asia", "Australia"],
             answer: 2
         },
         {
             question: "How many states are there in India?",
-            options: [
-                "26",
-                "27",
-                "28",
-                "29"
-            ],
+            options: ["26", "27", "28", "29"],
             answer: 2
         },
         {
             question: "Which is the longest river in India?",
-            options: [
-                "Yamuna",
-                "Ganga",
-                "Godavari",
-                "Narmada"
-            ],
+            options: ["Yamuna", "Ganga", "Godavari", "Narmada"],
             answer: 1
         },
         {
@@ -396,32 +277,17 @@ const quizQuestions = {
         },
         {
             question: "What is the national animal of India?",
-            options: [
-                "Lion",
-                "Tiger",
-                "Elephant",
-                "Peacock"
-            ],
+            options: ["Lion", "Tiger", "Elephant", "Peacock"],
             answer: 1
         },
         {
             question: "Which planet is known as the Red Planet?",
-            options: [
-                "Earth",
-                "Mars",
-                "Jupiter",
-                "Venus"
-            ],
+            options: ["Earth", "Mars", "Jupiter", "Venus"],
             answer: 1
         },
         {
             question: "What is the currency of India?",
-            options: [
-                "Dollar",
-                "Pound",
-                "Rupee",
-                "Euro"
-            ],
+            options: ["Dollar", "Pound", "Rupee", "Euro"],
             answer: 2
         }
     ],
@@ -430,22 +296,12 @@ const quizQuestions = {
     "General Studies": [
         {
             question: "Which is the largest planet in our Solar System?",
-            options: [
-                "Earth",
-                "Mars",
-                "Jupiter",
-                "Saturn"
-            ],
+            options: ["Earth", "Mars", "Jupiter", "Saturn"],
             answer: 2
         },
         {
             question: "How many days are there in a leap year?",
-            options: [
-                "365",
-                "366",
-                "364",
-                "360"
-            ],
+            options: ["365", "366", "364", "360"],
             answer: 1
         },
         {
@@ -460,72 +316,37 @@ const quizQuestions = {
         },
         {
             question: "How many continents are there?",
-            options: [
-                "5",
-                "6",
-                "7",
-                "8"
-            ],
+            options: ["5", "6", "7", "8"],
             answer: 2
         },
         {
             question: "Which is the fastest land animal?",
-            options: [
-                "Lion",
-                "Tiger",
-                "Cheetah",
-                "Horse"
-            ],
+            options: ["Lion", "Tiger", "Cheetah", "Horse"],
             answer: 2
         },
         {
             question: "Which organ pumps blood in the human body?",
-            options: [
-                "Brain",
-                "Heart",
-                "Lungs",
-                "Kidney"
-            ],
+            options: ["Brain", "Heart", "Lungs", "Kidney"],
             answer: 1
         },
         {
             question: "Which is the smallest prime number?",
-            options: [
-                "0",
-                "1",
-                "2",
-                "3"
-            ],
+            options: ["0", "1", "2", "3"],
             answer: 2
         },
         {
             question: "How many colors are there in a rainbow?",
-            options: [
-                "5",
-                "6",
-                "7",
-                "8"
-            ],
+            options: ["5", "6", "7", "8"],
             answer: 2
         },
         {
             question: "Which device is used to type on a computer?",
-            options: [
-                "Monitor",
-                "Keyboard",
-                "Speaker",
-                "Printer"
-            ],
+            options: ["Monitor", "Keyboard", "Speaker", "Printer"],
             answer: 1
         },
         {
             question: "Which is the nearest star to Earth?",
-            options: [
-                "Moon",
-                "Sun",
-                "Mars",
-                "Sirius"
-            ],
+            options: ["Moon", "Sun", "Mars", "Sirius"],
             answer: 1
         }
     ]
@@ -541,62 +362,32 @@ const scienceQuestions = {
     Easy: [
         {
             question: "Which organ helps us to breathe?",
-            options: [
-                "Heart",
-                "Lungs",
-                "Brain",
-                "Stomach"
-            ],
+            options: ["Heart", "Lungs", "Brain", "Stomach"],
             answer: 1
         },
         {
             question: "What do plants need to make food?",
-            options: [
-                "Sunlight",
-                "Plastic",
-                "Iron",
-                "Stone"
-            ],
+            options: ["Sunlight", "Plastic", "Iron", "Stone"],
             answer: 0
         },
         {
             question: "Which is a source of light?",
-            options: [
-                "Sun",
-                "Table",
-                "Chair",
-                "Book"
-            ],
+            options: ["Sun", "Table", "Chair", "Book"],
             answer: 0
         },
         {
             question: "Water freezes at:",
-            options: [
-                "0°C",
-                "10°C",
-                "50°C",
-                "100°C"
-            ],
+            options: ["0°C", "10°C", "50°C", "100°C"],
             answer: 0
         },
         {
             question: "Which planet do we live on?",
-            options: [
-                "Mars",
-                "Venus",
-                "Earth",
-                "Jupiter"
-            ],
+            options: ["Mars", "Venus", "Earth", "Jupiter"],
             answer: 2
         },
         {
             question: "Which sense organ helps us see?",
-            options: [
-                "Ear",
-                "Eye",
-                "Nose",
-                "Skin"
-            ],
+            options: ["Ear", "Eye", "Nose", "Skin"],
             answer: 1
         },
         {
@@ -611,32 +402,17 @@ const scienceQuestions = {
         },
         {
             question: "Which animal is a mammal?",
-            options: [
-                "Cow",
-                "Frog",
-                "Fish",
-                "Snake"
-            ],
+            options: ["Cow", "Frog", "Fish", "Snake"],
             answer: 0
         },
         {
             question: "What is the natural satellite of Earth?",
-            options: [
-                "Sun",
-                "Moon",
-                "Mars",
-                "Venus"
-            ],
+            options: ["Sun", "Moon", "Mars", "Venus"],
             answer: 1
         },
         {
             question: "Which part of a plant absorbs water?",
-            options: [
-                "Flower",
-                "Leaf",
-                "Root",
-                "Fruit"
-            ],
+            options: ["Flower", "Leaf", "Root", "Fruit"],
             answer: 2
         }
     ],
@@ -665,12 +441,7 @@ const scienceQuestions = {
         },
         {
             question: "What is the boiling point of water at normal pressure?",
-            options: [
-                "50°C",
-                "75°C",
-                "100°C",
-                "150°C"
-            ],
+            options: ["50°C", "75°C", "100°C", "150°C"],
             answer: 2
         },
         {
@@ -695,22 +466,12 @@ const scienceQuestions = {
         },
         {
             question: "Which organ filters waste from the blood?",
-            options: [
-                "Heart",
-                "Kidney",
-                "Lungs",
-                "Brain"
-            ],
+            options: ["Heart", "Kidney", "Lungs", "Brain"],
             answer: 1
         },
         {
             question: "What is the basic unit of life?",
-            options: [
-                "Tissue",
-                "Organ",
-                "Cell",
-                "Bone"
-            ],
+            options: ["Tissue", "Organ", "Cell", "Bone"],
             answer: 2
         },
         {
@@ -735,12 +496,7 @@ const scienceQuestions = {
         },
         {
             question: "Which metal is liquid at room temperature?",
-            options: [
-                "Iron",
-                "Copper",
-                "Mercury",
-                "Aluminium"
-            ],
+            options: ["Iron", "Copper", "Mercury", "Aluminium"],
             answer: 2
         }
     ],
@@ -749,12 +505,7 @@ const scienceQuestions = {
     Hard: [
         {
             question: "What is the SI unit of force?",
-            options: [
-                "Joule",
-                "Newton",
-                "Watt",
-                "Pascal"
-            ],
+            options: ["Joule", "Newton", "Watt", "Pascal"],
             answer: 1
         },
         {
@@ -769,12 +520,7 @@ const scienceQuestions = {
         },
         {
             question: "What is the chemical formula of water?",
-            options: [
-                "CO₂",
-                "H₂O",
-                "O₂",
-                "H₂"
-            ],
+            options: ["CO₂", "H₂O", "O₂", "H₂"],
             answer: 1
         },
         {
@@ -789,12 +535,7 @@ const scienceQuestions = {
         },
         {
             question: "What is the pH of pure water?",
-            options: [
-                "5",
-                "6",
-                "7",
-                "8"
-            ],
+            options: ["5", "6", "7", "8"],
             answer: 2
         },
         {
@@ -809,12 +550,7 @@ const scienceQuestions = {
         },
         {
             question: "Which blood group is commonly called the universal donor?",
-            options: [
-                "A+",
-                "B+",
-                "AB+",
-                "O−"
-            ],
+            options: ["A+", "B+", "AB+", "O−"],
             answer: 3
         },
         {
@@ -861,7 +597,6 @@ let selectedScienceLevel = "";
 let currentQuestions = [];
 let currentQuestionIndex = 0;
 let quizScore = 0;
-
 let selectedAnswer = false;
 
 
@@ -873,17 +608,13 @@ function selectSubject(subject, button) {
 
     selectedSubject = subject;
 
-    document.querySelectorAll(".subject-btn")
-        .forEach(btn => {
-            btn.classList.remove("active");
-        });
+    document.querySelectorAll(".subject-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
 
     if (button) {
         button.classList.add("active");
     }
-
-
-    /* Science needs level selection */
 
     if (subject === "Science") {
 
@@ -897,25 +628,21 @@ function selectSubject(subject, button) {
         return;
     }
 
-
-    /* Other subjects start immediately */
-
     startQuiz(subject);
 }
 
 
 /* =========================================================
-   SCIENCE LEVEL
+   SELECT SCIENCE LEVEL
 ========================================================= */
 
 function selectScienceLevel(level, button) {
 
     selectedScienceLevel = level;
 
-    document.querySelectorAll(".level-btn")
-        .forEach(btn => {
-            btn.classList.remove("active");
-        });
+    document.querySelectorAll(".science-level-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
 
     if (button) {
         button.classList.add("active");
@@ -931,42 +658,33 @@ function selectScienceLevel(level, button) {
 
 function startQuiz(subject, scienceLevel = null) {
 
-    clearQuizResult();
-
     currentQuestionIndex = 0;
     quizScore = 0;
     selectedAnswer = false;
 
+    selectedSubject = subject;
 
     if (subject === "Science") {
 
-        currentQuestions =
-            scienceQuestions[scienceLevel];
-
+        currentQuestions = scienceQuestions[scienceLevel];
         selectedScienceLevel = scienceLevel;
 
     } else {
 
-        currentQuestions =
-            quizQuestions[subject];
-
+        currentQuestions = quizQuestions[subject];
     }
 
-
-    if (!currentQuestions ||
-        currentQuestions.length === 0) {
+    if (!currentQuestions || currentQuestions.length === 0) {
 
         alert("Questions are not available yet.");
         return;
     }
-
 
     const subjectSelection =
         document.getElementById("subjectSelection");
 
     const quizArea =
         document.getElementById("quizArea");
-
 
     if (subjectSelection) {
         subjectSelection.style.display = "none";
@@ -976,25 +694,16 @@ function startQuiz(subject, scienceLevel = null) {
         quizArea.style.display = "block";
     }
 
-
     const quizSubject =
         document.getElementById("quizSubject");
 
     if (quizSubject) {
 
-        if (subject === "Science") {
-
-            quizSubject.innerText =
-                "🔬 Science - " + scienceLevel;
-
-        } else {
-
-            quizSubject.innerText =
-                "📚 " + subject;
-
-        }
+        quizSubject.innerText =
+            subject === "Science"
+                ? `🔬 Science - ${scienceLevel}`
+                : `📚 ${subject}`;
     }
-
 
     showQuestion();
 }
@@ -1011,34 +720,40 @@ function showQuestion() {
         return;
     }
 
-
     selectedAnswer = false;
-
 
     const q =
         currentQuestions[currentQuestionIndex];
 
+    const questionNumber =
+        document.getElementById("questionNumber");
 
-    document.getElementById("questionNumber")
-        .innerText =
-        `Question ${currentQuestionIndex + 1} / ${currentQuestions.length}`;
+    const score =
+        document.getElementById("score");
 
-
-    document.getElementById("score")
-        .innerText =
-        `Score: ${quizScore}`;
-
-
-    document.getElementById("question")
-        .innerText =
-        q.question;
-
+    const question =
+        document.getElementById("question");
 
     const optionsBox =
         document.getElementById("options");
 
-    optionsBox.innerHTML = "";
+    if (!questionNumber ||
+        !score ||
+        !question ||
+        !optionsBox) {
+        return;
+    }
 
+    questionNumber.innerText =
+        `Question ${currentQuestionIndex + 1} / ${currentQuestions.length}`;
+
+    score.innerText =
+        `Score: ${quizScore}`;
+
+    question.innerText =
+        q.question;
+
+    optionsBox.innerHTML = "";
 
     q.options.forEach((option, index) => {
 
@@ -1046,21 +761,14 @@ function showQuestion() {
             document.createElement("button");
 
         button.className = "option";
+        button.innerText = option;
 
-        button.innerText =
-            option;
-
-        button.onclick =
-            function () {
-
-                selectOption(index, button);
-            };
-
+        button.addEventListener("click", () => {
+            selectOption(index, button);
+        });
 
         optionsBox.appendChild(button);
-
     });
-
 
     const nextBtn =
         document.getElementById("nextBtn");
@@ -1068,23 +776,15 @@ function showQuestion() {
     const submitBtn =
         document.getElementById("quizSubmitBtn");
 
-
     if (nextBtn) {
         nextBtn.style.display = "none";
     }
 
-
     if (submitBtn) {
-
-        if (currentQuestionIndex ===
-            currentQuestions.length - 1) {
-
-            submitBtn.style.display = "block";
-
-        } else {
-
-            submitBtn.style.display = "none";
-        }
+        submitBtn.style.display =
+            currentQuestionIndex === currentQuestions.length - 1
+                ? "none"
+                : "none";
     }
 }
 
@@ -1101,50 +801,57 @@ function selectOption(index, button) {
 
     selectedAnswer = true;
 
-
     const question =
         currentQuestions[currentQuestionIndex];
 
-
     const allOptions =
         document.querySelectorAll(".option");
-
 
     allOptions.forEach(option => {
         option.disabled = true;
     });
 
-
     if (index === question.answer) {
 
         button.classList.add("correct");
-
         quizScore++;
 
     } else {
 
         button.classList.add("wrong");
 
-        allOptions[question.answer]
-            .classList.add("correct");
+        if (allOptions[question.answer]) {
+            allOptions[question.answer]
+                .classList.add("correct");
+        }
     }
 
+    const score =
+        document.getElementById("score");
 
-    document.getElementById("score")
-        .innerText =
-        `Score: ${quizScore}`;
+    if (score) {
+        score.innerText =
+            `Score: ${quizScore}`;
+    }
 
+    const nextBtn =
+        document.getElementById("nextBtn");
+
+    const submitBtn =
+        document.getElementById("quizSubmitBtn");
 
     if (currentQuestionIndex <
         currentQuestions.length - 1) {
 
-        document.getElementById("nextBtn")
-            .style.display = "block";
+        if (nextBtn) {
+            nextBtn.style.display = "block";
+        }
 
     } else {
 
-        document.getElementById("quizSubmitBtn")
-            .style.display = "block";
+        if (submitBtn) {
+            submitBtn.style.display = "block";
+        }
     }
 }
 
@@ -1174,10 +881,8 @@ function submitQuiz() {
     if (!selectedAnswer) {
 
         alert("Please answer this question first.");
-
         return;
     }
-
 
     finishQuiz();
 }
@@ -1192,39 +897,31 @@ function finishQuiz() {
     const quizArea =
         document.getElementById("quizArea");
 
-
-    if (!quizArea) return;
-
+    if (!quizArea) {
+        return;
+    }
 
     const total =
         currentQuestions.length;
 
+    if (total === 0) {
+        return;
+    }
 
     const percentage =
         Math.round((quizScore / total) * 100);
 
-
-    let message = "";
-
+    let message;
 
     if (percentage >= 80) {
-
         message = "🌟 Excellent! Great job!";
-
     } else if (percentage >= 60) {
-
         message = "👏 Good job! Keep learning!";
-
     } else if (percentage >= 40) {
-
         message = "🙂 Nice try! Practice more!";
-
     } else {
-
         message = "💪 Keep practicing! You can do it!";
-
     }
-
 
     quizArea.innerHTML = `
 
@@ -1241,19 +938,17 @@ function finishQuiz() {
 
                 ${
                     selectedSubject === "Science"
-                    ?
-                    `<p>
-                        🔬 Level:
-                        <strong>${selectedScienceLevel}</strong>
-                    </p>`
-                    :
-                    ""
+                    ? `
+                        <p>
+                            🔬 Level:
+                            <strong>${selectedScienceLevel}</strong>
+                        </p>
+                    `
+                    : ""
                 }
 
                 <div class="result-score">
-
                     ${quizScore} / ${total}
-
                 </div>
 
                 <p>
@@ -1261,9 +956,7 @@ function finishQuiz() {
                     <strong>${percentage}%</strong>
                 </p>
 
-                <p>
-                    ${message}
-                </p>
+                <p>${message}</p>
 
             </div>
 
@@ -1272,23 +965,18 @@ function finishQuiz() {
                 <button
                     class="btn"
                     onclick="restartQuiz()">
-
                     🔄 Try Again
-
                 </button>
 
                 <button
                     class="btn"
                     onclick="goHome()">
-
                     🏠 Home
-
                 </button>
 
             </div>
 
         </div>
-
     `;
 }
 
@@ -1299,35 +987,31 @@ function finishQuiz() {
 
 function restartQuiz() {
 
-    location.reload();
+    const quizArea =
+        document.getElementById("quizArea");
+
+    const subjectSelection =
+        document.getElementById("subjectSelection");
+
+    if (quizArea) {
+        quizArea.style.display = "none";
+    }
+
+    if (subjectSelection) {
+        subjectSelection.style.display = "block";
+    }
+
+    currentQuestionIndex = 0;
+    quizScore = 0;
+    selectedAnswer = false;
 }
 
 
 /* =========================================================
-   CLEAR QUIZ RESULT
-========================================================= */
-
-function clearQuizResult() {
-
-    const quizBox =
-        document.getElementById("quizBox");
-
-    if (!quizBox) return;
-
-    /*
-       Nothing needed here.
-       Kept as a separate function so
-       future result systems can be added.
-    */
-}
-
-
-/* =========================================================
-   HOME BUTTON
+   HOME
 ========================================================= */
 
 function goHome() {
-
     window.location.href = "index.html";
 }
 
@@ -1336,78 +1020,54 @@ function goHome() {
    TYPING TEST
 ========================================================= */
 
-
-/*
-   Different text for each level
-*/
-
 const typingLevels = {
 
     1: {
         name: "🟢 Easy",
-
         time: 30,
-
         text:
-        "Learning is fun when we practice every day. " +
-        "Small steps can help us improve our skills."
+            "Learning is fun when we practice every day. " +
+            "Small steps can help us improve our skills."
     },
-
 
     2: {
         name: "🟡 Basic",
-
         time: 30,
-
         text:
-        "Reading books helps us learn new words and ideas. " +
-        "Regular practice makes our typing faster and better."
+            "Reading books helps us learn new words and ideas. " +
+            "Regular practice makes our typing faster and better."
     },
-
 
     3: {
         name: "🟠 Medium",
-
         time: 30,
-
         text:
-        "Technology has changed the way students learn. " +
-        "Computers and the internet provide many useful resources."
+            "Technology has changed the way students learn. " +
+            "Computers and the internet provide many useful resources."
     },
-
 
     4: {
         name: "🔴 Hard",
-
         time: 30,
-
         text:
-        "Good communication requires clear thinking, careful listening, " +
-        "and the ability to express ideas in a simple and meaningful way."
+            "Good communication requires clear thinking, careful listening, " +
+            "and the ability to express ideas in a simple and meaningful way."
     },
-
 
     5: {
         name: "🟣 Advanced",
-
         time: 30,
-
         text:
-        "Consistent practice develops confidence and improves performance. " +
-        "A student who learns from mistakes can gradually achieve better results."
+            "Consistent practice develops confidence and improves performance. " +
+            "A student who learns from mistakes can gradually achieve better results."
     }
-
 };
 
 
 let currentTypingLevel = 1;
-
 let typingTimer = null;
-
 let typingTimeLeft = 30;
-
 let typingStarted = false;
-
 let typingFinished = false;
 
 
@@ -1415,43 +1075,32 @@ let typingFinished = false;
    SELECT TYPING LEVEL
 ========================================================= */
 
-function selectLevel(level) {
+function selectLevel(level, button) {
+
+    if (!typingLevels[level]) {
+        return;
+    }
 
     currentTypingLevel = level;
 
+    document.querySelectorAll(".typing-level-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
 
-    document.querySelectorAll(".level-btn")
-        .forEach(btn => {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    if (event &&
-        event.target &&
-        event.target.classList) {
-
-        event.target.classList.add("active");
-
+    if (button) {
+        button.classList.add("active");
     }
-
 
     const levelData =
         typingLevels[level];
 
-
     const levelName =
         document.getElementById("levelName");
 
-
     if (levelName) {
-
         levelName.innerText =
             levelData.name;
-
     }
-
 
     resetTypingTest();
 }
@@ -1465,19 +1114,18 @@ function startTypingTest() {
 
     clearInterval(typingTimer);
 
-
     const levelData =
         typingLevels[currentTypingLevel];
 
+    if (!levelData) {
+        return;
+    }
 
     typingTimeLeft =
         levelData.time;
 
-
     typingStarted = true;
-
     typingFinished = false;
-
 
     const text =
         document.getElementById("typingText");
@@ -1485,75 +1133,69 @@ function startTypingTest() {
     const input =
         document.getElementById("typingInput");
 
-
     if (!text || !input) {
         return;
     }
 
-
     text.innerText =
         levelData.text;
 
-
     input.disabled = false;
-
     input.value = "";
-
     input.focus();
 
+    const time =
+        document.getElementById("time");
 
-    document.getElementById("time")
-        .innerText =
-        typingTimeLeft;
+    const wpm =
+        document.getElementById("wpm");
 
+    const accuracy =
+        document.getElementById("accuracy");
 
-    document.getElementById("wpm")
-        .innerText =
-        "0";
+    const result =
+        document.getElementById("typingResult");
 
+    if (time) {
+        time.innerText = typingTimeLeft;
+    }
 
-    document.getElementById("accuracy")
-        .innerText =
-        "100";
+    if (wpm) {
+        wpm.innerText = "0";
+    }
 
+    if (accuracy) {
+        accuracy.innerText = "100";
+    }
 
-    document.getElementById("typingResult")
-        .innerText =
-        "";
-
+    if (result) {
+        result.innerText = "";
+    }
 
     const submitBtn =
         document.getElementById("submitBtn");
 
-
     if (submitBtn) {
-
-        submitBtn.style.display =
-            "inline-block";
-
+        submitBtn.style.display = "inline-block";
     }
-
 
     typingTimer =
         setInterval(() => {
 
             typingTimeLeft--;
 
-
-            document.getElementById("time")
-                .innerText =
-                typingTimeLeft;
-
+            if (time) {
+                time.innerText =
+                    typingTimeLeft;
+            }
 
             updateTypingStats();
-
 
             if (typingTimeLeft <= 0) {
 
                 clearInterval(typingTimer);
 
                 finishTypingTest();
-
             }
 
         }, 1000);
@@ -1569,64 +1211,46 @@ function updateTypingStats() {
     const input =
         document.getElementById("typingInput");
 
+    const originalElement =
+        document.getElementById("typingText");
 
-    if (!input) return;
-
+    if (!input || !originalElement) {
+        return;
+    }
 
     const typed =
         input.value;
 
+    const original =
+        originalElement.innerText;
 
     if (typed.length === 0) {
 
-        document.getElementById("wpm")
-            .innerText =
-            "0";
-
-        document.getElementById("accuracy")
-            .innerText =
-            "100";
+        document.getElementById("wpm").innerText = "0";
+        document.getElementById("accuracy").innerText = "100";
 
         return;
     }
 
-
-    const original =
-        document.getElementById("typingText")
-            .innerText;
-
-
     let correctCharacters = 0;
 
-
-    for (
-        let i = 0;
-        i < typed.length;
-        i++
-    ) {
+    for (let i = 0; i < typed.length; i++) {
 
         if (typed[i] === original[i]) {
-
             correctCharacters++;
-
         }
-
     }
-
 
     const accuracy =
         Math.round(
             (correctCharacters / typed.length) * 100
         );
 
-
     const elapsedSeconds =
-        typingLevels[currentTypingLevel].time
-        - typingTimeLeft;
-
+        typingLevels[currentTypingLevel].time -
+        typingTimeLeft;
 
     let wpm = 0;
-
 
     if (elapsedSeconds > 0) {
 
@@ -1635,18 +1259,26 @@ function updateTypingStats() {
                 (typed.length / 5) /
                 (elapsedSeconds / 60)
             );
-
     }
 
+    const wpmElement =
+        document.getElementById("wpm");
 
-    document.getElementById("wpm")
-        .innerText =
-        wpm;
+    const accuracyElement =
+        document.getElementById("accuracy");
 
+    if (wpmElement) {
+        wpmElement.innerText =
+            Math.max(0, wpm);
+    }
 
-    document.getElementById("accuracy")
-        .innerText =
-        Math.max(0, Math.min(100, accuracy));
+    if (accuracyElement) {
+        accuracyElement.innerText =
+            Math.max(
+                0,
+                Math.min(100, accuracy)
+            );
+    }
 }
 
 
@@ -1659,10 +1291,8 @@ function submitTypingTest() {
     if (!typingStarted) {
 
         alert("Please start the test first.");
-
         return;
     }
-
 
     finishTypingTest();
 }
@@ -1678,41 +1308,30 @@ function finishTypingTest() {
         return;
     }
 
-
     typingFinished = true;
-
     typingStarted = false;
 
-
     clearInterval(typingTimer);
-
 
     const input =
         document.getElementById("typingInput");
 
-
-    if (!input) return;
-
-
-    input.disabled = true;
-
+    if (!input) {
+        return;
+    }
 
     updateTypingStats();
 
+    input.disabled = true;
 
     const wpm =
-        document.getElementById("wpm")
-            .innerText;
-
+        document.getElementById("wpm");
 
     const accuracy =
-        document.getElementById("accuracy")
-            .innerText;
-
+        document.getElementById("accuracy");
 
     const result =
         document.getElementById("typingResult");
-
 
     if (result) {
 
@@ -1723,27 +1342,21 @@ function finishTypingTest() {
             <br>
 
             ⚡ Speed:
-            <strong>${wpm} WPM</strong>
+            <strong>${wpm ? wpm.innerText : 0} WPM</strong>
 
             <br>
 
             🎯 Accuracy:
-            <strong>${accuracy}%</strong>
+            <strong>${accuracy ? accuracy.innerText : 0}%</strong>
 
         `;
-
     }
-
 
     const submitBtn =
         document.getElementById("submitBtn");
 
-
     if (submitBtn) {
-
-        submitBtn.style.display =
-            "none";
-
+        submitBtn.style.display = "none";
     }
 }
 
@@ -1756,84 +1369,85 @@ function resetTypingTest() {
 
     clearInterval(typingTimer);
 
-
     typingStarted = false;
-
     typingFinished = false;
-
 
     const levelData =
         typingLevels[currentTypingLevel];
 
+    if (!levelData) {
+        return;
+    }
 
     typingTimeLeft =
         levelData.time;
 
-
     const text =
         document.getElementById("typingText");
 
-
     const input =
         document.getElementById("typingInput");
-
 
     if (!text || !input) {
         return;
     }
 
-
     text.innerText =
         "Click Start Test to begin!";
 
-
     input.value = "";
-
     input.disabled = true;
 
+    const time =
+        document.getElementById("time");
 
-    document.getElementById("time")
-        .innerText =
-        levelData.time;
+    const wpm =
+        document.getElementById("wpm");
 
+    const accuracy =
+        document.getElementById("accuracy");
 
-    document.getElementById("wpm")
-        .innerText =
-        "0";
+    const result =
+        document.getElementById("typingResult");
 
+    if (time) {
+        time.innerText =
+            levelData.time;
+    }
 
-    document.getElementById("accuracy")
-        .innerText =
-        "100";
+    if (wpm) {
+        wpm.innerText = "0";
+    }
 
+    if (accuracy) {
+        accuracy.innerText = "100";
+    }
 
-    document.getElementById("typingResult")
-        .innerText =
-        "";
-
+    if (result) {
+        result.innerText = "";
+    }
 
     const submitBtn =
         document.getElementById("submitBtn");
 
-
     if (submitBtn) {
-
-        submitBtn.style.display =
-            "none";
-
+        submitBtn.style.display = "none";
     }
 }
 
 
 /* =========================================================
-   LIVE TYPING INPUT
+   DOM CONTENT LOADED
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* -------------------------------
+       TYPING INPUT
+    ------------------------------- */
+
     const input =
         document.getElementById("typingInput");
-
 
     if (input) {
 
@@ -1847,38 +1461,134 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 updateTypingStats();
 
+                /*
+                   Automatically finish when
+                   complete text is typed.
+                */
+
+                const original =
+                    document.getElementById("typingText");
+
+                if (
+                    original &&
+                    input.value.length >=
+                    original.innerText.length
+                ) {
+
+                    finishTypingTest();
+                }
             }
         );
-
     }
+
+
+    /* -------------------------------
+       DEFAULT TYPING LEVEL
+    ------------------------------- */
+
+    if (typingLevels[1]) {
+
+        const levelName =
+            document.getElementById("levelName");
+
+        if (levelName) {
+            levelName.innerText =
+                typingLevels[1].name;
+        }
+    }
+
+
+    /* -------------------------------
+       QUIZ ENTER KEY
+    ------------------------------- */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key !== "Enter") {
+                return;
+            }
+
+            const answerInput =
+                document.getElementById("answer");
+
+            if (
+                answerInput &&
+                document.activeElement === answerInput
+            ) {
+
+                if (
+                    typeof checkAnswer === "function"
+                ) {
+
+                    checkAnswer();
+                }
+            }
+        }
+    );
 
 });
 
 
 /* =========================================================
-   ENTER KEY SUPPORT FOR QUIZ
+   KEYBOARD SHORTCUTS FOR QUIZ
 ========================================================= */
 
 document.addEventListener("keydown", function (event) {
 
-    if (event.key !== "Enter") {
+    if (!currentQuestions.length) {
         return;
     }
 
+    /*
+       1,2,3,4 keys select options
+    */
 
-    const answerInput =
-        document.getElementById("answer");
+    if (
+        ["1", "2", "3", "4"].includes(event.key)
+    ) {
 
+        const index =
+            Number(event.key) - 1;
 
-    if (answerInput &&
-        document.activeElement === answerInput) {
+        const options =
+            document.querySelectorAll(".option");
 
-        if (typeof checkAnswer === "function") {
+        if (
+            options[index] &&
+            !selectedAnswer
+        ) {
 
-            checkAnswer();
-
+            selectOption(
+                index,
+                options[index]
+            );
         }
+    }
 
+
+    /*
+       Arrow / Enter for next question
+    */
+
+    if (
+        event.key === "Enter" &&
+        selectedAnswer
+    ) {
+
+        if (
+            currentQuestionIndex <
+            currentQuestions.length - 1
+        ) {
+
+            nextQuestion();
+
+        } else {
+
+            submitQuiz();
+        }
     }
 
 });
+```
