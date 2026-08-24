@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -39,6 +38,12 @@
             color: white;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -68,7 +73,6 @@
         .quiz-box {
             background: white;
             padding: 35px;
-
             border-radius: 20px;
 
             box-shadow:
@@ -76,7 +80,7 @@
                 rgba(0,0,0,0.1);
         }
 
-        /* ================= SUBJECT SELECTION ================= */
+        /* ================= SUBJECT ================= */
 
         .subject-selection {
             text-align: center;
@@ -94,13 +98,8 @@
 
         .subjects {
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-
-            margin-bottom: 25px;
         }
 
         .subject-btn {
@@ -125,45 +124,7 @@
 
         .subject-btn:hover {
             background: #fff1e6;
-
             border-color: #ff6b6b;
-
-            transform: translateY(-2px);
-        }
-
-        .subject-btn.active {
-            background: #ff6b6b;
-
-            color: white;
-
-            border-color: #ff6b6b;
-        }
-
-        #startQuizBtn {
-            margin-top: 10px;
-
-            padding: 13px 30px;
-
-            border: none;
-
-            border-radius: 25px;
-
-            background: #ff6b6b;
-
-            color: white;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            font-size: 16px;
-
-            transition: 0.3s;
-        }
-
-        #startQuizBtn:hover {
-            background: #ff5252;
-
             transform: translateY(-2px);
         }
 
@@ -183,17 +144,13 @@
 
         #scienceLevelSelection h3 {
             color: #ff6b6b;
-
             margin-bottom: 15px;
         }
 
         .science-levels {
             display: flex;
-
             justify-content: center;
-
             gap: 12px;
-
             flex-wrap: wrap;
         }
 
@@ -217,19 +174,10 @@
 
         .level-btn:hover {
             border-color: #ff6b6b;
-
             background: #fff1e6;
         }
 
-        .level-btn.active {
-            background: #ff6b6b;
-
-            color: white;
-
-            border-color: #ff6b6b;
-        }
-
-        /* ================= QUIZ TOP ================= */
+        /* ================= QUIZ AREA ================= */
 
         .top {
             display: flex;
@@ -253,21 +201,14 @@
             font-weight: bold;
         }
 
-        /* ================= QUESTION ================= */
-
         #question {
             margin-bottom: 25px;
-
             line-height: 1.5;
         }
 
-        /* ================= OPTIONS ================= */
-
         #options {
             display: flex;
-
             flex-direction: column;
-
             gap: 12px;
         }
 
@@ -291,23 +232,18 @@
 
         .option:hover {
             background: #fff1e6;
-
             border-color: #ff6b6b;
         }
 
         .option.correct {
             background: #d4edda;
-
             border-color: #28a745;
-
             color: #155724;
         }
 
         .option.wrong {
             background: #f8d7da;
-
             border-color: #dc3545;
-
             color: #721c24;
         }
 
@@ -319,11 +255,8 @@
 
         .quiz-buttons {
             display: flex;
-
             justify-content: center;
-
             gap: 12px;
-
             flex-wrap: wrap;
         }
 
@@ -349,24 +282,16 @@
 
         .btn:hover {
             background: #ff5252;
-
             transform: translateY(-2px);
         }
 
         #quizSubmitBtn {
             background: #28a745;
-
             display: none;
         }
 
         #quizSubmitBtn:hover {
             background: #218838;
-        }
-
-        #backSubjectBtn {
-            background: #ff9f43;
-
-            display: none;
         }
 
         /* ================= RESULT ================= */
@@ -377,7 +302,6 @@
 
         .result h2 {
             color: #ff6b6b;
-
             margin: 15px;
         }
 
@@ -393,7 +317,6 @@
 
         .result-card p {
             margin: 10px;
-
             font-size: 17px;
         }
 
@@ -423,15 +346,17 @@
 
             nav {
                 flex-direction: column;
-
                 gap: 12px;
-
                 text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
             }
 
             .page {
                 margin: 30px auto;
-
                 padding: 15px;
             }
 
@@ -445,9 +370,7 @@
 
             .top {
                 flex-direction: column;
-
                 gap: 10px;
-
                 text-align: center;
             }
 
@@ -481,171 +404,110 @@
 <body>
 
 
-    <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
 
-    <nav>
+<nav>
 
-        <h2>
-            🌈 Maahi Ki Funshala
-        </h2>
+    <h2>
+        🌈 Maahi Ki Funshala
+    </h2>
 
-        <a href="games.html">
-            🎮 Back to Games
+    <div class="nav-links">
+
+        <a href="index.html">
+            🏠 Home
         </a>
 
-    </nav>
+        <a href="games.html">
+            🎮 Games
+        </a>
+
+    </div>
+
+</nav>
 
 
-    <!-- ================= PAGE ================= -->
+<!-- ================= PAGE ================= -->
 
-    <div class="page">
+<div class="page">
 
-        <h1 class="title">
-            🧠 Student Quiz
-        </h1>
+    <h1 class="title">
+        🧠 Student Quiz
+    </h1>
 
+
+    <div class="quiz-box">
+
+
+        <!-- ================= SUBJECT SELECTION ================= -->
 
         <div
-            class="quiz-box"
-            id="quizBox">
+            class="subject-selection"
+            id="subjectSelection">
+
+            <h2>
+                📚 Choose Your Subject
+            </h2>
+
+            <p>
+                Select a subject and start your quiz!
+            </p>
 
 
-            <!-- ================= SUBJECT SELECTION ================= -->
-
-            <div
-                class="subject-selection"
-                id="subjectSelection">
-
-                <h2>
-                    📚 Choose Your Subject
-                </h2>
-
-                <p>
-                    Select a subject and test your knowledge!
-                </p>
-
-
-                <div class="subjects">
-
-
-                    <!-- ENGLISH -->
-
-                    <button
-                        class="subject-btn"
-                        onclick="selectSubject('English', this)">
-
-                        📘 English
-                        <small>(Grammar)</small>
-
-                    </button>
-
-
-                    <!-- HINDI -->
-
-                    <button
-                        class="subject-btn"
-                        onclick="selectSubject('Hindi', this)">
-
-                        🪔 Hindi
-
-                    </button>
-
-
-                    <!-- MATHEMATICS -->
-
-                    <button
-                        class="subject-btn"
-                        onclick="selectSubject('Mathematics', this)">
-
-                        🔢 Mathematics
-
-                    </button>
-
-
-                    <!-- SCIENCE -->
-
-                    <button
-                        class="subject-btn"
-                        onclick="selectSubject('Science', this)">
-
-                        🔬 Science
-
-                    </button>
-
-
-                    <!-- SOCIAL SCIENCE -->
-
-                    <button
-                        class="subject-btn"
-                        onclick="selectSubject('Social Science', this)">
-
-                        🌍 Social Science
-
-                    </button>
-
-
-                    <!-- GS -->
-
-                    <button
-                        class="subject-btn"
-                        onclick="selectSubject('General Studies', this)">
-
-                        🌐 General Studies (GS)
-
-                    </button>
-
-
-                </div>
-
-
-                <!-- ================= SCIENCE LEVEL ================= -->
-
-                <div id="scienceLevelSelection">
-
-                    <h3>
-                        🔬 Choose Science Level
-                    </h3>
-
-                    <div class="science-levels">
-
-
-                        <button
-                            class="level-btn"
-                            onclick="selectScienceLevel('Easy', this)">
-
-                            🟢 Easy
-
-                        </button>
-
-
-                        <button
-                            class="level-btn"
-                            onclick="selectScienceLevel('Medium', this)">
-
-                            🟡 Medium
-
-                        </button>
-
-
-                        <button
-                            class="level-btn"
-                            onclick="selectScienceLevel('Hard', this)">
-
-                            🔴 Hard
-
-                        </button>
-
-
-                    </div>
-
-                </div>
+            <div class="subjects">
 
 
                 <button
-                    id="startQuizBtn"
-                    onclick="beginSelectedQuiz()">
+                    class="subject-btn"
+                    onclick="selectSubject('English')">
 
-                    🚀 Start Quiz
+                    📘 English
+                    <small>(Grammar)</small>
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    onclick="selectSubject('Hindi')">
+
+                    🪔 Hindi
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    onclick="selectSubject('Mathematics')">
+
+                    🔢 Mathematics
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    onclick="selectSubject('Science')">
+
+                    🔬 Science
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    onclick="selectSubject('Social Science')">
+
+                    🌍 Social Science
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    onclick="selectSubject('General Studies')">
+
+                    🌐 General Studies (GS)
 
                 </button>
 
@@ -653,88 +515,116 @@
             </div>
 
 
-            <!-- ================= QUIZ AREA ================= -->
+            <!-- ================= SCIENCE LEVEL ================= -->
+
+            <div id="scienceLevelSelection">
+
+                <h3>
+                    🔬 Choose Science Level
+                </h3>
+
+                <div class="science-levels">
+
+                    <button
+                        class="level-btn"
+                        onclick="selectScienceLevel('Easy')">
+
+                        🟢 Easy
+
+                    </button>
+
+                    <button
+                        class="level-btn"
+                        onclick="selectScienceLevel('Medium')">
+
+                        🟡 Medium
+
+                    </button>
+
+                    <button
+                        class="level-btn"
+                        onclick="selectScienceLevel('Hard')">
+
+                        🔴 Hard
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= QUIZ AREA ================= -->
+
+        <div
+            id="quizArea"
+            style="display:none;">
 
             <div
-                id="quizArea"
-                style="display:none;">
+                class="subject-label"
+                id="quizSubject">
 
-
-                <div class="subject-label" id="quizSubject">
-                    📚 Quiz
-                </div>
-
-
-                <div class="top">
-
-                    <span id="questionNumber">
-                        Question 1 / 10
-                    </span>
-
-                    <span id="score">
-                        Score: 0
-                    </span>
-
-                </div>
-
-
-                <h2 id="question">
-                    Loading...
-                </h2>
-
-
-                <div id="options"></div>
-
-
-                <div class="quiz-buttons">
-
-
-                    <button
-                        class="btn"
-                        id="nextBtn"
-                        onclick="nextQuestion()"
-                        style="display:none;">
-
-                        Next Question ➡️
-
-                    </button>
-
-
-                    <button
-                        class="btn"
-                        id="quizSubmitBtn"
-                        onclick="submitQuiz()">
-
-                        ✅ Submit Quiz
-
-                    </button>
-
-
-                    <button
-                        class="btn"
-                        id="backSubjectBtn"
-                        onclick="backToSubjects()">
-
-                        📚 Change Subject
-
-                    </button>
-
-
-                </div>
-
+                📚 Quiz
 
             </div>
 
 
+            <div class="top">
+
+                <span id="questionNumber">
+                    Question 1 / 10
+                </span>
+
+                <span id="score">
+                    Score: 0
+                </span>
+
+            </div>
+
+
+            <h2 id="question">
+                Loading...
+            </h2>
+
+
+            <div id="options"></div>
+
+
+            <div class="quiz-buttons">
+
+                <button
+                    class="btn"
+                    id="nextBtn"
+                    onclick="nextQuestion()"
+                    style="display:none;">
+
+                    Next Question ➡️
+
+                </button>
+
+
+                <button
+                    class="btn"
+                    id="quizSubmitBtn"
+                    onclick="submitQuiz()">
+
+                    ✅ Submit Quiz
+
+                </button>
+
+            </div>
+
         </div>
+
 
     </div>
 
+</div>
 
-    <!-- ================= JAVASCRIPT ================= -->
 
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 
 </body>
 

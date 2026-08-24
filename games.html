@@ -3,402 +3,907 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Games - Maahi Ki Funshala</title>
+    <title>Games - Maahi Ki Funshala</title>
 
-<style>
+    <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body{
-    background:#fff8f0;
-    color:#333;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-nav{
-    background:#ff6b6b;
-    padding:15px 8%;
+        body {
+            background: #0b0b12;
+            color: #f5f5f5;
+            min-height: 100vh;
+        }
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
 
-nav h2{
-    color:white;
-}
+        /* ================= NAVBAR ================= */
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
+        nav {
 
-.header{
-    text-align:center;
-    padding:70px 20px;
+            background: #11111a;
 
-    background:linear-gradient(
-        135deg,
-        #ffe66d,
-        #ff9f43,
-        #ff6b6b
-    );
+            padding: 15px 7%;
 
-    color:white;
-}
+            display: flex;
 
-.header h1{
-    font-size:45px;
-    margin-bottom:15px;
-}
+            justify-content: space-between;
 
-.header p{
-    font-size:18px;
-}
+            align-items: center;
 
-.games{
+            border-bottom: 1px solid #292938;
 
-    max-width:1100px;
-    margin:50px auto;
-    padding:20px;
+            position: sticky;
 
-    display:grid;
+            top: 0;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
+            z-index: 1000;
 
-    gap:25px;
-}
+            box-shadow:
+                0 4px 20px rgba(0,0,0,0.45);
+        }
 
-.game-card{
 
-    background:white;
-    padding:30px 20px;
+        .logo {
 
-    border-radius:20px;
+            display: flex;
 
-    text-align:center;
+            align-items: center;
 
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.1);
+            gap: 12px;
+        }
 
-    transition:.3s;
-}
 
-.game-card:hover{
-    transform:translateY(-8px);
-}
+        .logo img {
 
-.icon{
-    font-size:50px;
-    margin-bottom:15px;
-}
+            width: 46px;
 
-.game-card h2{
-    color:#ff6b6b;
-    margin-bottom:10px;
-}
+            height: 46px;
 
-.game-card p{
-    line-height:1.6;
-    margin-bottom:20px;
-    min-height:50px;
-}
+            object-fit: cover;
 
-.game-btn{
+            border-radius: 50%;
 
-    display:inline-block;
+            border: 2px solid #ff4fa3;
 
-    padding:12px 22px;
+            box-shadow:
+                0 0 12px rgba(255,79,163,0.5);
+        }
 
-    background:#ff6b6b;
 
-    color:white;
+        .logo h2 {
 
-    border:none;
+            color: #ff4fa3;
 
-    border-radius:25px;
+            font-size: 21px;
 
-    text-decoration:none;
+            text-shadow:
+                0 0 10px rgba(255,79,163,0.45);
+        }
 
-    font-weight:bold;
 
-    cursor:pointer;
-}
+        nav a {
 
-.game-btn:hover{
-    background:#e55050;
-}
+            color: #eeeeF5;
 
-footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
+            text-decoration: none;
 
-@media(max-width:700px){
+            font-weight: bold;
 
-    nav{
-        flex-direction:column;
-        gap:12px;
-        text-align:center;
-    }
+            padding: 10px 18px;
 
-    .header{
-        padding:50px 20px;
-    }
+            border: 1px solid #303044;
 
-    .header h1{
-        font-size:35px;
-    }
+            border-radius: 25px;
 
-    .games{
-        margin:25px auto;
-        padding:15px;
-        grid-template-columns:1fr;
-    }
+            transition: 0.3s ease;
+        }
 
-    .game-card{
-        padding:25px 18px;
-    }
 
-}
+        nav a:hover {
 
-</style>
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4fa3,
+                    #7b3cff
+                );
+
+            border-color: transparent;
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 20px
+                rgba(255,79,163,0.25);
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .header {
+
+            min-height: 42vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+
+                radial-gradient(
+                    circle at top left,
+                    rgba(123,60,255,0.3),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(255,79,163,0.25),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #0b0b12,
+                    #151122,
+                    #0b0b12
+                );
+        }
+
+
+        .header-content {
+
+            max-width: 800px;
+        }
+
+
+        .header h1 {
+
+            font-size: 52px;
+
+            margin-bottom: 15px;
+
+            color: white;
+
+            text-shadow:
+
+                0 0 12px
+                rgba(255,79,163,0.55),
+
+                0 0 30px
+                rgba(123,60,255,0.35);
+        }
+
+
+        .header p {
+
+            font-size: 20px;
+
+            color: #cfcfe0;
+
+            margin-bottom: 25px;
+        }
+
+
+        .header-badge {
+
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            border-radius: 25px;
+
+            background: rgba(255,79,163,0.1);
+
+            border: 1px solid #343448;
+
+            color: #ff66b3;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= GAMES ================= */
+
+        .games {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 65px 25px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(250px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+
+        /* ================= GAME CARD ================= */
+
+        .game-card {
+
+            position: relative;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #181822,
+                    #111119
+                );
+
+            padding: 30px 22px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            border: 1px solid #292938;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.35);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+
+        .game-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+
+            height: 120px;
+
+            background:
+                rgba(255,79,163,0.08);
+
+            border-radius: 50%;
+
+            top: -50px;
+
+            right: -50px;
+
+            transition: 0.4s ease;
+        }
+
+
+        .game-card:hover {
+
+            transform:
+                translateY(-9px);
+
+            border-color: #ff4fa3;
+
+            box-shadow:
+
+                0 15px 40px
+                rgba(255,79,163,0.15);
+        }
+
+
+        .game-card:hover::before {
+
+            transform: scale(2);
+        }
+
+
+        /* ================= ICON ================= */
+
+        .icon {
+
+            width: 75px;
+
+            height: 75px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 38px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(255,79,163,0.15),
+                    rgba(123,60,255,0.15)
+                );
+
+            border: 1px solid #343448;
+
+            box-shadow:
+                0 0 20px
+                rgba(255,79,163,0.08);
+
+            transition: 0.35s ease;
+        }
+
+
+        .game-card:hover .icon {
+
+            transform:
+                scale(1.08)
+                rotate(-3deg);
+
+            border-color: #ff4fa3;
+
+            box-shadow:
+                0 0 25px
+                rgba(255,79,163,0.25);
+        }
+
+
+        /* ================= TITLE ================= */
+
+        .game-card h2 {
+
+            color: #ff66b3;
+
+            margin-bottom: 12px;
+
+            font-size: 22px;
+        }
+
+
+        .game-card p {
+
+            color: #bdbdcb;
+
+            line-height: 1.6;
+
+            margin-bottom: 22px;
+
+            min-height: 55px;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .game-btn {
+
+            display: inline-block;
+
+            padding: 11px 22px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ff4fa3,
+                    #7b3cff
+                );
+
+            color: white;
+
+            border: none;
+
+            border-radius: 25px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 5px 18px
+                rgba(255,79,163,0.18);
+
+            transition: 0.3s ease;
+        }
+
+
+        .game-btn:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(255,79,163,0.35);
+        }
+
+
+        /* ================= COMING SOON ================= */
+
+        .coming {
+
+            background:
+                #171722;
+
+            color: #9999aa;
+
+            border: 1px solid #303044;
+
+            box-shadow: none;
+
+        }
+
+
+        .coming:hover {
+
+            border-color: #44445a;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.3);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #07070c;
+
+            color: #858595;
+
+            text-align: center;
+
+            padding: 22px;
+
+            border-top:
+                1px solid #1e1e29;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                padding: 15px 5%;
+            }
+
+
+            .logo h2 {
+
+                font-size: 19px;
+            }
+
+
+            .header {
+
+                min-height: 38vh;
+
+                padding: 50px 20px;
+            }
+
+
+            .header h1 {
+
+                font-size: 37px;
+            }
+
+
+            .header p {
+
+                font-size: 17px;
+            }
+
+
+            .games {
+
+                padding:
+                    40px 15px;
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .game-card {
+
+                padding:
+                    28px 18px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .header h1 {
+
+                font-size: 31px;
+            }
+
+
+            .logo img {
+
+                width: 40px;
+
+                height: 40px;
+            }
+
+
+            nav a {
+
+                font-size: 14px;
+
+                padding:
+                    9px 15px;
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 <body>
 
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
 
-<h2>
-🌈 Maahi Ki Funshala
-</h2>
+    <div class="logo">
 
-<a href="index.html">
-🏠 Home
-</a>
+        <img
+            src="logo.jpg"
+            alt="Maahi Ki Funshala Logo">
+
+        <h2>
+            Maahi Ki Funshala
+        </h2>
+
+    </div>
+
+
+    <a href="index.html">
+
+        🏠 Home
+
+    </a>
 
 </nav>
 
 
+
+<!-- ================= HEADER ================= -->
+
 <div class="header">
 
-<h1>
-🎮 Student Fun Zone
-</h1>
+    <div class="header-content">
 
-<p>
-Learn • Play • Challenge Yourself
-</p>
+        <span class="header-badge">
+            🎮 LEARNING + FUN
+        </span>
+
+        <h1>
+            Student Fun Zone
+        </h1>
+
+        <p>
+            Learn • Play • Challenge Yourself
+        </p>
+
+    </div>
 
 </div>
 
+
+
+<!-- ================= GAMES ================= -->
 
 <div class="games">
 
 
-<!-- STUDENT QUIZ -->
+    <!-- STUDENT QUIZ -->
 
-<div class="game-card">
+    <div class="game-card">
 
-<div class="icon">🧠</div>
+        <div class="icon">
+            🧠
+        </div>
 
-<h2>Student Quiz</h2>
+        <h2>
+            Student Quiz
+        </h2>
 
-<p>
-Test your knowledge in English,
-Hindi, Maths, Science and Social Science.
-</p>
+        <p>
+            Test your knowledge in English,
+            Hindi, Maths, Science and
+            Social Science.
+        </p>
 
-<a href="quiz.html"
-class="game-btn">
+        <a
+            href="quiz.html"
+            class="game-btn">
 
-Play Quiz 🚀
+            Play Quiz 🚀
 
-</a>
+        </a>
+
+    </div>
+
+
+
+    <!-- TYPING -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            ⌨️
+        </div>
+
+        <h2>
+            Typing Speed Test
+        </h2>
+
+        <p>
+            Improve your typing speed
+            and accuracy with different
+            levels.
+        </p>
+
+        <a
+            href="typing.html"
+            class="game-btn">
+
+            Start Test ⚡
+
+        </a>
+
+    </div>
+
+
+
+    <!-- CODING -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            💻
+        </div>
+
+        <h2>
+            Coding Quiz
+        </h2>
+
+        <p>
+            Test your knowledge of Python,
+            C, C++, Java, JavaScript,
+            HTML and CSS.
+        </p>
+
+        <a
+            href="coding.html"
+            class="game-btn">
+
+            Code Challenge 💻
+
+        </a>
+
+    </div>
+
+
+
+    <!-- MATH -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            🔢
+        </div>
+
+        <h2>
+            Math Challenge
+        </h2>
+
+        <p>
+            Solve quick mathematical
+            questions and beat the timer!
+        </p>
+
+        <a
+            href="math.html"
+            class="game-btn">
+
+            Start Challenge 🧮
+
+        </a>
+
+    </div>
+
+
+
+    <!-- WORD -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            🔤
+        </div>
+
+        <h2>
+            Word Scramble
+        </h2>
+
+        <p>
+            Unscramble educational words
+            and improve your vocabulary.
+        </p>
+
+        <a
+            href="word.html"
+            class="game-btn">
+
+            Play Word Game 🔤
+
+        </a>
+
+    </div>
+
+
+
+    <!-- MEMORY -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            🧠
+        </div>
+
+        <h2>
+            Memory Quiz
+        </h2>
+
+        <p>
+            Answer quick educational
+            questions and test your memory.
+        </p>
+
+        <a
+            href="memory.html"
+            class="game-btn">
+
+            Test Memory 🧠
+
+        </a>
+
+    </div>
+
+
+
+    <!-- MATCH WORDS -->
+
+    <div class="game-card coming">
+
+        <div class="icon">
+            🧩
+        </div>
+
+        <h2>
+            Match the Words
+        </h2>
+
+        <p>
+            Match related words and
+            concepts in a fun learning game.
+        </p>
+
+        <button
+            class="game-btn"
+            onclick="comingSoon()">
+
+            Coming Soon 🚀
+
+        </button>
+
+    </div>
+
+
+
+    <!-- DAILY CHALLENGE -->
+
+    <div class="game-card coming">
+
+        <div class="icon">
+            🏆
+        </div>
+
+        <h2>
+            Daily Challenge
+        </h2>
+
+        <p>
+            A new educational challenge
+            every day!
+        </p>
+
+        <button
+            class="game-btn"
+            onclick="comingSoon()">
+
+            Coming Soon 🚀
+
+        </button>
+
+    </div>
+
 
 </div>
 
 
-<!-- TYPING -->
 
-<div class="game-card">
-
-<div class="icon">⌨️</div>
-
-<h2>Typing Speed Test</h2>
-
-<p>
-Improve your typing speed and accuracy
-with different levels.
-</p>
-
-<a href="typing.html"
-class="game-btn">
-
-Start Test ⚡
-
-</a>
-
-</div>
-
-
-<!-- CODING -->
-
-<div class="game-card">
-
-<div class="icon">💻</div>
-
-<h2>Coding Quiz</h2>
-
-<p>
-Test your knowledge of Python, C, C++,
-Java, JavaScript, HTML and CSS.
-</p>
-
-<a href="coding.html"
-class="game-btn">
-
-Code Challenge 💻
-
-</a>
-
-</div>
-
-
-<!-- MATH -->
-
-<div class="game-card">
-
-<div class="icon">🔢</div>
-
-<h2>Math Challenge</h2>
-
-<p>
-Solve quick mathematical questions
-and beat the timer!
-</p>
-
-<a href="math.html"
-class="game-btn">
-
-Start Challenge 🧮
-
-</a>
-
-</div>
-
-
-<!-- WORD -->
-
-<div class="game-card">
-
-<div class="icon">🔤</div>
-
-<h2>Word Scramble</h2>
-
-<p>
-Unscramble educational words
-and improve your vocabulary.
-</p>
-
-<a href="word.html"
-class="game-btn">
-
-Play Word Game 🔤
-
-</a>
-
-</div>
-
-
-<!-- MEMORY -->
-
-<div class="game-card">
-
-<div class="icon">🧠</div>
-
-<h2>Memory Quiz</h2>
-
-<p>
-Answer quick educational questions
-and test your memory.
-</p>
-
-<a href="memory.html"
-class="game-btn">
-
-Test Memory 🧠
-
-</a>
-
-</div>
-
-
-<!-- COMING SOON -->
-
-<div class="game-card">
-
-<div class="icon">🧩</div>
-
-<h2>Match the Words</h2>
-
-<p>
-Match related words and concepts
-in a fun learning game.
-</p>
-
-<button class="game-btn">
-
-Coming Soon 🚀
-
-</button>
-
-</div>
-
-
-<div class="game-card">
-
-<div class="icon">🏆</div>
-
-<h2>Daily Challenge</h2>
-
-<p>
-A new educational challenge
-every day!
-</p>
-
-<button class="game-btn">
-
-Coming Soon 🚀
-
-</button>
-
-</div>
-
-
-</div>
-
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-© 2026 Maahi Ki Funshala ❤️
+    © 2026 Maahi Ki Funshala ❤️
 
 </footer>
+
+
+
+<script>
+
+    function comingSoon() {
+
+        alert(
+            "🚀 This game is coming soon!"
+        );
+
+    }
+
+</script>
 
 
 </body>

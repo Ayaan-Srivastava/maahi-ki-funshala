@@ -1,67 +1,37 @@
-// ============================================
-// 🌈 Maahi Ki Funshala
-// COMPLETE JAVASCRIPT
-// QUIZ + TYPING TEST
-// ============================================
+/* =========================================================
+   MAAHI KI FUNSHALA
+   COMPLETE SCRIPT.JS
+   Quiz + Typing Test
+========================================================= */
 
 
+/* =========================================================
+   QUIZ SECTION
+========================================================= */
 
-// ============================================================
-// 🧠 SUBJECT-WISE QUIZ QUESTIONS
-// ============================================================
-
-const subjectQuestions = {
-
-    // ========================================================
-    // 📘 ENGLISH - GRAMMAR ONLY
-    // ========================================================
+const quizQuestions = {
 
     English: [
-
         {
-            question: "Which word is a noun?",
+            question: "Choose the correct sentence.",
             options: [
-                "Run",
-                "Beautiful",
-                "School",
-                "Quickly"
+                "She go to school every day.",
+                "She goes to school every day.",
+                "She going to school every day.",
+                "She gone to school every day."
             ],
-            answer: "School"
+            answer: 1
         },
-
         {
-            question: "Which word is a verb?",
-            options: [
-                "Jump",
-                "Beautiful",
-                "Book",
-                "Happy"
-            ],
-            answer: "Jump"
-        },
-
-        {
-            question: "Which word is an adjective?",
-            options: [
-                "Run",
-                "Beautiful",
-                "Slowly",
-                "School"
-            ],
-            answer: "Beautiful"
-        },
-
-        {
-            question: "What is the plural of 'Child'?",
+            question: "Choose the correct plural of 'Child'.",
             options: [
                 "Childs",
-                "Children",
                 "Childes",
-                "Child"
+                "Children",
+                "Childrens"
             ],
-            answer: "Children"
+            answer: 2
         },
-
         {
             question: "What is the past tense of 'Go'?",
             options: [
@@ -70,129 +40,82 @@ const subjectQuestions = {
                 "Went",
                 "Going"
             ],
-            answer: "Went"
+            answer: 2
         },
-
         {
-            question: "Which punctuation mark is used at the end of a question?",
+            question: "Identify the noun: 'The dog is barking.'",
             options: [
-                ".",
-                ",",
-                "?",
-                "!"
+                "The",
+                "Dog",
+                "Is",
+                "Barking"
             ],
-            answer: "?"
+            answer: 1
         },
-
         {
-            question: "Choose the correct spelling.",
-            options: [
-                "Beautifull",
-                "Beautiful",
-                "Beutiful",
-                "Beautifol"
-            ],
-            answer: "Beautiful"
-        },
-
-        {
-            question: "Which article is used before 'apple'?",
+            question: "Choose the correct article: ___ apple.",
             options: [
                 "A",
                 "An",
                 "The",
                 "No article"
             ],
-            answer: "An"
+            answer: 1
         },
-
         {
-            question: "Which sentence is grammatically correct?",
+            question: "Which word is an adjective?",
             options: [
-                "She go to school.",
-                "She going school.",
-                "She goes to school.",
-                "She gone to school."
+                "Beautiful",
+                "Run",
+                "Quickly",
+                "School"
             ],
-            answer: "She goes to school."
+            answer: 0
         },
-
         {
-            question: "Choose the correct pronoun: 'Rahul is a student. ___ is intelligent.'",
+            question: "Choose the correct pronoun: 'Riya is a student. ___ is intelligent.'",
             options: [
                 "He",
                 "She",
                 "It",
                 "They"
             ],
-            answer: "He"
+            answer: 1
         },
-
         {
-            question: "Which word is an adverb?",
+            question: "What is the opposite of 'Happy'?",
             options: [
-                "Quickly",
-                "Quick",
-                "Runner",
-                "Run"
+                "Joyful",
+                "Sad",
+                "Excited",
+                "Cheerful"
             ],
-            answer: "Quickly"
+            answer: 1
         },
-
         {
-            question: "Choose the correct preposition: 'The book is ___ the table.'",
+            question: "Which is a verb?",
             options: [
-                "On",
-                "At",
-                "By",
-                "To"
+                "Beautiful",
+                "Run",
+                "Blue",
+                "Chair"
             ],
-            answer: "On"
+            answer: 1
         },
-
         {
-            question: "Which is a proper noun?",
+            question: "Choose the correct spelling.",
             options: [
-                "City",
-                "Boy",
-                "India",
-                "Country"
+                "Beautifull",
+                "Beutiful",
+                "Beautiful",
+                "Beautifol"
             ],
-            answer: "India"
-        },
-
-        {
-            question: "Choose the correct form: 'They ___ playing cricket.'",
-            options: [
-                "Is",
-                "Are",
-                "Am",
-                "Be"
-            ],
-            answer: "Are"
-        },
-
-        {
-            question: "What is the opposite of 'Hot'?",
-            options: [
-                "Warm",
-                "Cold",
-                "Heat",
-                "Fire"
-            ],
-            answer: "Cold"
+            answer: 2
         }
-
     ],
 
 
-
-    // ========================================================
-    // 🪔 HINDI
-    // ========================================================
-
     Hindi: [
-
         {
             question: "हिंदी वर्णमाला में कितने स्वर माने जाते हैं?",
             options: [
@@ -201,140 +124,102 @@ const subjectQuestions = {
                 "12",
                 "13"
             ],
-            answer: "11"
+            answer: 1
         },
-
-        {
-            question: "'सुंदर' का विलोम शब्द क्या है?",
-            options: [
-                "अच्छा",
-                "कुरूप",
-                "मधुर",
-                "सरल"
-            ],
-            answer: "कुरूप"
-        },
-
         {
             question: "'जल' का पर्यायवाची शब्द क्या है?",
             options: [
-                "आग",
+                "अग्नि",
                 "पानी",
-                "हवा",
+                "वायु",
                 "धरती"
             ],
-            answer: "पानी"
+            answer: 1
         },
-
         {
-            question: "'लड़का' का स्त्रीलिंग क्या है?",
-            options: [
-                "लड़की",
-                "बालक",
-                "बच्चा",
-                "नारी"
-            ],
-            answer: "लड़की"
-        },
-
-        {
-            question: "'राम स्कूल जाता है।' इस वाक्य में क्रिया कौन सी है?",
-            options: [
-                "राम",
-                "स्कूल",
-                "जाता है",
-                "है"
-            ],
-            answer: "जाता है"
-        },
-
-        {
-            question: "'दिन' का विलोम क्या है?",
+            question: "'दिन' का विलोम शब्द क्या है?",
             options: [
                 "सुबह",
                 "शाम",
                 "रात",
                 "दोपहर"
             ],
-            answer: "रात"
+            answer: 2
         },
-
         {
-            question: "'आकाश' का पर्यायवाची क्या है?",
+            question: "'सुंदर' का विलोम क्या है?",
             options: [
-                "गगन",
-                "जल",
-                "पर्वत",
-                "धरती"
+                "अच्छा",
+                "कुरूप",
+                "मीठा",
+                "साफ"
             ],
-            answer: "गगन"
+            answer: 1
         },
-
         {
-            question: "'पुस्तक' का अर्थ क्या है?",
+            question: "'विद्यालय' का अर्थ क्या है?",
             options: [
-                "किताब",
-                "कलम",
-                "कागज",
-                "विद्यालय"
+                "घर",
+                "बाजार",
+                "स्कूल",
+                "अस्पताल"
             ],
-            answer: "किताब"
+            answer: 2
         },
-
         {
-            question: "'मीठा' किस प्रकार का शब्द है?",
+            question: "'कमल' क्या है?",
             options: [
-                "संज्ञा",
-                "सर्वनाम",
-                "विशेषण",
-                "क्रिया"
+                "पक्षी",
+                "फूल",
+                "फल",
+                "जानवर"
             ],
-            answer: "विशेषण"
+            answer: 1
         },
-
         {
-            question: "हिंदी दिवस कब मनाया जाता है?",
+            question: "'गाय' का बहुवचन क्या है?",
             options: [
-                "15 अगस्त",
-                "26 जनवरी",
-                "14 सितंबर",
-                "2 अक्टूबर"
+                "गायों",
+                "गाय",
+                "गाया",
+                "गायें"
             ],
-            answer: "14 सितंबर"
+            answer: 3
         },
-
         {
-            question: "'सूर्य' का पर्यायवाची शब्द क्या है?",
+            question: "'सूर्य' का पर्यायवाची क्या है?",
             options: [
                 "चंद्रमा",
                 "रवि",
-                "जल",
-                "पवन"
+                "बादल",
+                "तारा"
             ],
-            answer: "रवि"
+            answer: 1
         },
-
         {
-            question: "'अंधकार' का विलोम क्या है?",
+            question: "'बड़ा' का विलोम क्या है?",
             options: [
-                "रात",
-                "प्रकाश",
-                "छाया",
-                "काला"
+                "लंबा",
+                "छोटा",
+                "ऊँचा",
+                "मोटा"
             ],
-            answer: "प्रकाश"
+            answer: 1
+        },
+        {
+            question: "हिंदी भाषा की लिपि कौन-सी है?",
+            options: [
+                "रोमन",
+                "देवनागरी",
+                "गुरुमुखी",
+                "उर्दू"
+            ],
+            answer: 1
         }
-
     ],
 
 
-
-    // ========================================================
-    // 🔢 MATHEMATICS
-    // ========================================================
-
     Mathematics: [
-
         {
             question: "What is 5 + 7?",
             options: [
@@ -343,20 +228,18 @@ const subjectQuestions = {
                 "12",
                 "13"
             ],
-            answer: "12"
+            answer: 2
         },
-
         {
-            question: "What is 10 × 5?",
+            question: "What is 8 × 6?",
             options: [
-                "40",
-                "50",
-                "60",
-                "55"
+                "42",
+                "48",
+                "54",
+                "56"
             ],
-            answer: "50"
+            answer: 1
         },
-
         {
             question: "What is 100 ÷ 10?",
             options: [
@@ -365,31 +248,18 @@ const subjectQuestions = {
                 "20",
                 "25"
             ],
-            answer: "10"
+            answer: 1
         },
-
         {
-            question: "What is the square of 5?",
+            question: "What is the square of 9?",
             options: [
-                "10",
-                "15",
-                "20",
-                "25"
+                "18",
+                "27",
+                "81",
+                "90"
             ],
-            answer: "25"
+            answer: 2
         },
-
-        {
-            question: "How many sides does a triangle have?",
-            options: [
-                "2",
-                "3",
-                "4",
-                "5"
-            ],
-            answer: "3"
-        },
-
         {
             question: "What is 15 - 8?",
             options: [
@@ -398,453 +268,62 @@ const subjectQuestions = {
                 "7",
                 "8"
             ],
-            answer: "7"
+            answer: 2
         },
-
         {
-            question: "What is half of 20?",
+            question: "How many sides does a triangle have?",
             options: [
-                "5",
-                "10",
-                "15",
-                "20"
+                "2",
+                "3",
+                "4",
+                "5"
             ],
-            answer: "10"
+            answer: 1
         },
-
         {
-            question: "What is 9 × 9?",
+            question: "What is half of 50?",
             options: [
-                "72",
-                "81",
-                "90",
-                "99"
-            ],
-            answer: "81"
-        },
-
-        {
-            question: "How many degrees are there in a right angle?",
-            options: [
-                "45°",
-                "60°",
-                "90°",
-                "180°"
-            ],
-            answer: "90°"
-        },
-
-        {
-            question: "What is 25% of 100?",
-            options: [
-                "10",
                 "20",
                 "25",
-                "50"
+                "30",
+                "35"
             ],
-            answer: "25"
+            answer: 1
         },
-
         {
             question: "What is 12 × 12?",
             options: [
                 "124",
+                "134",
                 "144",
-                "154",
-                "164"
+                "154"
             ],
-            answer: "144"
+            answer: 2
         },
-
         {
-            question: "What is the perimeter of a square with side 5 cm?",
+            question: "Which number is even?",
             options: [
-                "10 cm",
-                "15 cm",
-                "20 cm",
-                "25 cm"
+                "17",
+                "21",
+                "29",
+                "24"
             ],
-            answer: "20 cm"
+            answer: 3
+        },
+        {
+            question: "What is 50% of 100?",
+            options: [
+                "25",
+                "40",
+                "50",
+                "75"
+            ],
+            answer: 2
         }
-
     ],
 
 
-
-    // ========================================================
-    // 🔬 SCIENCE
-    // ========================================================
-
-    Science: {
-
-        // ====================================================
-        // 🟢 EASY
-        // ====================================================
-
-        Easy: [
-
-            {
-                question: "Which planet is known as the Red Planet?",
-                options: [
-                    "Earth",
-                    "Mars",
-                    "Jupiter",
-                    "Venus"
-                ],
-                answer: "Mars"
-            },
-
-            {
-                question: "What gas do humans need to breathe?",
-                options: [
-                    "Carbon Dioxide",
-                    "Oxygen",
-                    "Nitrogen",
-                    "Hydrogen"
-                ],
-                answer: "Oxygen"
-            },
-
-            {
-                question: "How many planets are there in our Solar System?",
-                options: [
-                    "7",
-                    "8",
-                    "9",
-                    "10"
-                ],
-                answer: "8"
-            },
-
-            {
-                question: "Which organ pumps blood through the body?",
-                options: [
-                    "Brain",
-                    "Heart",
-                    "Lungs",
-                    "Kidney"
-                ],
-                answer: "Heart"
-            },
-
-            {
-                question: "What is the main source of energy for Earth?",
-                options: [
-                    "Moon",
-                    "Sun",
-                    "Stars",
-                    "Wind"
-                ],
-                answer: "Sun"
-            },
-
-            {
-                question: "Which part of a plant absorbs water?",
-                options: [
-                    "Leaf",
-                    "Flower",
-                    "Root",
-                    "Stem"
-                ],
-                answer: "Root"
-            },
-
-            {
-                question: "Which is the nearest star to Earth?",
-                options: [
-                    "Moon",
-                    "Sun",
-                    "Mars",
-                    "Venus"
-                ],
-                answer: "Sun"
-            },
-
-            {
-                question: "Which organ helps us to see?",
-                options: [
-                    "Ear",
-                    "Eye",
-                    "Nose",
-                    "Hand"
-                ],
-                answer: "Eye"
-            },
-
-            {
-                question: "Water freezes at what temperature?",
-                options: [
-                    "0°C",
-                    "10°C",
-                    "50°C",
-                    "100°C"
-                ],
-                answer: "0°C"
-            },
-
-            {
-                question: "Which gas do plants take in during photosynthesis?",
-                options: [
-                    "Oxygen",
-                    "Nitrogen",
-                    "Carbon Dioxide",
-                    "Hydrogen"
-                ],
-                answer: "Carbon Dioxide"
-            }
-
-        ],
-
-
-
-        // ====================================================
-        // 🟡 MEDIUM
-        // ====================================================
-
-        Medium: [
-
-            {
-                question: "What is the largest organ in the human body?",
-                options: [
-                    "Heart",
-                    "Brain",
-                    "Skin",
-                    "Liver"
-                ],
-                answer: "Skin"
-            },
-
-            {
-                question: "What force pulls objects toward Earth?",
-                options: [
-                    "Friction",
-                    "Gravity",
-                    "Magnetism",
-                    "Pressure"
-                ],
-                answer: "Gravity"
-            },
-
-            {
-                question: "Which organ is mainly responsible for filtering waste from blood?",
-                options: [
-                    "Heart",
-                    "Kidney",
-                    "Lung",
-                    "Stomach"
-                ],
-                answer: "Kidney"
-            },
-
-            {
-                question: "Which process do plants use to make food?",
-                options: [
-                    "Respiration",
-                    "Photosynthesis",
-                    "Digestion",
-                    "Transpiration"
-                ],
-                answer: "Photosynthesis"
-            },
-
-            {
-                question: "Which vitamin is mainly produced in the skin in sunlight?",
-                options: [
-                    "Vitamin A",
-                    "Vitamin B",
-                    "Vitamin C",
-                    "Vitamin D"
-                ],
-                answer: "Vitamin D"
-            },
-
-            {
-                question: "Which blood cells help fight infections?",
-                options: [
-                    "Red blood cells",
-                    "White blood cells",
-                    "Platelets",
-                    "Plasma"
-                ],
-                answer: "White blood cells"
-            },
-
-            {
-                question: "What is the boiling point of water at normal pressure?",
-                options: [
-                    "50°C",
-                    "75°C",
-                    "100°C",
-                    "150°C"
-                ],
-                answer: "100°C"
-            },
-
-            {
-                question: "Which planet is the largest in our Solar System?",
-                options: [
-                    "Earth",
-                    "Mars",
-                    "Jupiter",
-                    "Saturn"
-                ],
-                answer: "Jupiter"
-            },
-
-            {
-                question: "What is the basic unit of life?",
-                options: [
-                    "Tissue",
-                    "Organ",
-                    "Cell",
-                    "Atom"
-                ],
-                answer: "Cell"
-            },
-
-            {
-                question: "Which instrument is used to measure temperature?",
-                options: [
-                    "Barometer",
-                    "Thermometer",
-                    "Speedometer",
-                    "Ammeter"
-                ],
-                answer: "Thermometer"
-            }
-
-        ],
-
-
-
-        // ====================================================
-        // 🔴 HARD
-        // ====================================================
-
-        Hard: [
-
-            {
-                question: "Which part of the cell controls most of its activities?",
-                options: [
-                    "Cell wall",
-                    "Nucleus",
-                    "Cytoplasm",
-                    "Vacuole"
-                ],
-                answer: "Nucleus"
-            },
-
-            {
-                question: "Which gas is most abundant in Earth's atmosphere?",
-                options: [
-                    "Oxygen",
-                    "Nitrogen",
-                    "Carbon Dioxide",
-                    "Hydrogen"
-                ],
-                answer: "Nitrogen"
-            },
-
-            {
-                question: "Which organelle is known as the powerhouse of the cell?",
-                options: [
-                    "Nucleus",
-                    "Ribosome",
-                    "Mitochondria",
-                    "Vacuole"
-                ],
-                answer: "Mitochondria"
-            },
-
-            {
-                question: "What is the SI unit of force?",
-                options: [
-                    "Joule",
-                    "Watt",
-                    "Newton",
-                    "Pascal"
-                ],
-                answer: "Newton"
-            },
-
-            {
-                question: "Which blood group is commonly called the universal donor for red blood cells?",
-                options: [
-                    "AB+",
-                    "O−",
-                    "A+",
-                    "B+"
-                ],
-                answer: "O−"
-            },
-
-            {
-                question: "Which layer of the atmosphere contains most weather phenomena?",
-                options: [
-                    "Stratosphere",
-                    "Troposphere",
-                    "Mesosphere",
-                    "Thermosphere"
-                ],
-                answer: "Troposphere"
-            },
-
-            {
-                question: "Which type of energy is stored in food?",
-                options: [
-                    "Chemical energy",
-                    "Light energy",
-                    "Sound energy",
-                    "Nuclear energy"
-                ],
-                answer: "Chemical energy"
-            },
-
-            {
-                question: "What is the process by which liquid changes into gas?",
-                options: [
-                    "Condensation",
-                    "Freezing",
-                    "Evaporation",
-                    "Melting"
-                ],
-                answer: "Evaporation"
-            },
-
-            {
-                question: "Which planet has the most prominent ring system?",
-                options: [
-                    "Mars",
-                    "Earth",
-                    "Saturn",
-                    "Mercury"
-                ],
-                answer: "Saturn"
-            },
-
-            {
-                question: "Which force opposes motion between two surfaces in contact?",
-                options: [
-                    "Gravity",
-                    "Friction",
-                    "Magnetism",
-                    "Buoyancy"
-                ],
-                answer: "Friction"
-            }
-
-        ]
-
-    },
-
-
-
-    // ========================================================
-    // 🌍 SOCIAL SCIENCE
-    // ========================================================
-
     "Social Science": [
-
         {
             question: "What is the capital of India?",
             options: [
@@ -853,9 +332,8 @@ const subjectQuestions = {
                 "Kolkata",
                 "Chennai"
             ],
-            answer: "New Delhi"
+            answer: 1
         },
-
         {
             question: "Who is known as the Father of the Nation in India?",
             options: [
@@ -864,9 +342,18 @@ const subjectQuestions = {
                 "Sardar Patel",
                 "Subhash Chandra Bose"
             ],
-            answer: "Mahatma Gandhi"
+            answer: 1
         },
-
+        {
+            question: "Which is the largest continent?",
+            options: [
+                "Africa",
+                "Europe",
+                "Asia",
+                "Australia"
+            ],
+            answer: 2
+        },
         {
             question: "How many states are there in India?",
             options: [
@@ -875,31 +362,8 @@ const subjectQuestions = {
                 "28",
                 "29"
             ],
-            answer: "28"
+            answer: 2
         },
-
-        {
-            question: "Which is the largest state of India by area?",
-            options: [
-                "Uttar Pradesh",
-                "Rajasthan",
-                "Maharashtra",
-                "Madhya Pradesh"
-            ],
-            answer: "Rajasthan"
-        },
-
-        {
-            question: "Who was the first Prime Minister of India?",
-            options: [
-                "Mahatma Gandhi",
-                "Jawaharlal Nehru",
-                "Sardar Patel",
-                "Dr. Rajendra Prasad"
-            ],
-            answer: "Jawaharlal Nehru"
-        },
-
         {
             question: "Which is the longest river in India?",
             options: [
@@ -908,85 +372,28 @@ const subjectQuestions = {
                 "Godavari",
                 "Narmada"
             ],
-            answer: "Ganga"
+            answer: 1
         },
-
         {
-            question: "When is Independence Day celebrated in India?",
+            question: "Who was the first Prime Minister of India?",
             options: [
-                "26 January",
-                "15 August",
-                "2 October",
-                "14 November"
+                "Mahatma Gandhi",
+                "Sardar Patel",
+                "Jawaharlal Nehru",
+                "Rajendra Prasad"
             ],
-            answer: "15 August"
+            answer: 2
         },
-
         {
-            question: "When is Republic Day celebrated in India?",
-            options: [
-                "15 August",
-                "26 January",
-                "2 October",
-                "14 November"
-            ],
-            answer: "26 January"
-        },
-
-        {
-            question: "Which continent is India located in?",
-            options: [
-                "Europe",
-                "Asia",
-                "Africa",
-                "Australia"
-            ],
-            answer: "Asia"
-        },
-
-        {
-            question: "Which is the largest ocean in the world?",
+            question: "Which ocean is south of India?",
             options: [
                 "Atlantic Ocean",
-                "Indian Ocean",
                 "Pacific Ocean",
+                "Indian Ocean",
                 "Arctic Ocean"
             ],
-            answer: "Pacific Ocean"
+            answer: 2
         },
-
-        {
-            question: "Who was the first President of India?",
-            options: [
-                "Dr. Rajendra Prasad",
-                "Jawaharlal Nehru",
-                "Sardar Patel",
-                "Mahatma Gandhi"
-            ],
-            answer: "Dr. Rajendra Prasad"
-        },
-
-        {
-            question: "Which movement was launched by Mahatma Gandhi in 1942?",
-            options: [
-                "Non-Cooperation Movement",
-                "Quit India Movement",
-                "Civil Disobedience Movement",
-                "Swadeshi Movement"
-            ],
-            answer: "Quit India Movement"
-        }
-
-    ],
-
-
-
-    // ========================================================
-    // 🌐 GENERAL STUDIES / GS
-    // ========================================================
-
-    "General Studies": [
-
         {
             question: "What is the national animal of India?",
             options: [
@@ -995,97 +402,102 @@ const subjectQuestions = {
                 "Elephant",
                 "Peacock"
             ],
-            answer: "Tiger"
+            answer: 1
         },
-
         {
-            question: "What is the national bird of India?",
+            question: "Which planet is known as the Red Planet?",
             options: [
-                "Sparrow",
-                "Peacock",
-                "Eagle",
-                "Parrot"
+                "Earth",
+                "Mars",
+                "Jupiter",
+                "Venus"
             ],
-            answer: "Peacock"
+            answer: 1
         },
-
         {
-            question: "What is the currency of Japan?",
+            question: "What is the currency of India?",
             options: [
-                "Yuan",
-                "Won",
-                "Yen",
-                "Dollar"
+                "Dollar",
+                "Pound",
+                "Rupee",
+                "Euro"
             ],
-            answer: "Yen"
-        },
+            answer: 2
+        }
+    ],
 
+
+    "General Studies": [
         {
-            question: "Which is the largest continent in the world?",
+            question: "Which is the largest planet in our Solar System?",
             options: [
-                "Africa",
-                "Asia",
-                "Europe",
-                "Australia"
+                "Earth",
+                "Mars",
+                "Jupiter",
+                "Saturn"
             ],
-            answer: "Asia"
+            answer: 2
         },
-
-        {
-            question: "Which is the smallest continent?",
-            options: [
-                "Asia",
-                "Europe",
-                "Australia",
-                "Africa"
-            ],
-            answer: "Australia"
-        },
-
         {
             question: "How many days are there in a leap year?",
             options: [
                 "365",
                 "366",
                 "364",
-                "367"
+                "360"
             ],
-            answer: "366"
+            answer: 1
         },
-
         {
-            question: "Which is the largest planet in our Solar System?",
+            question: "Which gas do humans need to breathe?",
             options: [
-                "Earth",
-                "Jupiter",
-                "Saturn",
-                "Neptune"
+                "Carbon dioxide",
+                "Oxygen",
+                "Nitrogen",
+                "Hydrogen"
             ],
-            answer: "Jupiter"
+            answer: 1
         },
-
         {
-            question: "Who wrote the Indian national anthem?",
+            question: "How many continents are there?",
             options: [
-                "Mahatma Gandhi",
-                "Rabindranath Tagore",
-                "Jawaharlal Nehru",
-                "Bankim Chandra Chattopadhyay"
+                "5",
+                "6",
+                "7",
+                "8"
             ],
-            answer: "Rabindranath Tagore"
+            answer: 2
         },
-
         {
-            question: "Which is the highest mountain peak in the world?",
+            question: "Which is the fastest land animal?",
             options: [
-                "K2",
-                "Mount Everest",
-                "Kangchenjunga",
-                "Nanda Devi"
+                "Lion",
+                "Tiger",
+                "Cheetah",
+                "Horse"
             ],
-            answer: "Mount Everest"
+            answer: 2
         },
-
+        {
+            question: "Which organ pumps blood in the human body?",
+            options: [
+                "Brain",
+                "Heart",
+                "Lungs",
+                "Kidney"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which is the smallest prime number?",
+            options: [
+                "0",
+                "1",
+                "2",
+                "3"
+            ],
+            answer: 2
+        },
         {
             question: "How many colors are there in a rainbow?",
             options: [
@@ -1094,887 +506,782 @@ const subjectQuestions = {
                 "7",
                 "8"
             ],
-            answer: "7"
+            answer: 2
         },
-
         {
-            question: "Which planet is known as the Blue Planet?",
+            question: "Which device is used to type on a computer?",
             options: [
+                "Monitor",
+                "Keyboard",
+                "Speaker",
+                "Printer"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which is the nearest star to Earth?",
+            options: [
+                "Moon",
+                "Sun",
                 "Mars",
-                "Earth",
-                "Venus",
-                "Neptune"
+                "Sirius"
             ],
-            answer: "Earth"
-        },
-
-        {
-            question: "Which is the fastest land animal?",
-            options: [
-                "Lion",
-                "Horse",
-                "Cheetah",
-                "Tiger"
-            ],
-            answer: "Cheetah"
-        },
-
-        {
-            question: "Which country is known as the Land of the Rising Sun?",
-            options: [
-                "China",
-                "Japan",
-                "India",
-                "Korea"
-            ],
-            answer: "Japan"
-        },
-
-        {
-            question: "How many hours are there in one day?",
-            options: [
-                "12",
-                "18",
-                "24",
-                "36"
-            ],
-            answer: "24"
+            answer: 1
         }
-
     ]
-
 };
 
 
+/* =========================================================
+   SCIENCE QUESTIONS
+========================================================= */
 
-// ============================================================
-// 🧠 QUIZ VARIABLES
-// ============================================================
+const scienceQuestions = {
 
-let quizQuestions = [];
+    Easy: [
+        {
+            question: "Which organ helps us to breathe?",
+            options: [
+                "Heart",
+                "Lungs",
+                "Brain",
+                "Stomach"
+            ],
+            answer: 1
+        },
+        {
+            question: "What do plants need to make food?",
+            options: [
+                "Sunlight",
+                "Plastic",
+                "Iron",
+                "Stone"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which is a source of light?",
+            options: [
+                "Sun",
+                "Table",
+                "Chair",
+                "Book"
+            ],
+            answer: 0
+        },
+        {
+            question: "Water freezes at:",
+            options: [
+                "0°C",
+                "10°C",
+                "50°C",
+                "100°C"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which planet do we live on?",
+            options: [
+                "Mars",
+                "Venus",
+                "Earth",
+                "Jupiter"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which sense organ helps us see?",
+            options: [
+                "Ear",
+                "Eye",
+                "Nose",
+                "Skin"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which gas do plants release during photosynthesis?",
+            options: [
+                "Oxygen",
+                "Carbon dioxide",
+                "Hydrogen",
+                "Nitrogen"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which animal is a mammal?",
+            options: [
+                "Cow",
+                "Frog",
+                "Fish",
+                "Snake"
+            ],
+            answer: 0
+        },
+        {
+            question: "What is the natural satellite of Earth?",
+            options: [
+                "Sun",
+                "Moon",
+                "Mars",
+                "Venus"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which part of a plant absorbs water?",
+            options: [
+                "Flower",
+                "Leaf",
+                "Root",
+                "Fruit"
+            ],
+            answer: 2
+        }
+    ],
 
-let currentQuestion = 0;
 
-let score = 0;
+    Medium: [
+        {
+            question: "Which process helps plants make food?",
+            options: [
+                "Respiration",
+                "Photosynthesis",
+                "Digestion",
+                "Evaporation"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which blood cells fight infections?",
+            options: [
+                "Red blood cells",
+                "White blood cells",
+                "Platelets",
+                "Plasma"
+            ],
+            answer: 1
+        },
+        {
+            question: "What is the boiling point of water at normal pressure?",
+            options: [
+                "50°C",
+                "75°C",
+                "100°C",
+                "150°C"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which force pulls objects toward Earth?",
+            options: [
+                "Friction",
+                "Gravity",
+                "Magnetic force",
+                "Electric force"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which vitamin is mainly produced by sunlight exposure?",
+            options: [
+                "Vitamin A",
+                "Vitamin B",
+                "Vitamin C",
+                "Vitamin D"
+            ],
+            answer: 3
+        },
+        {
+            question: "Which organ filters waste from the blood?",
+            options: [
+                "Heart",
+                "Kidney",
+                "Lungs",
+                "Brain"
+            ],
+            answer: 1
+        },
+        {
+            question: "What is the basic unit of life?",
+            options: [
+                "Tissue",
+                "Organ",
+                "Cell",
+                "Bone"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which gas is most abundant in Earth's atmosphere?",
+            options: [
+                "Oxygen",
+                "Nitrogen",
+                "Carbon dioxide",
+                "Hydrogen"
+            ],
+            answer: 1
+        },
+        {
+            question: "What type of energy does a moving object have?",
+            options: [
+                "Potential energy",
+                "Kinetic energy",
+                "Chemical energy",
+                "Solar energy"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which metal is liquid at room temperature?",
+            options: [
+                "Iron",
+                "Copper",
+                "Mercury",
+                "Aluminium"
+            ],
+            answer: 2
+        }
+    ],
+
+
+    Hard: [
+        {
+            question: "What is the SI unit of force?",
+            options: [
+                "Joule",
+                "Newton",
+                "Watt",
+                "Pascal"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which organelle is called the powerhouse of the cell?",
+            options: [
+                "Nucleus",
+                "Ribosome",
+                "Mitochondria",
+                "Vacuole"
+            ],
+            answer: 2
+        },
+        {
+            question: "What is the chemical formula of water?",
+            options: [
+                "CO₂",
+                "H₂O",
+                "O₂",
+                "H₂"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which law explains action and reaction?",
+            options: [
+                "Newton's First Law",
+                "Newton's Second Law",
+                "Newton's Third Law",
+                "Law of Gravitation"
+            ],
+            answer: 2
+        },
+        {
+            question: "What is the pH of pure water?",
+            options: [
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which particle has a negative charge?",
+            options: [
+                "Proton",
+                "Neutron",
+                "Electron",
+                "Nucleus"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which blood group is commonly called the universal donor?",
+            options: [
+                "A+",
+                "B+",
+                "AB+",
+                "O−"
+            ],
+            answer: 3
+        },
+        {
+            question: "What is the approximate speed of light in vacuum?",
+            options: [
+                "3 × 10⁶ m/s",
+                "3 × 10⁸ m/s",
+                "3 × 10¹⁰ m/s",
+                "3 × 10⁴ m/s"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which part of the brain controls balance?",
+            options: [
+                "Cerebrum",
+                "Cerebellum",
+                "Medulla",
+                "Hypothalamus"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which type of bond involves sharing electrons?",
+            options: [
+                "Ionic bond",
+                "Covalent bond",
+                "Metallic bond",
+                "Hydrogen bond"
+            ],
+            answer: 1
+        }
+    ]
+};
+
+
+/* =========================================================
+   QUIZ VARIABLES
+========================================================= */
 
 let selectedSubject = "";
-
 let selectedScienceLevel = "";
 
-const totalQuestions = 10;
+let currentQuestions = [];
+let currentQuestionIndex = 0;
+let quizScore = 0;
+
+let selectedAnswer = false;
 
 
-
-// ============================================================
-// 🔀 SHUFFLE
-// ============================================================
-
-function shuffle(array) {
-
-    let result = [...array];
-
-    for (
-        let i = result.length - 1;
-        i > 0;
-        i--
-    ) {
-
-        let j =
-            Math.floor(
-                Math.random() * (i + 1)
-            );
-
-        [
-            result[i],
-            result[j]
-        ] =
-        [
-            result[j],
-            result[i]
-        ];
-
-    }
-
-    return result;
-
-}
-
-
-
-// ============================================================
-// 📚 SELECT SUBJECT
-// ============================================================
+/* =========================================================
+   SELECT SUBJECT
+========================================================= */
 
 function selectSubject(subject, button) {
 
     selectedSubject = subject;
 
-    selectedScienceLevel = "";
-
-
-    // Remove active from all subjects
-
-    let buttons =
-        document.querySelectorAll(
-            ".subject-btn"
-        );
-
-    buttons.forEach(
-        function(btn) {
-
+    document.querySelectorAll(".subject-btn")
+        .forEach(btn => {
             btn.classList.remove("active");
+        });
 
-        }
-    );
-
-
-    // Add active
-
-    button.classList.add("active");
-
-
-    // Science level box
-
-    let scienceBox =
-        document.getElementById(
-            "scienceLevelSelection"
-        );
-
-
-    if (scienceBox) {
-
-        if (subject === "Science") {
-
-            scienceBox.style.display =
-                "block";
-
-        }
-
-        else {
-
-            scienceBox.style.display =
-                "none";
-
-        }
-
+    if (button) {
+        button.classList.add("active");
     }
 
 
-    // Reset Science buttons
+    /* Science needs level selection */
 
-    let levelButtons =
-        document.querySelectorAll(
-            ".level-btn"
-        );
+    if (subject === "Science") {
 
-    levelButtons.forEach(
-        function(btn) {
+        const scienceBox =
+            document.getElementById("scienceLevelSelection");
 
-            btn.classList.remove("active");
-
+        if (scienceBox) {
+            scienceBox.style.display = "block";
         }
-    );
 
+        return;
+    }
+
+
+    /* Other subjects start immediately */
+
+    startQuiz(subject);
 }
 
 
-
-// ============================================================
-// 🔬 SELECT SCIENCE LEVEL
-// ============================================================
+/* =========================================================
+   SCIENCE LEVEL
+========================================================= */
 
 function selectScienceLevel(level, button) {
 
     selectedScienceLevel = level;
 
-
-    let buttons =
-        document.querySelectorAll(
-            ".level-btn"
-        );
-
-
-    buttons.forEach(
-        function(btn) {
-
+    document.querySelectorAll(".level-btn")
+        .forEach(btn => {
             btn.classList.remove("active");
+        });
 
-        }
-    );
+    if (button) {
+        button.classList.add("active");
+    }
 
-
-    button.classList.add("active");
-
+    startQuiz("Science", level);
 }
 
 
+/* =========================================================
+   START QUIZ
+========================================================= */
 
-// ============================================================
-// 🚀 START SELECTED QUIZ
-// ============================================================
+function startQuiz(subject, scienceLevel = null) {
 
-function beginSelectedQuiz() {
+    clearQuizResult();
 
-    // No subject
+    currentQuestionIndex = 0;
+    quizScore = 0;
+    selectedAnswer = false;
 
-    if (selectedSubject === "") {
 
-        alert(
-            "Please select a subject first! 📚"
-        );
+    if (subject === "Science") {
 
+        currentQuestions =
+            scienceQuestions[scienceLevel];
+
+        selectedScienceLevel = scienceLevel;
+
+    } else {
+
+        currentQuestions =
+            quizQuestions[subject];
+
+    }
+
+
+    if (!currentQuestions ||
+        currentQuestions.length === 0) {
+
+        alert("Questions are not available yet.");
         return;
-
     }
 
 
-    // Science needs level
+    const subjectSelection =
+        document.getElementById("subjectSelection");
 
-    if (
-        selectedSubject === "Science" &&
-        selectedScienceLevel === ""
-    ) {
-
-        alert(
-            "Please select a Science level! 🔬"
-        );
-
-        return;
-
-    }
-
-
-    let subjectData;
-
-
-    // Science
-
-    if (selectedSubject === "Science") {
-
-        subjectData =
-            subjectQuestions.Science[
-                selectedScienceLevel
-            ];
-
-    }
-
-    // Other subjects
-
-    else {
-
-        subjectData =
-            subjectQuestions[
-                selectedSubject
-            ];
-
-    }
-
-
-    if (
-        !subjectData ||
-        subjectData.length === 0
-    ) {
-
-        alert(
-            "Questions are not available for this section yet."
-        );
-
-        return;
-
-    }
-
-
-    quizQuestions =
-        shuffle(subjectData)
-        .slice(
-            0,
-            Math.min(
-                totalQuestions,
-                subjectData.length
-            )
-        );
-
-
-    currentQuestion = 0;
-
-    score = 0;
-
-
-    // Hide subject selection
-
-    let subjectSelection =
-        document.getElementById(
-            "subjectSelection"
-        );
+    const quizArea =
+        document.getElementById("quizArea");
 
 
     if (subjectSelection) {
-
-        subjectSelection.style.display =
-            "none";
-
+        subjectSelection.style.display = "none";
     }
-
-
-    // Show quiz
-
-    let quizArea =
-        document.getElementById(
-            "quizArea"
-        );
-
 
     if (quizArea) {
-
-        quizArea.style.display =
-            "block";
-
+        quizArea.style.display = "block";
     }
 
 
-    // Update quiz subject
-
-    let quizSubject =
-        document.getElementById(
-            "quizSubject"
-        );
-
+    const quizSubject =
+        document.getElementById("quizSubject");
 
     if (quizSubject) {
 
-        if (selectedSubject === "Science") {
+        if (subject === "Science") {
 
             quizSubject.innerText =
-                "🔬 Science - " +
-                selectedScienceLevel;
+                "🔬 Science - " + scienceLevel;
 
-        }
-
-        else if (
-            selectedSubject ===
-            "General Studies"
-        ) {
+        } else {
 
             quizSubject.innerText =
-                "🌐 General Studies (GS)";
+                "📚 " + subject;
 
         }
-
-        else if (
-            selectedSubject ===
-            "English"
-        ) {
-
-            quizSubject.innerText =
-                "📘 English - Grammar";
-
-        }
-
-        else {
-
-            quizSubject.innerText =
-                selectedSubject;
-
-        }
-
-    }
-
-
-    // Reset score
-
-    let scoreElement =
-        document.getElementById(
-            "score"
-        );
-
-
-    if (scoreElement) {
-
-        scoreElement.innerText =
-            "Score: 0";
-
     }
 
 
     showQuestion();
-
 }
 
 
-
-// ============================================================
-// ▶️ OLD START QUIZ
-// ============================================================
-
-function startQuiz() {
-
-    if (
-        !document.getElementById(
-            "quizArea"
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    if (selectedSubject === "") {
-
-        return;
-
-    }
-
-
-    beginSelectedQuiz();
-
-}
-
-
-
-// ============================================================
-// ❓ SHOW QUESTION
-// ============================================================
+/* =========================================================
+   SHOW QUESTION
+========================================================= */
 
 function showQuestion() {
 
-    let current =
-        quizQuestions[currentQuestion];
-
-
-    if (!current) {
-
+    if (currentQuestionIndex >= currentQuestions.length) {
+        finishQuiz();
         return;
-
     }
 
 
-    let questionNumber =
-        document.getElementById(
-            "questionNumber"
-        );
+    selectedAnswer = false;
 
 
-    let question =
-        document.getElementById(
-            "question"
-        );
+    const q =
+        currentQuestions[currentQuestionIndex];
 
 
-    let options =
-        document.getElementById(
-            "options"
-        );
+    document.getElementById("questionNumber")
+        .innerText =
+        `Question ${currentQuestionIndex + 1} / ${currentQuestions.length}`;
 
 
-    if (
-        !questionNumber ||
-        !question ||
-        !options
-    ) {
-
-        return;
-
-    }
+    document.getElementById("score")
+        .innerText =
+        `Score: ${quizScore}`;
 
 
-    questionNumber.innerText =
-        "Question " +
-        (currentQuestion + 1) +
-        " / " +
-        quizQuestions.length;
+    document.getElementById("question")
+        .innerText =
+        q.question;
 
 
-    question.innerText =
-        current.question;
+    const optionsBox =
+        document.getElementById("options");
+
+    optionsBox.innerHTML = "";
 
 
-    options.innerHTML = "";
+    q.options.forEach((option, index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.innerText =
+            option;
+
+        button.onclick =
+            function () {
+
+                selectOption(index, button);
+            };
 
 
-    // Create options
+        optionsBox.appendChild(button);
 
-    current.options.forEach(
-        function(option) {
-
-            let button =
-                document.createElement(
-                    "button"
-                );
+    });
 
 
-            button.className =
-                "option";
+    const nextBtn =
+        document.getElementById("nextBtn");
 
-
-            button.innerText =
-                option;
-
-
-            button.onclick =
-                function() {
-
-                    checkAnswer(
-                        button,
-                        option
-                    );
-
-                };
-
-
-            options.appendChild(
-                button
-            );
-
-        }
-    );
-
-
-    // Hide buttons
-
-    let nextBtn =
-        document.getElementById(
-            "nextBtn"
-        );
-
-
-    let submitBtn =
-        document.getElementById(
-            "quizSubmitBtn"
-        );
-
-
-    let backBtn =
-        document.getElementById(
-            "backSubjectBtn"
-        );
+    const submitBtn =
+        document.getElementById("quizSubmitBtn");
 
 
     if (nextBtn) {
-
-        nextBtn.style.display =
-            "none";
-
+        nextBtn.style.display = "none";
     }
 
 
     if (submitBtn) {
 
-        submitBtn.style.display =
-            "none";
+        if (currentQuestionIndex ===
+            currentQuestions.length - 1) {
 
+            submitBtn.style.display = "block";
+
+        } else {
+
+            submitBtn.style.display = "none";
+        }
     }
-
-
-    if (backBtn) {
-
-        backBtn.style.display =
-            "none";
-
-    }
-
 }
 
 
+/* =========================================================
+   SELECT OPTION
+========================================================= */
 
-// ============================================================
-// ✅ CHECK ANSWER
-// ============================================================
+function selectOption(index, button) {
 
-function checkAnswer(
-    button,
-    selectedAnswer
-) {
+    if (selectedAnswer) {
+        return;
+    }
 
-    let current =
-        quizQuestions[currentQuestion];
-
-
-    let allOptions =
-        document.querySelectorAll(
-            ".option"
-        );
+    selectedAnswer = true;
 
 
-    // Disable all options
-
-    allOptions.forEach(
-        function(option) {
-
-            option.disabled = true;
-
-        }
-    );
+    const question =
+        currentQuestions[currentQuestionIndex];
 
 
-    // Correct answer
-
-    if (
-        selectedAnswer ===
-        current.answer
-    ) {
-
-        button.classList.add(
-            "correct"
-        );
+    const allOptions =
+        document.querySelectorAll(".option");
 
 
-        score++;
+    allOptions.forEach(option => {
+        option.disabled = true;
+    });
 
 
-        let scoreElement =
-            document.getElementById(
-                "score"
-            );
+    if (index === question.answer) {
 
+        button.classList.add("correct");
 
-        if (scoreElement) {
+        quizScore++;
 
-            scoreElement.innerText =
-                "Score: " + score;
+    } else {
 
-        }
+        button.classList.add("wrong");
 
+        allOptions[question.answer]
+            .classList.add("correct");
     }
 
 
-    // Wrong answer
-
-    else {
-
-        button.classList.add(
-            "wrong"
-        );
+    document.getElementById("score")
+        .innerText =
+        `Score: ${quizScore}`;
 
 
-        allOptions.forEach(
-            function(option) {
+    if (currentQuestionIndex <
+        currentQuestions.length - 1) {
 
-                if (
-                    option.innerText ===
-                    current.answer
-                ) {
+        document.getElementById("nextBtn")
+            .style.display = "block";
 
-                    option.classList.add(
-                        "correct"
-                    );
+    } else {
 
-                }
-
-            }
-        );
-
+        document.getElementById("quizSubmitBtn")
+            .style.display = "block";
     }
-
-
-    // Last question
-
-    if (
-        currentQuestion ===
-        quizQuestions.length - 1
-    ) {
-
-        let submitBtn =
-            document.getElementById(
-                "quizSubmitBtn"
-            );
-
-
-        if (submitBtn) {
-
-            submitBtn.style.display =
-                "inline-block";
-
-        }
-
-    }
-
-
-    // Other questions
-
-    else {
-
-        let nextBtn =
-            document.getElementById(
-                "nextBtn"
-            );
-
-
-        if (nextBtn) {
-
-            nextBtn.style.display =
-                "inline-block";
-
-        }
-
-    }
-
 }
 
 
-
-// ============================================================
-// ➡️ NEXT QUESTION
-// ============================================================
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
 
 function nextQuestion() {
 
-    currentQuestion++;
-
-
-    if (
-        currentQuestion <
-        quizQuestions.length
-    ) {
-
-        showQuestion();
-
+    if (!selectedAnswer) {
+        return;
     }
 
+    currentQuestionIndex++;
+
+    showQuestion();
 }
 
 
-
-// ============================================================
-// 📤 SUBMIT QUIZ
-// ============================================================
+/* =========================================================
+   SUBMIT QUIZ
+========================================================= */
 
 function submitQuiz() {
 
-    showResult();
+    if (!selectedAnswer) {
 
+        alert("Please answer this question first.");
+
+        return;
+    }
+
+
+    finishQuiz();
 }
 
 
+/* =========================================================
+   FINISH QUIZ
+========================================================= */
 
-// ============================================================
-// 🏆 SHOW RESULT
-// ============================================================
+function finishQuiz() {
 
-function showResult() {
-
-    let quizBox =
-        document.getElementById(
-            "quizBox"
-        );
+    const quizArea =
+        document.getElementById("quizArea");
 
 
-    if (!quizBox) {
-
-        return;
-
-    }
+    if (!quizArea) return;
 
 
-    let total =
-        quizQuestions.length;
+    const total =
+        currentQuestions.length;
 
 
-    let wrong =
-        total - score;
+    const percentage =
+        Math.round((quizScore / total) * 100);
 
 
-    let percentage =
-        Math.round(
-            (
-                score /
-                total
-            ) * 100
-        );
+    let message = "";
 
 
-    let subjectName;
+    if (percentage >= 80) {
 
+        message = "🌟 Excellent! Great job!";
 
-    if (selectedSubject === "Science") {
+    } else if (percentage >= 60) {
 
-        subjectName =
-            "🔬 Science - " +
-            selectedScienceLevel;
+        message = "👏 Good job! Keep learning!";
 
-    }
+    } else if (percentage >= 40) {
 
-    else if (
-        selectedSubject ===
-        "General Studies"
-    ) {
+        message = "🙂 Nice try! Practice more!";
 
-        subjectName =
-            "🌐 General Studies (GS)";
+    } else {
 
-    }
-
-    else if (
-        selectedSubject ===
-        "English"
-    ) {
-
-        subjectName =
-            "📘 English - Grammar";
-
-    }
-
-    else {
-
-        subjectName =
-            selectedSubject;
+        message = "💪 Keep practicing! You can do it!";
 
     }
 
 
-    quizBox.innerHTML = `
+    quizArea.innerHTML = `
 
         <div class="result">
 
-            <h2>
-                🎉 Quiz Completed!
-            </h2>
-
-            <h2>
-                ${subjectName}
-            </h2>
-
+            <h2>🎉 Quiz Completed!</h2>
 
             <div class="result-card">
 
+                <p>
+                    📚 Subject:
+                    <strong>${selectedSubject}</strong>
+                </p>
+
+                ${
+                    selectedSubject === "Science"
+                    ?
+                    `<p>
+                        🔬 Level:
+                        <strong>${selectedScienceLevel}</strong>
+                    </p>`
+                    :
+                    ""
+                }
+
                 <div class="result-score">
-                    ${score} / ${total}
+
+                    ${quizScore} / ${total}
+
                 </div>
 
                 <p>
-                    ✅ Correct Answers:
-                    <b>${score}</b>
+                    🎯 Percentage:
+                    <strong>${percentage}%</strong>
                 </p>
 
                 <p>
-                    ❌ Wrong Answers:
-                    <b>${wrong}</b>
-                </p>
-
-                <p>
-                    📊 Percentage:
-                    <b>${percentage}%</b>
+                    ${message}
                 </p>
 
             </div>
-
 
             <div class="result-buttons">
 
                 <button
                     class="btn"
-                    onclick="location.reload()">
+                    onclick="restartQuiz()">
 
-                    🔄 Play Again
+                    🔄 Try Again
 
                 </button>
 
-
                 <button
                     class="btn"
-                    onclick="location.href='games.html'">
+                    onclick="goHome()">
 
-                    🎮 Back to Games
+                    🏠 Home
 
                 </button>
 
@@ -1983,186 +1290,159 @@ function showResult() {
         </div>
 
     `;
-
 }
 
 
+/* =========================================================
+   RESTART QUIZ
+========================================================= */
 
-// ============================================================
-// 📚 BACK TO SUBJECTS
-// ============================================================
-
-function backToSubjects() {
+function restartQuiz() {
 
     location.reload();
-
 }
 
 
+/* =========================================================
+   CLEAR QUIZ RESULT
+========================================================= */
 
-// ============================================================
-// ============================================================
-// ⌨️ TYPING TEST
-// ============================================================
-// ============================================================
+function clearQuizResult() {
+
+    const quizBox =
+        document.getElementById("quizBox");
+
+    if (!quizBox) return;
+
+    /*
+       Nothing needed here.
+       Kept as a separate function so
+       future result systems can be added.
+    */
+}
 
 
+/* =========================================================
+   HOME BUTTON
+========================================================= */
 
-// ============================================================
-// ⌨️ TYPING LEVELS
-// ============================================================
+function goHome() {
+
+    window.location.href = "index.html";
+}
+
+
+/* =========================================================
+   TYPING TEST
+========================================================= */
+
+
+/*
+   Different text for each level
+*/
 
 const typingLevels = {
 
     1: {
-
         name: "🟢 Easy",
 
         time: 30,
 
-        texts: [
-
-            "Learning is fun and exciting.",
-
-            "Practice makes us better every day.",
-
-            "I love learning new things.",
-
-            "Keep learning and keep smiling."
-
-        ]
-
+        text:
+        "Learning is fun when we practice every day. " +
+        "Small steps can help us improve our skills."
     },
 
 
     2: {
-
-        name: "🟡 Medium",
+        name: "🟡 Basic",
 
         time: 30,
 
-        texts: [
-
-            "Learning something new every day makes us better.",
-
-            "Practice is the key to improving your skills.",
-
-            "Technology makes learning easier and more interesting.",
-
-            "Small steps every day can lead to great success."
-
-        ]
-
+        text:
+        "Reading books helps us learn new words and ideas. " +
+        "Regular practice makes our typing faster and better."
     },
 
 
     3: {
-
-        name: "🟠 Hard",
+        name: "🟠 Medium",
 
         time: 30,
 
-        texts: [
-
-            "Students can achieve their goals with regular practice and determination.",
-
-            "Reading books improves knowledge, imagination, creativity, and communication skills.",
-
-            "Successful people understand that patience and consistency are important for achieving goals.",
-
-            "Learning programming requires logical thinking, problem solving, and continuous practice."
-
-        ]
-
+        text:
+        "Technology has changed the way students learn. " +
+        "Computers and the internet provide many useful resources."
     },
 
 
     4: {
+        name: "🔴 Hard",
 
-        name: "🔴 Expert",
+        time: 30,
 
-        time: 45,
-
-        texts: [
-
-            "Technology has transformed the way students learn, communicate, collaborate, and solve complex problems in modern education.",
-
-            "Developing strong programming skills requires patience, logical thinking, creativity, debugging, and consistent hands-on practice.",
-
-            "The ability to learn from mistakes and continuously improve is one of the most valuable skills a student can develop."
-
-        ]
-
+        text:
+        "Good communication requires clear thinking, careful listening, " +
+        "and the ability to express ideas in a simple and meaningful way."
     },
 
 
     5: {
+        name: "🟣 Advanced",
 
-        name: "🟣 Master",
+        time: 30,
 
-        time: 60,
-
-        texts: [
-
-            "Learning is a lifelong journey that requires curiosity, discipline, patience, creativity, and the willingness to overcome challenges while continuously improving knowledge and skills.",
-
-            "Programming teaches us how to break complex problems into smaller parts, think logically, experiment with different solutions, identify mistakes, and develop efficient ways to solve real world challenges.",
-
-            "Success does not come from talent alone. It comes from consistent effort, meaningful practice, learning from failure, staying focused on your goals, and having the courage to continue when things become difficult."
-
-        ]
-
+        text:
+        "Consistent practice develops confidence and improves performance. " +
+        "A student who learns from mistakes can gradually achieve better results."
     }
 
 };
 
 
-
-// ============================================================
-// ⌨️ TYPING VARIABLES
-// ============================================================
+let currentTypingLevel = 1;
 
 let typingTimer = null;
 
-let typingTime = 30;
-
-let selectedLevel = 1;
-
-let totalLevelTime = 30;
+let typingTimeLeft = 30;
 
 let typingStarted = false;
 
+let typingFinished = false;
 
 
-// ============================================================
-// 🔢 SELECT TYPING LEVEL
-// ============================================================
+/* =========================================================
+   SELECT TYPING LEVEL
+========================================================= */
 
 function selectLevel(level) {
 
-    clearInterval(typingTimer);
-
-    typingStarted = false;
-
-    selectedLevel = level;
+    currentTypingLevel = level;
 
 
-    let levelData =
-        typingLevels[selectedLevel];
+    document.querySelectorAll(".level-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
 
 
-    totalLevelTime =
-        levelData.time;
+    if (event &&
+        event.target &&
+        event.target.classList) {
+
+        event.target.classList.add("active");
+
+    }
 
 
-    typingTime =
-        levelData.time;
+    const levelData =
+        typingLevels[level];
 
 
-    let levelName =
-        document.getElementById(
-            "levelName"
-        );
+    const levelName =
+        document.getElementById("levelName");
 
 
     if (levelName) {
@@ -2173,200 +1453,77 @@ function selectLevel(level) {
     }
 
 
-    let time =
-        document.getElementById(
-            "time"
-        );
-
-
-    if (time) {
-
-        time.innerText =
-            levelData.time;
-
-    }
-
-
-    let wpm =
-        document.getElementById(
-            "wpm"
-        );
-
-
-    if (wpm) {
-
-        wpm.innerText =
-            "0";
-
-    }
-
-
-    let accuracy =
-        document.getElementById(
-            "accuracy"
-        );
-
-
-    if (accuracy) {
-
-        accuracy.innerText =
-            "100";
-
-    }
-
-
-    let typingText =
-        document.getElementById(
-            "typingText"
-        );
-
-
-    if (typingText) {
-
-        typingText.innerText =
-            "Click Start Test to begin!";
-
-    }
-
-
-    let input =
-        document.getElementById(
-            "typingInput"
-        );
-
-
-    if (input) {
-
-        input.value = "";
-
-        input.disabled = true;
-
-    }
-
-
-    let result =
-        document.getElementById(
-            "typingResult"
-        );
-
-
-    if (result) {
-
-        result.innerHTML = "";
-
-    }
-
-
-    hideSubmitButton();
-
-
-    let buttons =
-        document.querySelectorAll(
-            ".level-btn"
-        );
-
-
-    buttons.forEach(
-        function(button) {
-
-            button.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    if (buttons[level - 1]) {
-
-        buttons[level - 1]
-            .classList.add(
-                "active"
-            );
-
-    }
-
+    resetTypingTest();
 }
 
 
-
-// ============================================================
-// 🚀 START TYPING TEST
-// ============================================================
+/* =========================================================
+   START TYPING TEST
+========================================================= */
 
 function startTypingTest() {
 
     clearInterval(typingTimer);
 
+
+    const levelData =
+        typingLevels[currentTypingLevel];
+
+
+    typingTimeLeft =
+        levelData.time;
+
+
     typingStarted = true;
 
-
-    let levelData =
-        typingLevels[selectedLevel];
+    typingFinished = false;
 
 
-    totalLevelTime =
-        levelData.time;
+    const text =
+        document.getElementById("typingText");
+
+    const input =
+        document.getElementById("typingInput");
 
 
-    typingTime =
-        levelData.time;
+    if (!text || !input) {
+        return;
+    }
 
 
-    document.getElementById(
-        "time"
-    ).innerText =
-        typingTime;
+    text.innerText =
+        levelData.text;
 
-
-    document.getElementById(
-        "wpm"
-    ).innerText =
-        "0";
-
-
-    document.getElementById(
-        "accuracy"
-    ).innerText =
-        "100";
-
-
-    document.getElementById(
-        "typingResult"
-    ).innerHTML =
-        "";
-
-
-    let randomIndex =
-        Math.floor(
-            Math.random() *
-            levelData.texts.length
-        );
-
-
-    document.getElementById(
-        "typingText"
-    ).innerText =
-        levelData.texts[randomIndex];
-
-
-    let input =
-        document.getElementById(
-            "typingInput"
-        );
-
-
-    input.value = "";
 
     input.disabled = false;
+
+    input.value = "";
 
     input.focus();
 
 
-    let submitBtn =
-        document.getElementById(
-            "submitBtn"
-        );
+    document.getElementById("time")
+        .innerText =
+        typingTimeLeft;
+
+
+    document.getElementById("wpm")
+        .innerText =
+        "0";
+
+
+    document.getElementById("accuracy")
+        .innerText =
+        "100";
+
+
+    document.getElementById("typingResult")
+        .innerText =
+        "";
+
+
+    const submitBtn =
+        document.getElementById("submitBtn");
 
 
     if (submitBtn) {
@@ -2378,122 +1535,65 @@ function startTypingTest() {
 
 
     typingTimer =
-        setInterval(
-            function() {
+        setInterval(() => {
 
-                typingTime--;
-
-
-                document.getElementById(
-                    "time"
-                ).innerText =
-                    typingTime;
+            typingTimeLeft--;
 
 
-                calculateTyping();
+            document.getElementById("time")
+                .innerText =
+                typingTimeLeft;
 
 
-                if (
-                    typingTime <= 0
-                ) {
+            updateTypingStats();
 
-                    finishTypingTest();
 
-                }
+            if (typingTimeLeft <= 0) {
 
-            },
-            1000
-        );
+                clearInterval(typingTimer);
 
+                finishTypingTest();
+
+            }
+
+        }, 1000);
 }
 
 
+/* =========================================================
+   UPDATE TYPING STATS
+========================================================= */
 
-// ============================================================
-// 📊 CALCULATE TYPING
-// ============================================================
+function updateTypingStats() {
 
-function calculateTyping() {
-
-    let input =
-        document.getElementById(
-            "typingInput"
-        );
+    const input =
+        document.getElementById("typingInput");
 
 
-    if (!input) {
-
-        return;
-
-    }
+    if (!input) return;
 
 
-    let typedText =
+    const typed =
         input.value;
 
 
-    let originalText =
-        document.getElementById(
-            "typingText"
-        ).innerText;
+    if (typed.length === 0) {
 
-
-    if (
-        typedText.length === 0
-    ) {
-
-        document.getElementById(
-            "wpm"
-        ).innerText =
+        document.getElementById("wpm")
+            .innerText =
             "0";
 
-        return;
+        document.getElementById("accuracy")
+            .innerText =
+            "100";
 
+        return;
     }
 
 
-    let words =
-        typedText
-        .trim()
-        .split(/\s+/)
-        .filter(
-            function(word) {
-
-                return word.length > 0;
-
-            }
-        );
-
-
-    let elapsedSeconds =
-        totalLevelTime -
-        typingTime;
-
-
-    if (
-        elapsedSeconds <= 0
-    ) {
-
-        return;
-
-    }
-
-
-    let minutes =
-        elapsedSeconds / 60;
-
-
-    let wpm =
-        Math.round(
-            words.length /
-            minutes
-        );
-
-
-    document.getElementById(
-        "wpm"
-    ).innerText =
-        wpm;
+    const original =
+        document.getElementById("typingText")
+            .innerText;
 
 
     let correctCharacters = 0;
@@ -2501,14 +1601,11 @@ function calculateTyping() {
 
     for (
         let i = 0;
-        i < typedText.length;
+        i < typed.length;
         i++
     ) {
 
-        if (
-            typedText[i] ===
-            originalText[i]
-        ) {
+        if (typed[i] === original[i]) {
 
             correctCharacters++;
 
@@ -2517,416 +1614,129 @@ function calculateTyping() {
     }
 
 
-    let accuracy =
+    const accuracy =
         Math.round(
-            (
-                correctCharacters /
-                typedText.length
-            ) * 100
+            (correctCharacters / typed.length) * 100
         );
 
 
-    accuracy =
-        Math.min(
-            accuracy,
-            100
-        );
+    const elapsedSeconds =
+        typingLevels[currentTypingLevel].time
+        - typingTimeLeft;
 
 
-    document.getElementById(
-        "accuracy"
-    ).innerText =
-        accuracy;
+    let wpm = 0;
 
+
+    if (elapsedSeconds > 0) {
+
+        wpm =
+            Math.round(
+                (typed.length / 5) /
+                (elapsedSeconds / 60)
+            );
+
+    }
+
+
+    document.getElementById("wpm")
+        .innerText =
+        wpm;
+
+
+    document.getElementById("accuracy")
+        .innerText =
+        Math.max(0, Math.min(100, accuracy));
 }
 
 
-
-// ============================================================
-// 📤 SUBMIT TYPING TEST
-// ============================================================
+/* =========================================================
+   SUBMIT TYPING TEST
+========================================================= */
 
 function submitTypingTest() {
 
     if (!typingStarted) {
 
-        return;
+        alert("Please start the test first.");
 
+        return;
     }
 
 
-    clearInterval(typingTimer);
+    finishTypingTest();
+}
+
+
+/* =========================================================
+   FINISH TYPING TEST
+========================================================= */
+
+function finishTypingTest() {
+
+    if (typingFinished) {
+        return;
+    }
+
+
+    typingFinished = true;
 
     typingStarted = false;
 
 
-    let input =
-        document.getElementById(
-            "typingInput"
-        );
+    clearInterval(typingTimer);
+
+
+    const input =
+        document.getElementById("typingInput");
+
+
+    if (!input) return;
 
 
     input.disabled = true;
 
 
-    calculateFinalTypingResult();
+    updateTypingStats();
 
 
-    let wpm =
-        document.getElementById(
-            "wpm"
-        ).innerText;
+    const wpm =
+        document.getElementById("wpm")
+            .innerText;
 
 
-    let accuracy =
-        document.getElementById(
-            "accuracy"
-        ).innerText;
+    const accuracy =
+        document.getElementById("accuracy")
+            .innerText;
 
 
-    document.getElementById(
-        "typingResult"
-    ).innerHTML =
-
-        "🎉 Test Submitted!<br>" +
-
-        "⚡ Speed: " +
-        wpm +
-        " WPM<br>" +
-
-        "🎯 Accuracy: " +
-        accuracy +
-        "%";
-
-
-    hideSubmitButton();
-
-}
-
-
-
-// ============================================================
-// 📊 FINAL TYPING RESULT
-// ============================================================
-
-function calculateFinalTypingResult() {
-
-    let input =
-        document.getElementById(
-            "typingInput"
-        );
-
-
-    let typedText =
-        input.value;
-
-
-    let originalText =
-        document.getElementById(
-            "typingText"
-        ).innerText;
-
-
-    if (
-        typedText.trim().length === 0
-    ) {
-
-        document.getElementById(
-            "wpm"
-        ).innerText =
-            "0";
-
-
-        document.getElementById(
-            "accuracy"
-        ).innerText =
-            "0";
-
-
-        return;
-
-    }
-
-
-    let words =
-        typedText
-        .trim()
-        .split(/\s+/)
-        .filter(
-            function(word) {
-
-                return word.length > 0;
-
-            }
-        );
-
-
-    let elapsedSeconds =
-        totalLevelTime -
-        typingTime;
-
-
-    let actualSeconds =
-        Math.max(
-            elapsedSeconds,
-            1
-        );
-
-
-    let minutes =
-        actualSeconds / 60;
-
-
-    let wpm =
-        Math.round(
-            words.length /
-            minutes
-        );
-
-
-    let correctCharacters = 0;
-
-
-    for (
-        let i = 0;
-        i < typedText.length;
-        i++
-    ) {
-
-        if (
-            typedText[i] ===
-            originalText[i]
-        ) {
-
-            correctCharacters++;
-
-        }
-
-    }
-
-
-    let accuracy =
-        Math.round(
-            (
-                correctCharacters /
-                typedText.length
-            ) * 100
-        );
-
-
-    accuracy =
-        Math.min(
-            accuracy,
-            100
-        );
-
-
-    document.getElementById(
-        "wpm"
-    ).innerText =
-        wpm;
-
-
-    document.getElementById(
-        "accuracy"
-    ).innerText =
-        accuracy;
-
-}
-
-
-
-// ============================================================
-// ⏰ FINISH TYPING TEST
-// ============================================================
-
-function finishTypingTest() {
-
-    clearInterval(typingTimer);
-
-    typingStarted = false;
-
-
-    let input =
-        document.getElementById(
-            "typingInput"
-        );
-
-
-    if (input) {
-
-        input.disabled = true;
-
-    }
-
-
-    calculateFinalTypingResult();
-
-
-    let wpm =
-        document.getElementById(
-            "wpm"
-        ).innerText;
-
-
-    let accuracy =
-        document.getElementById(
-            "accuracy"
-        ).innerText;
-
-
-    let result =
-        document.getElementById(
-            "typingResult"
-        );
+    const result =
+        document.getElementById("typingResult");
 
 
     if (result) {
 
-        result.innerHTML =
+        result.innerHTML = `
 
-            "⏰ Time's Up!<br>" +
+            🎉 Test Completed!
 
-            "⚡ Speed: " +
-            wpm +
-            " WPM<br>" +
+            <br>
 
-            "🎯 Accuracy: " +
-            accuracy +
-            "%";
+            ⚡ Speed:
+            <strong>${wpm} WPM</strong>
 
-    }
+            <br>
 
+            🎯 Accuracy:
+            <strong>${accuracy}%</strong>
 
-    hideSubmitButton();
-
-}
-
-
-
-// ============================================================
-// 🔄 RESET TYPING TEST
-// ============================================================
-
-function resetTypingTest() {
-
-    clearInterval(typingTimer);
-
-    typingStarted = false;
-
-
-    let levelData =
-        typingLevels[selectedLevel];
-
-
-    typingTime =
-        levelData.time;
-
-
-    totalLevelTime =
-        levelData.time;
-
-
-    let time =
-        document.getElementById(
-            "time"
-        );
-
-
-    if (time) {
-
-        time.innerText =
-            levelData.time;
+        `;
 
     }
 
 
-    let wpm =
-        document.getElementById(
-            "wpm"
-        );
-
-
-    if (wpm) {
-
-        wpm.innerText =
-            "0";
-
-    }
-
-
-    let accuracy =
-        document.getElementById(
-            "accuracy"
-        );
-
-
-    if (accuracy) {
-
-        accuracy.innerText =
-            "100";
-
-    }
-
-
-    let typingText =
-        document.getElementById(
-            "typingText"
-        );
-
-
-    if (typingText) {
-
-        typingText.innerText =
-            "Click Start Test to begin!";
-
-    }
-
-
-    let input =
-        document.getElementById(
-            "typingInput"
-        );
-
-
-    if (input) {
-
-        input.value = "";
-
-        input.disabled = true;
-
-    }
-
-
-    let result =
-        document.getElementById(
-            "typingResult"
-        );
-
-
-    if (result) {
-
-        result.innerHTML = "";
-
-    }
-
-
-    hideSubmitButton();
-
-}
-
-
-
-// ============================================================
-// 👁️ HIDE TYPING SUBMIT BUTTON
-// ============================================================
-
-function hideSubmitButton() {
-
-    let submitBtn =
-        document.getElementById(
-            "submitBtn"
-        );
+    const submitBtn =
+        document.getElementById("submitBtn");
 
 
     if (submitBtn) {
@@ -2935,5 +1745,140 @@ function hideSubmitButton() {
             "none";
 
     }
-
 }
+
+
+/* =========================================================
+   RESET TYPING TEST
+========================================================= */
+
+function resetTypingTest() {
+
+    clearInterval(typingTimer);
+
+
+    typingStarted = false;
+
+    typingFinished = false;
+
+
+    const levelData =
+        typingLevels[currentTypingLevel];
+
+
+    typingTimeLeft =
+        levelData.time;
+
+
+    const text =
+        document.getElementById("typingText");
+
+
+    const input =
+        document.getElementById("typingInput");
+
+
+    if (!text || !input) {
+        return;
+    }
+
+
+    text.innerText =
+        "Click Start Test to begin!";
+
+
+    input.value = "";
+
+    input.disabled = true;
+
+
+    document.getElementById("time")
+        .innerText =
+        levelData.time;
+
+
+    document.getElementById("wpm")
+        .innerText =
+        "0";
+
+
+    document.getElementById("accuracy")
+        .innerText =
+        "100";
+
+
+    document.getElementById("typingResult")
+        .innerText =
+        "";
+
+
+    const submitBtn =
+        document.getElementById("submitBtn");
+
+
+    if (submitBtn) {
+
+        submitBtn.style.display =
+            "none";
+
+    }
+}
+
+
+/* =========================================================
+   LIVE TYPING INPUT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input =
+        document.getElementById("typingInput");
+
+
+    if (input) {
+
+        input.addEventListener(
+            "input",
+            function () {
+
+                if (!typingStarted) {
+                    return;
+                }
+
+                updateTypingStats();
+
+            }
+        );
+
+    }
+
+});
+
+
+/* =========================================================
+   ENTER KEY SUPPORT FOR QUIZ
+========================================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Enter") {
+        return;
+    }
+
+
+    const answerInput =
+        document.getElementById("answer");
+
+
+    if (answerInput &&
+        document.activeElement === answerInput) {
+
+        if (typeof checkAnswer === "function") {
+
+            checkAnswer();
+
+        }
+
+    }
+
+});
