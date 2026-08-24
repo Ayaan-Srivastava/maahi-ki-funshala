@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Memory Quiz - Maahi Ki Funshala</title>
+<title>Memory Game - Maahi Ki Funshala</title>
 
 <style>
 
@@ -20,6 +20,8 @@
 body{
     background:#fff8f0;
 }
+
+/* NAVBAR */
 
 nav{
     background:#ff6b6b;
@@ -39,17 +41,21 @@ nav a{
     font-weight:bold;
 }
 
+/* PAGE */
+
 .page{
-    max-width:750px;
-    margin:50px auto;
+    max-width:800px;
+    margin:40px auto;
     padding:20px;
 }
 
 .title{
     text-align:center;
     color:#ff6b6b;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
+
+/* BOX */
 
 .box{
     background:white;
@@ -57,6 +63,8 @@ nav a{
     border-radius:20px;
     box-shadow:0 8px 25px rgba(0,0,0,.1);
 }
+
+/* INFO */
 
 .info{
     display:flex;
@@ -66,14 +74,69 @@ nav a{
     margin-bottom:25px;
 }
 
-#question{
+/* LEVEL */
+
+.level{
+    text-align:center;
+    margin-bottom:15px;
+    color:#555;
+    font-weight:bold;
+}
+
+/* MESSAGE */
+
+.message{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
     margin-bottom:20px;
+}
+
+/* MEMORY GRID */
+
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin:25px 0;
+}
+
+.memory-item{
+    background:#fff1e6;
+    border:2px solid #ff6b6b;
+    border-radius:15px;
+    padding:20px 10px;
+    text-align:center;
+    font-size:38px;
+    min-height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* TIMER */
+
+.timer{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    color:#ff6b6b;
+    margin:15px 0;
+}
+
+/* QUESTION */
+
+#question{
+    text-align:center;
+    margin:20px 0;
     line-height:1.5;
 }
 
+/* OPTIONS */
+
 .options{
-    display:flex;
-    flex-direction:column;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     gap:12px;
 }
 
@@ -83,7 +146,8 @@ nav a{
     border-radius:12px;
     background:white;
     cursor:pointer;
-    text-align:left;
+    font-size:16px;
+    font-weight:bold;
 }
 
 .option:hover{
@@ -93,11 +157,15 @@ nav a{
 
 .correct{
     background:#d4edda !important;
+    border-color:#28a745 !important;
 }
 
 .wrong{
     background:#f8d7da !important;
+    border-color:#dc3545 !important;
 }
+
+/* BUTTON */
 
 .btn{
     padding:13px 25px;
@@ -108,7 +176,14 @@ nav a{
     color:white;
     font-weight:bold;
     cursor:pointer;
+    font-size:16px;
 }
+
+.btn:hover{
+    background:#ff5252;
+}
+
+/* RESULT */
 
 .result{
     text-align:center;
@@ -118,6 +193,13 @@ nav a{
     color:#ff6b6b;
     margin:15px;
 }
+
+.result p{
+    margin:10px;
+    font-size:17px;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:700px){
 
@@ -139,7 +221,21 @@ nav a{
     .info{
         flex-direction:column;
         gap:10px;
+        text-align:center;
     }
+
+    .memory-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .options{
+        grid-template-columns:1fr;
+    }
+
+    .memory-item{
+        font-size:32px;
+    }
+
 }
 
 </style>
@@ -147,6 +243,7 @@ nav a{
 </head>
 
 <body>
+
 
 <nav>
 
@@ -162,16 +259,17 @@ nav a{
 <div class="page">
 
 <h1 class="title">
-🧠 Memory Quiz
+🧠 Memory Game
 </h1>
+
 
 <div class="box" id="box">
 
 <div class="info">
 
 <span>
-Question:
-<span id="number">1</span>/10
+Round:
+<span id="round">1</span>/10
 </span>
 
 <span>
@@ -181,9 +279,33 @@ Question:
 
 </div>
 
+
+<div class="level" id="level">
+Level: Easy
+</div>
+
+
+<div class="message" id="message">
+Remember these objects!
+</div>
+
+
+<div class="timer" id="timer">
+Memorize: 5 seconds
+</div>
+
+
+<div class="memory-grid" id="memoryGrid"></div>
+
+
+<div id="questionArea" style="display:none;">
+
 <h2 id="question"></h2>
 
 <div class="options" id="options"></div>
+
+</div>
+
 
 </div>
 
@@ -192,190 +314,492 @@ Question:
 
 <script>
 
-const questions=[
 
-{
-q:"How many days are there in a week?",
-o:["5","6","7","8"],
-a:"7"
-},
+/* =========================
+   MEMORY ITEMS
+========================= */
 
-{
-q:"Which planet is called the Red Planet?",
-o:["Earth","Mars","Venus","Jupiter"],
-a:"Mars"
-},
+const items = [
 
-{
-q:"How many months are there in a year?",
-o:["10","11","12","13"],
-a:"12"
-},
+    "🍎",
+    "🍌",
+    "🍇",
+    "🍉",
+    "🍓",
+    "🍒",
+    "🍍",
+    "🥝",
+    "🥭",
+    "🍊",
 
-{
-q:"What is the largest ocean?",
-o:["Indian","Atlantic","Pacific","Arctic"],
-a:"Pacific"
-},
+    "🐶",
+    "🐱",
+    "🐼",
+    "🦁",
+    "🐯",
+    "🐸",
+    "🐵",
+    "🐰",
+    "🦊",
+    "🐨",
 
-{
-q:"Which gas do humans breathe in?",
-o:["Oxygen","Carbon Dioxide","Hydrogen","Helium"],
-a:"Oxygen"
-},
+    "🚗",
+    "🚲",
+    "✈️",
+    "🚀",
+    "🚢",
+    "🚌",
+    "🚂",
+    "🏍️",
+    "🚁",
+    "🚕",
 
-{
-q:"What is 8 × 8?",
-o:["54","64","72","81"],
-a:"64"
-},
-
-{
-q:"Which is the fastest land animal?",
-o:["Lion","Tiger","Cheetah","Horse"],
-a:"Cheetah"
-},
-
-{
-q:"What is the capital of India?",
-o:["Mumbai","New Delhi","Kolkata","Chennai"],
-a:"New Delhi"
-},
-
-{
-q:"How many sides does a square have?",
-o:["3","4","5","6"],
-a:"4"
-},
-
-{
-q:"Which organ pumps blood?",
-o:["Brain","Heart","Lungs","Kidney"],
-a:"Heart"
-}
+    "⭐",
+    "🌙",
+    "☀️",
+    "🌈",
+    "⚽",
+    "🏀",
+    "🎸",
+    "📚",
+    "🎁",
+    "🎈"
 
 ];
 
 
-let current=0;
-let score=0;
+/* =========================
+   GAME SETTINGS
+========================= */
+
+const levels = {
+
+    easy:{
+        count:4,
+        time:5
+    },
+
+    medium:{
+        count:6,
+        time:4
+    },
+
+    hard:{
+        count:8,
+        time:3
+    }
+
+};
 
 
-function showQuestion(){
+/* =========================
+   VARIABLES
+========================= */
 
-    let q=questions[current];
+let currentRound = 0;
 
-    document.getElementById("number")
-    .innerText=current+1;
+let score = 0;
 
-    document.getElementById("score")
-    .innerText=score;
+let levelName = "easy";
 
-    document.getElementById("question")
-    .innerText=q.q;
+let selectedItems = [];
 
-    let container=
-    document.getElementById("options");
+let correctAnswer = "";
 
-    container.innerHTML="";
+let timerInterval;
 
-    q.o.forEach(option=>{
 
-        let button=
+/* =========================
+   GET ELEMENTS
+========================= */
+
+const memoryGrid =
+document.getElementById("memoryGrid");
+
+const timer =
+document.getElementById("timer");
+
+const message =
+document.getElementById("message");
+
+const questionArea =
+document.getElementById("questionArea");
+
+const question =
+document.getElementById("question");
+
+const options =
+document.getElementById("options");
+
+
+/* =========================
+   GET LEVEL
+========================= */
+
+function getLevel(){
+
+    if(currentRound < 3){
+
+        levelName = "easy";
+
+    }
+    else if(currentRound < 7){
+
+        levelName = "medium";
+
+    }
+    else{
+
+        levelName = "hard";
+
+    }
+
+}
+
+
+/* =========================
+   SHOW LEVEL
+========================= */
+
+function updateLevel(){
+
+    let levelText =
+    levelName.charAt(0).toUpperCase()
+    + levelName.slice(1);
+
+    document.getElementById("level")
+    .innerText =
+    "Level: " + levelText;
+
+}
+
+
+/* =========================
+   RANDOM ITEMS
+========================= */
+
+function getRandomItems(count){
+
+    let shuffled =
+    [...items].sort(() => Math.random() - 0.5);
+
+    return shuffled.slice(0,count);
+
+}
+
+
+/* =========================
+   START ROUND
+========================= */
+
+function startRound(){
+
+    clearInterval(timerInterval);
+
+    getLevel();
+
+    updateLevel();
+
+    questionArea.style.display="none";
+
+    memoryGrid.style.display="grid";
+
+    message.innerText =
+    "🧠 Remember these objects!";
+
+    const settings =
+    levels[levelName];
+
+    selectedItems =
+    getRandomItems(settings.count);
+
+
+    /* SHOW ITEMS */
+
+    memoryGrid.innerHTML="";
+
+    selectedItems.forEach(item=>{
+
+        const div =
+        document.createElement("div");
+
+        div.className="memory-item";
+
+        div.innerText=item;
+
+        memoryGrid.appendChild(div);
+
+    });
+
+
+    /* TIMER */
+
+    let timeLeft =
+    settings.time;
+
+    timer.innerText =
+    "Memorize: " + timeLeft + " seconds";
+
+
+    timerInterval =
+    setInterval(()=>{
+
+        timeLeft--;
+
+        timer.innerText =
+        "Memorize: " + timeLeft + " seconds";
+
+
+        if(timeLeft<=0){
+
+            clearInterval(timerInterval);
+
+            hideMemory();
+
+        }
+
+    },1000);
+
+}
+
+
+/* =========================
+   HIDE MEMORY
+========================= */
+
+function hideMemory(){
+
+    memoryGrid.style.display="none";
+
+    timer.innerText="";
+
+    message.innerText =
+    "🤔 Now test your memory!";
+
+    createQuestion();
+
+}
+
+
+/* =========================
+   CREATE QUESTION
+========================= */
+
+function createQuestion(){
+
+    questionArea.style.display="block";
+
+    /*
+       Randomly choose one of
+       the remembered objects
+    */
+
+    correctAnswer =
+    selectedItems[
+        Math.floor(
+            Math.random() * selectedItems.length
+        )
+    ];
+
+
+    question.innerText =
+    "Which of these objects was shown?";
+
+
+    /*
+       Create wrong options
+    */
+
+    let wrongOptions =
+    items.filter(item =>
+        !selectedItems.includes(item)
+    );
+
+
+    wrongOptions =
+    wrongOptions
+    .sort(() => Math.random() - 0.5)
+    .slice(0,3);
+
+
+    let allOptions =
+    [correctAnswer,...wrongOptions]
+    .sort(() => Math.random() - 0.5);
+
+
+    options.innerHTML="";
+
+
+    allOptions.forEach(option=>{
+
+        let button =
         document.createElement("button");
 
         button.className="option";
 
         button.innerText=option;
 
-        button.onclick=()=>checkAnswer(button,option);
+        button.onclick=() =>
+        checkAnswer(button,option);
 
-        container.appendChild(button);
+        options.appendChild(button);
 
     });
+
 }
 
 
+/* =========================
+   CHECK ANSWER
+========================= */
+
 function checkAnswer(button,answer){
 
-    let q=questions[current];
+    document
+    .querySelectorAll(".option")
+    .forEach(btn =>
+        btn.disabled=true
+    );
 
-    document.querySelectorAll(".option")
-    .forEach(btn=>btn.disabled=true);
 
-    if(answer===q.a){
+    if(answer === correctAnswer){
 
         button.classList.add("correct");
 
         score++;
 
-    }else{
+        document.getElementById("score")
+        .innerText=score;
+
+    }
+
+    else{
 
         button.classList.add("wrong");
 
-        document.querySelectorAll(".option")
+        document
+        .querySelectorAll(".option")
         .forEach(btn=>{
 
-            if(btn.innerText===q.a)
+            if(btn.innerText === correctAnswer){
+
                 btn.classList.add("correct");
+
+            }
 
         });
 
     }
 
+
     setTimeout(()=>{
 
-        current++;
+        currentRound++;
 
-        if(current<questions.length){
+        document.getElementById("round")
+        .innerText =
+        Math.min(currentRound+1,10);
 
-            showQuestion();
 
-        }else{
+        if(currentRound < 10){
+
+            startRound();
+
+        }
+
+        else{
 
             showResult();
 
         }
 
-    },700);
+    },800);
+
 }
 
 
+/* =========================
+   RESULT
+========================= */
+
 function showResult(){
 
-    let percentage=
-    Math.round((score/questions.length)*100);
+    clearInterval(timerInterval);
 
-    document.getElementById("box").innerHTML=`
+    let percentage =
+    Math.round(
+        (score / 10) * 100
+    );
+
+
+    let messageText;
+
+
+    if(score >= 9){
+
+        messageText =
+        "🧠 Amazing memory!";
+
+    }
+
+    else if(score >= 7){
+
+        messageText =
+        "🎉 Great memory!";
+
+    }
+
+    else if(score >= 5){
+
+        messageText =
+        "👍 Good job! Keep practicing!";
+
+    }
+
+    else{
+
+        messageText =
+        "💪 Keep practicing your memory!";
+
+    }
+
+
+    document.getElementById("box")
+    .innerHTML = `
 
         <div class="result">
 
-            <h2>🎉 Quiz Completed!</h2>
+            <h2>🎉 Memory Game Completed!</h2>
 
-            <h2>${score} / ${questions.length}</h2>
+            <h2>${score} / 10</h2>
 
             <p>Your Score: ${percentage}%</p>
 
-            <p style="margin-top:10px;">
-                🧠 Great job! Keep learning!
-            </p>
+            <p>${messageText}</p>
 
-            <button class="btn"
-            onclick="location.reload()">
+            <button
+                class="btn"
+                onclick="location.reload()">
 
-            🔄 Play Again
+                🔄 Play Again
 
             </button>
 
         </div>
 
     `;
+
 }
 
 
-showQuestion();
+/* =========================
+   START GAME
+========================= */
+
+startRound();
 
 </script>
 
 </body>
+
 </html>
