@@ -1,404 +1,491 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Typing Test - Maahi Ki Funshala</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #fff8f0;
-        }
-
-        /* ================= NAVBAR ================= */
-
-        nav {
-            background: #ff6b6b;
-            padding: 15px 8%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Typing Test - Maahi Ki Funshala</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left,#24183d 0%,#111827 40%,#090d16 100%);
+    color:#eeeeee;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    background:rgba(10,13,24,.95);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    padding:16px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.35);
+}
+
+nav h2{
+    color:#f5f5f5;
+}
+
+nav a{
+    color:#d8d8df;
+    text-decoration:none;
+    font-weight:bold;
+    padding:9px 15px;
+    border-radius:10px;
+    transition:.25s;
+}
+
+nav a:hover{
+    background:#26203a;
+    color:white;
+}
 
-        nav h2 {
-            color: white;
-        }
+/* ================= PAGE ================= */
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.page{
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
+}
 
-        /* ================= PAGE ================= */
+.title{
+    text-align:center;
+    color:#c084fc;
+    margin-bottom:30px;
+    font-size:34px;
+    text-shadow:0 0 20px rgba(192,132,252,.25);
+}
 
-        .page {
-            max-width: 850px;
-            margin: 60px auto;
-            padding: 20px;
-        }
+/* ================= BOX ================= */
 
-        .title {
-            text-align: center;
-            color: #ff6b6b;
-            margin-bottom: 30px;
-        }
+.typing-box{
+    background:
+        linear-gradient(145deg,
+        rgba(30,30,48,.97),
+        rgba(17,24,39,.98));
 
-        /* ================= TYPING BOX ================= */
+    padding:35px;
+    border-radius:22px;
 
-        .typing-box {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
+    border:1px solid rgba(255,255,255,.08);
 
-            box-shadow:
-                0 8px 25px
-                rgba(0, 0, 0, 0.1);
-        }
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.45);
+}
 
-        /* ================= LEVELS ================= */
+/* ================= LEVELS ================= */
 
-        .levels {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
+.levels{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
 
-        .level-btn {
-            padding: 10px 16px;
-            border: none;
-            border-radius: 20px;
+.level-btn{
+    padding:11px 17px;
 
-            background: #fff1e6;
-            color: #ff6b6b;
+    border:1px solid #35334a;
+    border-radius:20px;
 
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    background:#191827;
+    color:#d9d9e2;
 
-        .level-btn:hover {
-            background: #ff6b6b;
-            color: white;
-            transform: translateY(-2px);
-        }
+    font-weight:bold;
+    cursor:pointer;
 
-        .level-btn.active {
-            background: #ff6b6b;
-            color: white;
-        }
+    transition:.25s;
+}
 
-        /* ================= LEVEL NAME ================= */
+.level-btn:hover{
+    background:#27213d;
+    border-color:#a855f7;
+    transform:translateY(-2px);
+}
 
-        #levelName {
-            text-align: center;
-            color: #ff9f43;
-            margin-bottom: 20px;
-        }
+.level-btn.active{
+    background:linear-gradient(135deg,#7c3aed,#a855f7);
+    border-color:#c084fc;
+    color:white;
+}
 
-        /* ================= INFO ================= */
+/* ================= LEVEL NAME ================= */
 
-        .info {
-            display: flex;
-            justify-content: space-around;
+#levelName{
+    text-align:center;
+    color:#f0abfc;
+    margin-bottom:22px;
+    font-size:20px;
+}
 
-            color: #ff6b6b;
-            font-weight: bold;
+/* ================= INFO ================= */
 
-            margin-bottom: 25px;
-        }
+.info{
+    display:flex;
+    justify-content:space-around;
+    gap:15px;
 
-        /* ================= TEXT ================= */
+    margin-bottom:25px;
+}
 
-        .text {
-            background: #fff1e6;
+.info span{
+    background:#111322;
 
-            padding: 20px;
+    border:1px solid #29283b;
 
-            border-radius: 12px;
+    padding:12px 18px;
 
-            line-height: 1.8;
+    border-radius:12px;
 
-            margin-bottom: 20px;
+    color:#c084fc;
 
-            min-height: 90px;
-        }
+    font-weight:bold;
 
-        /* ================= TEXTAREA ================= */
+    min-width:120px;
+    text-align:center;
+}
 
-        textarea {
-            width: 100%;
-            height: 170px;
+/* ================= TEXT ================= */
 
-            padding: 15px;
+.text{
+    background:#111322;
 
-            font-size: 17px;
+    border:1px solid #302d46;
 
-            border: 2px solid #eee;
+    padding:22px;
 
-            border-radius: 12px;
+    border-radius:14px;
 
-            resize: vertical;
+    line-height:1.8;
 
-            outline: none;
-        }
+    margin-bottom:20px;
 
-        textarea:focus {
-            border-color: #ff6b6b;
-        }
+    min-height:110px;
 
-        /* ================= BUTTON ================= */
+    color:#e5e5eb;
 
-        .btn {
-            margin-top: 20px;
+    font-size:17px;
+}
 
-            padding: 13px 25px;
+/* ================= TEXTAREA ================= */
 
-            border: none;
+textarea{
+    width:100%;
+    height:170px;
 
-            border-radius: 25px;
+    padding:16px;
 
-            background: #ff6b6b;
+    font-size:17px;
 
-            color: white;
+    background:#0f111d;
+    color:#eeeeee;
 
-            font-weight: bold;
+    border:2px solid #353449;
 
-            cursor: pointer;
+    border-radius:13px;
 
-            transition: 0.3s;
-        }
+    resize:vertical;
 
-        .btn:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-        }
+    outline:none;
 
-        /* ================= SUBMIT ================= */
+    transition:.25s;
+}
 
-        #submitBtn {
-            background: #28a745;
-            display: none;
-        }
+textarea::placeholder{
+    color:#777789;
+}
 
-        #submitBtn:hover {
-            background: #218838;
-        }
+textarea:focus{
+    border-color:#a855f7;
 
-        /* ================= RESULT ================= */
+    box-shadow:
+        0 0 0 3px rgba(168,85,247,.12);
+}
 
-        #typingResult {
-            text-align: center;
+/* ================= BUTTON ================= */
 
-            color: #ff6b6b;
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
 
-            margin-top: 20px;
+.btn{
+    margin-top:20px;
 
-            line-height: 1.8;
-        }
+    padding:13px 25px;
 
-        /* ================= MOBILE ================= */
+    border:none;
+    border-radius:12px;
 
-        @media(max-width: 700px) {
+    background:
+        linear-gradient(135deg,#7c3aed,#a855f7);
 
-            nav {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
+    color:white;
 
-            .page {
-                margin: 30px auto;
-                padding: 15px;
-            }
+    font-weight:bold;
 
-            .typing-box {
-                padding: 20px;
-            }
+    cursor:pointer;
 
-            .info {
-                flex-direction: column;
-                gap: 12px;
-                align-items: center;
-            }
+    transition:.25s;
+}
 
-            .level-btn {
-                font-size: 13px;
-                padding: 9px 13px;
-            }
+.btn:hover{
+    transform:translateY(-2px);
 
-            textarea {
-                height: 150px;
-            }
+    box-shadow:
+        0 8px 22px rgba(168,85,247,.3);
+}
 
-            .btn {
-                width: 100%;
-            }
+#submitBtn{
+    background:
+        linear-gradient(135deg,#15803d,#22c55e);
 
-        }
+    display:none;
+}
 
-    </style>
+#submitBtn:hover{
+    background:
+        linear-gradient(135deg,#16a34a,#4ade80);
+}
+
+#resetBtn{
+    background:#25243a;
+}
+
+#resetBtn:hover{
+    background:#35334a;
+}
+
+/* ================= RESULT ================= */
+
+#typingResult{
+    text-align:center;
+
+    margin-top:25px;
+
+    line-height:1.9;
+
+    color:#d9d9e2;
+}
+
+.result-title{
+    color:#c084fc;
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.result-score{
+    font-size:38px;
+    color:#f0abfc;
+    font-weight:bold;
+    margin:15px;
+}
+
+.result-message{
+    color:#a9a9b5;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+    .page{
+        margin:30px auto;
+        padding:14px;
+    }
+
+    .typing-box{
+        padding:20px;
+    }
+
+    .title{
+        font-size:28px;
+    }
+
+    .info{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .info span{
+        width:100%;
+    }
+
+    .level-btn{
+        font-size:13px;
+        padding:9px 13px;
+    }
+
+    textarea{
+        height:150px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+
+</style>
 
 </head>
-
 
 <body>
 
 
-    <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
 
-    <nav>
+<nav>
 
-        <h2>
-            🌈 Maahi Ki Funshala
-        </h2>
+    <h2>
+        🌈 Maahi Ki Funshala
+    </h2>
 
-        <a href="games.html">
-            🎮 Back to Games
-        </a>
+    <a href="games.html">
+        🎮 Back to Games
+    </a>
 
-    </nav>
-
-
-    <!-- ================= PAGE ================= -->
-
-    <div class="page">
-
-        <h1 class="title">
-            ⌨️ Typing Speed Test
-        </h1>
+</nav>
 
 
-        <div class="typing-box">
+<!-- ================= PAGE ================= -->
+
+<div class="page">
+
+    <h1 class="title">
+        ⌨️ Typing Speed Test
+    </h1>
 
 
-            <!-- ================= LEVELS ================= -->
-
-            <div class="levels">
-
-                <button
-                    class="level-btn active"
-                    onclick="selectLevel(1)">
-
-                    🟢 Level 1
-
-                </button>
+    <div class="typing-box">
 
 
-                <button
-                    class="level-btn"
-                    onclick="selectLevel(2)">
+        <!-- ================= LEVELS ================= -->
 
-                    🟡 Level 2
+        <div class="levels">
 
-                </button>
+            <button
+                class="level-btn active"
+                onclick="selectLevel(1,this)">
+                🟢 Level 1
+            </button>
 
+            <button
+                class="level-btn"
+                onclick="selectLevel(2,this)">
+                🟡 Level 2
+            </button>
 
-                <button
-                    class="level-btn"
-                    onclick="selectLevel(3)">
+            <button
+                class="level-btn"
+                onclick="selectLevel(3,this)">
+                🟠 Level 3
+            </button>
 
-                    🟠 Level 3
+            <button
+                class="level-btn"
+                onclick="selectLevel(4,this)">
+                🔴 Level 4
+            </button>
 
-                </button>
+            <button
+                class="level-btn"
+                onclick="selectLevel(5,this)">
+                🟣 Level 5
+            </button>
 
-
-                <button
-                    class="level-btn"
-                    onclick="selectLevel(4)">
-
-                    🔴 Level 4
-
-                </button>
-
-
-                <button
-                    class="level-btn"
-                    onclick="selectLevel(5)">
-
-                    🟣 Level 5
-
-                </button>
-
-            </div>
-
-
-            <!-- ================= LEVEL NAME ================= -->
-
-            <h3 id="levelName">
-                🟢 Easy
-            </h3>
+        </div>
 
 
-            <!-- ================= INFO ================= -->
+        <!-- ================= LEVEL NAME ================= -->
 
-            <div class="info">
-
-                <span>
-                    ⏱️
-                    <span id="time">30</span>
-                    sec
-                </span>
+        <h3 id="levelName">
+            🟢 Easy
+        </h3>
 
 
-                <span>
-                    ⚡
-                    <span id="wpm">0</span>
-                    WPM
-                </span>
+        <!-- ================= INFO ================= -->
+
+        <div class="info">
+
+            <span>
+                ⏱️
+                <span id="time">30</span>
+                sec
+            </span>
+
+            <span>
+                ⚡
+                <span id="wpm">0</span>
+                WPM
+            </span>
+
+            <span>
+                🎯
+                <span id="accuracy">100</span>
+                %
+            </span>
+
+        </div>
 
 
-                <span>
-                    🎯
-                    <span id="accuracy">100</span>
-                    %
-                </span>
+        <!-- ================= TEXT ================= -->
 
-            </div>
+        <div
+            class="text"
+            id="typingText">
 
+            Select a level and click
+            <b>Start Test</b> to begin!
 
-            <!-- ================= TEXT ================= -->
-
-            <div
-                class="text"
-                id="typingText">
-
-                Click Start Test to begin!
-
-            </div>
+        </div>
 
 
-            <!-- ================= INPUT ================= -->
+        <!-- ================= INPUT ================= -->
 
-            <textarea
-                id="typingInput"
-                placeholder="Start typing here..."
-                disabled></textarea>
-
-
-            <br>
+        <textarea
+            id="typingInput"
+            placeholder="Your typing starts here..."
+            disabled></textarea>
 
 
-            <!-- ================= BUTTONS ================= -->
+        <!-- ================= BUTTONS ================= -->
+
+        <div class="buttons">
 
             <button
                 class="btn"
+                id="startBtn"
                 onclick="startTypingTest()">
 
                 🚀 Start Test
@@ -408,6 +495,7 @@
 
             <button
                 class="btn"
+                id="resetBtn"
                 onclick="resetTypingTest()">
 
                 🔄 Reset
@@ -424,20 +512,454 @@
 
             </button>
 
-
-            <!-- ================= RESULT ================= -->
-
-            <h3 id="typingResult"></h3>
-
-
         </div>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <div id="typingResult"></div>
+
 
     </div>
 
+</div>
 
-    <!-- ================= JAVASCRIPT ================= -->
 
-    <script src="script.js"></script>
+<script>
+
+/* =========================================
+   TYPING TEXTS
+========================================= */
+
+const typingLevels = {
+
+    1:{
+        name:"🟢 Easy",
+        time:30,
+        text:
+        "Learning is a journey. Practice every day and keep improving your skills."
+    },
+
+    2:{
+        name:"🟡 Beginner",
+        time:30,
+        text:
+        "Good typing speed comes with regular practice. Stay focused and type carefully."
+    },
+
+    3:{
+        name:"🟠 Medium",
+        time:30,
+        text:
+        "Technology has changed the way we learn, communicate and solve problems in our daily lives."
+    },
+
+    4:{
+        name:"🔴 Hard",
+        time:30,
+        text:
+        "Programming teaches us how to break a complex problem into smaller steps and solve each part logically."
+    },
+
+    5:{
+        name:"🟣 Expert",
+        time:30,
+        text:
+        "Consistent practice, patience and concentration can help students develop strong technical skills and confidence."
+
+    }
+
+};
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+let selectedLevel = 1;
+
+let timeLeft = 30;
+
+let timerInterval = null;
+
+let testStarted = false;
+
+let startTime = null;
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const typingText =
+document.getElementById("typingText");
+
+const typingInput =
+document.getElementById("typingInput");
+
+const timeDisplay =
+document.getElementById("time");
+
+const wpmDisplay =
+document.getElementById("wpm");
+
+const accuracyDisplay =
+document.getElementById("accuracy");
+
+const levelName =
+document.getElementById("levelName");
+
+const startBtn =
+document.getElementById("startBtn");
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+const typingResult =
+document.getElementById("typingResult");
+
+
+/* =========================================
+   SELECT LEVEL
+========================================= */
+
+function selectLevel(level,button){
+
+    if(testStarted){
+        return;
+    }
+
+    selectedLevel = level;
+
+    document
+    .querySelectorAll(".level-btn")
+    .forEach(btn =>
+        btn.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    levelName.innerText =
+    typingLevels[level].name;
+
+    timeLeft =
+    typingLevels[level].time;
+
+    timeDisplay.innerText =
+    timeLeft;
+
+    typingText.innerText =
+    "Click Start Test to begin!";
+
+    typingInput.value = "";
+
+    typingInput.disabled = true;
+
+    wpmDisplay.innerText = "0";
+
+    accuracyDisplay.innerText = "100";
+
+    typingResult.innerHTML = "";
+
+}
+
+
+/* =========================================
+   START TEST
+========================================= */
+
+function startTypingTest(){
+
+    if(testStarted){
+        return;
+    }
+
+    const level =
+    typingLevels[selectedLevel];
+
+    testStarted = true;
+
+    timeLeft = level.time;
+
+    timeDisplay.innerText = timeLeft;
+
+    typingText.innerText = level.text;
+
+    typingInput.value = "";
+
+    typingInput.disabled = false;
+
+    typingInput.focus();
+
+    typingResult.innerHTML = "";
+
+    startBtn.style.display = "none";
+
+    submitBtn.style.display = "inline-block";
+
+    startTime = Date.now();
+
+
+    /* TIMER */
+
+    timerInterval =
+    setInterval(() => {
+
+        timeLeft--;
+
+        timeDisplay.innerText =
+        timeLeft;
+
+        updateStats();
+
+
+        if(timeLeft <= 0){
+
+            clearInterval(timerInterval);
+
+            submitTypingTest();
+
+        }
+
+    },1000);
+
+}
+
+
+/* =========================================
+   UPDATE STATS
+========================================= */
+
+function updateStats(){
+
+    const typed =
+    typingInput.value;
+
+    const target =
+    typingLevels[selectedLevel].text;
+
+
+    /* ACCURACY */
+
+    let correctCharacters = 0;
+
+    for(
+        let i = 0;
+        i < typed.length && i < target.length;
+        i++
+    ){
+
+        if(typed[i] === target[i]){
+            correctCharacters++;
+        }
+
+    }
+
+
+    let accuracy = 100;
+
+    if(typed.length > 0){
+
+        accuracy =
+        Math.round(
+            (correctCharacters / typed.length) * 100
+        );
+
+    }
+
+
+    accuracy =
+    Math.max(0,Math.min(100,accuracy));
+
+
+    accuracyDisplay.innerText =
+    accuracy;
+
+
+    /* WPM */
+
+    const elapsedSeconds =
+    Math.max(
+        1,
+        (Date.now() - startTime) / 1000
+    );
+
+
+    const words =
+    typed.length / 5;
+
+
+    const wpm =
+    Math.round(
+        words / (elapsedSeconds / 60)
+    );
+
+
+    wpmDisplay.innerText =
+    wpm;
+
+}
+
+
+/* =========================================
+   INPUT EVENT
+========================================= */
+
+typingInput.addEventListener(
+    "input",
+    function(){
+
+        if(!testStarted){
+            return;
+        }
+
+        updateStats();
+
+        const target =
+        typingLevels[selectedLevel].text;
+
+        /*
+           Automatically finish when
+           complete text is typed
+        */
+
+        if(
+            typingInput.value.length >=
+            target.length
+        ){
+
+            submitTypingTest();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   SUBMIT TEST
+========================================= */
+
+function submitTypingTest(){
+
+    if(!testStarted){
+        return;
+    }
+
+    clearInterval(timerInterval);
+
+    updateStats();
+
+    testStarted = false;
+
+    typingInput.disabled = true;
+
+    submitBtn.style.display = "none";
+
+    startBtn.style.display = "inline-block";
+
+
+    const finalWPM =
+    parseInt(wpmDisplay.innerText);
+
+    const finalAccuracy =
+    parseInt(accuracyDisplay.innerText);
+
+
+    let message = "";
+
+
+    if(finalAccuracy >= 95 && finalWPM >= 40){
+
+        message =
+        "🔥 Excellent! Your typing is very strong.";
+
+    }
+    else if(finalAccuracy >= 90 && finalWPM >= 30){
+
+        message =
+        "🎉 Great job! Keep practicing.";
+
+    }
+    else if(finalAccuracy >= 80){
+
+        message =
+        "👍 Good attempt! Focus on accuracy and speed.";
+
+    }
+    else{
+
+        message =
+        "💪 Keep practicing. You will improve!";
+
+    }
+
+
+    typingResult.innerHTML = `
+
+        <div class="result-title">
+            🎉 Test Completed!
+        </div>
+
+        <div class="result-score">
+            ${finalWPM} WPM
+        </div>
+
+        <p>
+            🎯 Accuracy:
+            <b>${finalAccuracy}%</b>
+        </p>
+
+        <p class="result-message">
+            ${message}
+        </p>
+
+    `;
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+function resetTypingTest(){
+
+    clearInterval(timerInterval);
+
+    testStarted = false;
+
+    const level =
+    typingLevels[selectedLevel];
+
+    timeLeft =
+    level.time;
+
+    timeDisplay.innerText =
+    timeLeft;
+
+    wpmDisplay.innerText =
+    "0";
+
+    accuracyDisplay.innerText =
+    "100";
+
+    typingText.innerText =
+    "Click Start Test to begin!";
+
+    typingInput.value = "";
+
+    typingInput.disabled = true;
+
+    typingResult.innerHTML = "";
+
+    startBtn.style.display = "inline-block";
+
+    submitBtn.style.display = "none";
+
+}
+
+</script>
 
 </body>
 

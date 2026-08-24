@@ -4,17 +4,11 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Student Quiz - Maahi Ki Funshala</title>
 
     <style>
-
-        /* =====================================================
-           RESET
-        ===================================================== */
 
         * {
             margin: 0;
@@ -22,11 +16,6 @@
             box-sizing: border-box;
             font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
         }
-
-
-        /* =====================================================
-           BODY
-        ===================================================== */
 
         body {
             min-height: 100vh;
@@ -42,15 +31,11 @@
             color: #eeeeee;
         }
 
-
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
+        /* NAVBAR */
 
         nav {
             background: rgba(10, 13, 24, 0.94);
-
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
 
             padding: 16px 8%;
 
@@ -58,181 +43,112 @@
             justify-content: space-between;
             align-items: center;
 
-            box-shadow:
-                0 5px 25px rgba(0, 0, 0, 0.35);
-
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-
         nav h2 {
-            color: #f5f5f5;
-
+            color: white;
             font-size: 21px;
-
-            letter-spacing: 0.3px;
         }
-
 
         .nav-links {
             display: flex;
-            gap: 12px;
-            align-items: center;
+            gap: 10px;
         }
-
 
         .nav-links a {
             color: #d8d8df;
-
             text-decoration: none;
-
             font-weight: bold;
 
             padding: 9px 15px;
-
             border-radius: 10px;
-
-            transition: 0.25s;
         }
-
 
         .nav-links a:hover {
-            color: white;
-
             background: #26203a;
-
-            transform: translateY(-1px);
+            color: white;
         }
 
-
-        /* =====================================================
-           PAGE
-        ===================================================== */
+        /* PAGE */
 
         .page {
             max-width: 850px;
-
             margin: 55px auto;
-
             padding: 20px;
         }
 
-
         .title {
             text-align: center;
-
             color: #c084fc;
-
             margin-bottom: 30px;
-
             font-size: 34px;
-
-            text-shadow:
-                0 0 20px rgba(192, 132, 252, 0.25);
         }
 
-
-        /* =====================================================
-           QUIZ BOX
-        ===================================================== */
+        /* QUIZ BOX */
 
         .quiz-box {
             background:
                 linear-gradient(
                     145deg,
-                    rgba(30, 30, 48, 0.97),
-                    rgba(17, 24, 39, 0.98)
+                    rgba(30,30,48,0.97),
+                    rgba(17,24,39,0.98)
                 );
 
             padding: 38px;
-
             border-radius: 22px;
 
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255,255,255,0.08);
 
             box-shadow:
-                0 20px 55px rgba(0, 0, 0, 0.45);
+                0 20px 55px rgba(0,0,0,0.45);
         }
 
-
-        /* =====================================================
-           SUBJECT SELECTION
-        ===================================================== */
+        /* SUBJECT */
 
         .subject-selection {
             text-align: center;
         }
 
-
         .subject-selection h2 {
             color: #f0abfc;
-
             margin-bottom: 10px;
-
-            font-size: 25px;
         }
 
-
         .subject-selection p {
-            color: #a9a9b5;
-
+            color: #aaa;
             margin-bottom: 28px;
         }
 
-
         .subjects {
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2,1fr);
             gap: 15px;
         }
-
-
-        /* =====================================================
-           SUBJECT BUTTONS
-        ===================================================== */
 
         .subject-btn {
             padding: 20px 15px;
 
             border: 1px solid #35334a;
-
             background: #191827;
-
             color: #e7e7ed;
 
             border-radius: 15px;
 
             font-size: 16px;
-
             font-weight: bold;
 
             cursor: pointer;
-
             transition: 0.25s;
-
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
 
         .subject-btn:hover {
             background: #242039;
-
             border-color: #a855f7;
-
-            color: white;
-
             transform: translateY(-3px);
-
-            box-shadow:
-                0 8px 22px rgba(168, 85, 247, 0.18);
         }
-
 
         .subject-btn.active {
             background:
@@ -242,166 +158,108 @@
                     #a855f7
                 );
 
-            border-color: #c084fc;
-
             color: white;
-
-            box-shadow:
-                0 8px 25px rgba(168, 85, 247, 0.3);
         }
 
-
-        .subject-btn small {
-            color: #a8a5b5;
-        }
-
-
-        .subject-btn.active small {
-            color: #ffffff;
-        }
-
-
-        /* =====================================================
-           SCIENCE LEVEL
-        ===================================================== */
+        /* SCIENCE LEVEL */
 
         #scienceLevelSelection {
             display: none;
 
             margin-top: 28px;
-
             padding: 24px;
 
             background: #121322;
-
             border-radius: 16px;
 
             border: 1px solid #302d46;
         }
 
-
         #scienceLevelSelection h3 {
             color: #f0abfc;
-
             margin-bottom: 18px;
         }
 
-
         .science-levels {
             display: flex;
-
             justify-content: center;
-
             gap: 12px;
-
             flex-wrap: wrap;
         }
-
 
         .level-btn {
             padding: 12px 22px;
 
             border: 1px solid #3b394c;
-
             border-radius: 25px;
 
             background: #1b1a2a;
-
             color: #d9d9e2;
 
             font-weight: bold;
-
             cursor: pointer;
-
-            transition: 0.25s;
         }
-
 
         .level-btn:hover {
             border-color: #a855f7;
-
             background: #27213d;
-
-            transform: translateY(-2px);
         }
-
 
         .level-btn.active {
             background: #8b5cf6;
-
-            border-color: #c084fc;
-
             color: white;
         }
 
+        /* QUIZ */
 
-        /* =====================================================
-           QUIZ AREA
-        ===================================================== */
+        #quizArea {
+            display: none;
+        }
+
+        .subject-label {
+            text-align: center;
+            margin-bottom: 20px;
+
+            color: #f0abfc;
+            font-weight: bold;
+            font-size: 18px;
+        }
 
         .top {
             display: flex;
-
             justify-content: space-between;
 
             color: #c084fc;
-
             font-weight: bold;
 
             margin-bottom: 25px;
 
             background: #111322;
-
             padding: 13px 16px;
 
             border-radius: 12px;
-
-            border: 1px solid #29283b;
         }
-
-
-        .subject-label {
-            text-align: center;
-
-            margin-bottom: 20px;
-
-            color: #f0abfc;
-
-            font-weight: bold;
-
-            font-size: 18px;
-        }
-
 
         #question {
             margin-bottom: 25px;
-
             line-height: 1.6;
 
             color: #f3f3f5;
-
             font-size: 23px;
         }
 
-
-        /* =====================================================
-           OPTIONS
-        ===================================================== */
+        /* OPTIONS */
 
         #options {
             display: flex;
-
             flex-direction: column;
-
             gap: 12px;
         }
-
 
         .option {
             padding: 16px 18px;
 
             border: 1px solid #353449;
-
             background: #171725;
 
             color: #e5e5eb;
@@ -409,69 +267,60 @@
             border-radius: 13px;
 
             text-align: left;
-
             cursor: pointer;
 
             font-size: 16px;
-
-            transition: 0.2s;
         }
-
 
         .option:hover {
             background: #25203a;
-
             border-color: #a855f7;
-
-            transform: translateX(3px);
         }
-
 
         .option.correct {
             background: #123524;
-
             border-color: #22c55e;
-
             color: #86efac;
         }
 
-
         .option.wrong {
             background: #3a171c;
-
             border-color: #ef4444;
-
             color: #fca5a5;
         }
-
 
         .option:disabled {
             cursor: not-allowed;
         }
 
+        /* TIMER MESSAGE */
 
-        /* =====================================================
-           BUTTONS
-        ===================================================== */
+        #answerMessage {
+            text-align: center;
+
+            margin-top: 18px;
+
+            min-height: 25px;
+
+            font-weight: bold;
+        }
+
+        /* BUTTONS */
 
         .quiz-buttons {
             display: flex;
+            justify-content: space-between;
 
-            justify-content: center;
-
-            gap: 12px;
-
+            gap: 10px;
             flex-wrap: wrap;
         }
-
 
         .btn {
             margin-top: 25px;
 
-            padding: 13px 26px;
+            padding: 13px 22px;
 
             border: none;
-
             border-radius: 12px;
 
             background:
@@ -484,76 +333,33 @@
             color: white;
 
             font-weight: bold;
-
             cursor: pointer;
-
-            transition: 0.25s;
-
-            box-shadow:
-                0 7px 20px rgba(124, 58, 237, 0.25);
         }
-
 
         .btn:hover {
-            background:
-                linear-gradient(
-                    135deg,
-                    #8b5cf6,
-                    #c084fc
-                );
-
             transform: translateY(-2px);
-
-            box-shadow:
-                0 10px 25px rgba(168, 85, 247, 0.35);
         }
 
-
-        #quizSubmitBtn {
-            background:
-                linear-gradient(
-                    135deg,
-                    #15803d,
-                    #22c55e
-                );
-
-            display: none;
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
-
-        #quizSubmitBtn:hover {
-            background:
-                linear-gradient(
-                    135deg,
-                    #16a34a,
-                    #4ade80
-                );
-        }
-
-
-        /* =====================================================
-           RESULT
-        ===================================================== */
+        /* RESULT */
 
         .result {
             text-align: center;
         }
 
-
         .result h2 {
             color: #c084fc;
-
             margin: 15px;
-
-            font-size: 28px;
         }
-
 
         .result-card {
             background: #111322;
 
             padding: 28px;
-
             border-radius: 16px;
 
             margin: 20px 0;
@@ -561,131 +367,58 @@
             border: 1px solid #302d46;
         }
 
-
         .result-card p {
             margin: 12px;
-
-            font-size: 17px;
-
             color: #cfcfd8;
         }
 
-
         .result-score {
             font-size: 42px;
-
             font-weight: bold;
-
             color: #c084fc;
-
             margin: 18px;
-
-            text-shadow:
-                0 0 20px rgba(192, 132, 252, 0.25);
         }
 
-
-        .result-buttons {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 12px;
-
-            flex-wrap: wrap;
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
+        /* MOBILE */
 
         @media(max-width:700px) {
 
             nav {
                 flex-direction: column;
-
                 gap: 12px;
-
                 text-align: center;
             }
 
-
-            .nav-links {
-                flex-direction: row;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-                gap: 7px;
-            }
-
-
-            .nav-links a {
-                font-size: 14px;
-
-                padding: 8px 11px;
-            }
-
-
             .page {
                 margin: 30px auto;
-
                 padding: 14px;
             }
-
-
-            .title {
-                font-size: 28px;
-            }
-
 
             .quiz-box {
                 padding: 20px;
             }
 
-
             .subjects {
                 grid-template-columns: 1fr;
             }
 
-
             .top {
                 flex-direction: column;
-
                 gap: 10px;
-
                 text-align: center;
             }
-
-
-            .science-levels {
-                flex-direction: column;
-            }
-
-
-            .level-btn {
-                width: 100%;
-            }
-
 
             #question {
                 font-size: 19px;
             }
 
-
-            .option {
-                font-size: 15px;
-
-                padding: 14px;
+            .quiz-buttons {
+                flex-direction: column;
             }
-
 
             .btn {
                 width: 100%;
             }
-
         }
 
     </style>
@@ -695,37 +428,20 @@
 
 <body>
 
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
 <nav>
 
-    <h2>
-        🌈 Maahi Ki Funshala
-    </h2>
-
+    <h2>🌈 Maahi Ki Funshala</h2>
 
     <div class="nav-links">
 
-        <a href="index.html">
-            🏠 Home
-        </a>
+        <a href="index.html">🏠 Home</a>
 
-        <a href="games.html">
-            🎮 Games
-        </a>
+        <a href="games.html">🎮 Games</a>
 
     </div>
 
 </nav>
 
-
-
-<!-- =====================================================
-     PAGE
-===================================================== -->
 
 <div class="page">
 
@@ -737,17 +453,13 @@
     <div class="quiz-box">
 
 
-        <!-- =================================================
-             SUBJECT SELECTION
-        ================================================== -->
+        <!-- SUBJECT SELECTION -->
 
         <div
             class="subject-selection"
             id="subjectSelection">
 
-            <h2>
-                📚 Choose Your Subject
-            </h2>
+            <h2>📚 Choose Your Subject</h2>
 
             <p>
                 Select a subject and start your quiz!
@@ -756,102 +468,75 @@
 
             <div class="subjects">
 
-
                 <button
                     class="subject-btn"
                     onclick="selectSubject('English', this)">
-
                     📘 English
                     <small>(Grammar)</small>
-
                 </button>
 
 
                 <button
                     class="subject-btn"
                     onclick="selectSubject('Hindi', this)">
-
                     🪔 Hindi
-
                 </button>
 
 
                 <button
                     class="subject-btn"
                     onclick="selectSubject('Mathematics', this)">
-
                     🔢 Mathematics
-
                 </button>
 
 
                 <button
                     class="subject-btn"
                     onclick="selectSubject('Science', this)">
-
                     🔬 Science
-
                 </button>
 
 
                 <button
                     class="subject-btn"
                     onclick="selectSubject('Social Science', this)">
-
                     🌍 Social Science
-
                 </button>
 
 
                 <button
                     class="subject-btn"
                     onclick="selectSubject('General Studies', this)">
-
-                    🌐 General Studies (GS)
-
+                    🌐 General Studies
                 </button>
 
             </div>
 
 
-
-            <!-- =================================================
-                 SCIENCE LEVEL
-            ================================================== -->
+            <!-- SCIENCE LEVEL -->
 
             <div id="scienceLevelSelection">
 
-                <h3>
-                    🔬 Choose Science Level
-                </h3>
-
+                <h3>🔬 Choose Science Level</h3>
 
                 <div class="science-levels">
 
                     <button
                         class="level-btn"
                         onclick="selectScienceLevel('Easy', this)">
-
                         🟢 Easy
-
                     </button>
-
 
                     <button
                         class="level-btn"
                         onclick="selectScienceLevel('Medium', this)">
-
                         🟡 Medium
-
                     </button>
-
 
                     <button
                         class="level-btn"
                         onclick="selectScienceLevel('Hard', this)">
-
                         🔴 Hard
-
                     </button>
 
                 </div>
@@ -861,22 +546,14 @@
         </div>
 
 
+        <!-- QUIZ AREA -->
 
-        <!-- =================================================
-             QUIZ AREA
-        ================================================== -->
-
-        <div
-            id="quizArea"
-            style="display:none;">
-
+        <div id="quizArea">
 
             <div
                 class="subject-label"
                 id="quizSubject">
-
                 📚 Quiz
-
             </div>
 
 
@@ -885,7 +562,6 @@
                 <span id="questionNumber">
                     Question 1 / 10
                 </span>
-
 
                 <span id="score">
                     Score: 0
@@ -902,27 +578,24 @@
             <div id="options"></div>
 
 
-            <div class="quiz-buttons">
+            <div id="answerMessage"></div>
 
+
+            <div class="quiz-buttons">
 
                 <button
                     class="btn"
-                    id="nextBtn"
-                    onclick="nextQuestion()"
-                    style="display:none;">
-
-                    Next Question ➡️
-
+                    id="prevBtn"
+                    onclick="previousQuestion()">
+                    ⬅️ Previous
                 </button>
 
 
                 <button
                     class="btn"
-                    id="quizSubmitBtn"
-                    onclick="submitQuiz()">
-
-                    ✅ Submit Quiz
-
+                    id="nextBtn"
+                    onclick="nextQuestion()">
+                    Next ➡️
                 </button>
 
             </div>
@@ -934,13 +607,7 @@
 </div>
 
 
-
-<!-- =====================================================
-     SCRIPT
-===================================================== -->
-
 <script src="script.js"></script>
-
 
 </body>
 

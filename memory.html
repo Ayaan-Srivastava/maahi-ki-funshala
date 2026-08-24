@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,188 +19,296 @@
 }
 
 body{
-    background:#fff8f0;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left,#24183d 0%,#111827 40%,#090d16 100%);
+    color:#eeeeee;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav{
-    background:#ff6b6b;
-    padding:15px 8%;
+    background:rgba(10,13,24,.95);
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    padding:16px 8%;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.35);
+
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-nav h2,
+nav h2{
+    color:#f5f5f5;
+    font-size:21px;
+}
+
 nav a{
+    color:#d8d8df;
+    text-decoration:none;
+    font-weight:bold;
+    padding:9px 15px;
+    border-radius:10px;
+    transition:.25s;
+}
+
+nav a:hover{
+    background:#26203a;
     color:white;
 }
 
-nav a{
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* PAGE */
+/* ================= PAGE ================= */
 
 .page{
-    max-width:800px;
-    margin:40px auto;
+    max-width:850px;
+    margin:45px auto;
     padding:20px;
 }
 
 .title{
     text-align:center;
-    color:#ff6b6b;
-    margin-bottom:25px;
+    color:#c084fc;
+    margin-bottom:30px;
+    font-size:34px;
+    text-shadow:0 0 20px rgba(192,132,252,.25);
 }
 
-/* BOX */
+/* ================= BOX ================= */
 
 .box{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    background:
+        linear-gradient(145deg,
+        rgba(30,30,48,.97),
+        rgba(17,24,39,.98));
+
+    padding:35px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 55px rgba(0,0,0,.45);
 }
 
-/* INFO */
+/* ================= INFO ================= */
 
 .info{
     display:flex;
     justify-content:space-between;
-    color:#ff6b6b;
+
+    color:#c084fc;
     font-weight:bold;
+
     margin-bottom:25px;
+
+    background:#111322;
+    padding:13px 16px;
+
+    border-radius:12px;
+    border:1px solid #29283b;
 }
 
-/* LEVEL */
+/* ================= LEVEL ================= */
 
 .level{
     text-align:center;
     margin-bottom:15px;
-    color:#555;
+
+    color:#f0abfc;
     font-weight:bold;
+    font-size:18px;
 }
 
-/* MESSAGE */
+/* ================= MESSAGE ================= */
 
 .message{
     text-align:center;
+
     font-size:20px;
     font-weight:bold;
-    margin-bottom:20px;
+
+    margin-bottom:18px;
+
+    color:#f3f3f5;
 }
 
-/* MEMORY GRID */
+/* ================= MEMORY GRID ================= */
 
 .memory-grid{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:15px;
+
     margin:25px 0;
 }
 
 .memory-item{
-    background:#fff1e6;
-    border:2px solid #ff6b6b;
+    background:#191827;
+
+    border:2px solid #35334a;
+
     border-radius:15px;
+
     padding:20px 10px;
+
     text-align:center;
+
     font-size:38px;
+
     min-height:90px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-/* TIMER */
+/* ================= TIMER ================= */
 
 .timer{
     text-align:center;
+
     font-size:18px;
     font-weight:bold;
-    color:#ff6b6b;
+
+    color:#c084fc;
+
     margin:15px 0;
 }
 
-/* QUESTION */
+/* ================= QUESTION ================= */
 
 #question{
     text-align:center;
+
     margin:20px 0;
+
     line-height:1.5;
+
+    color:#f3f3f5;
+
+    font-size:22px;
 }
 
-/* OPTIONS */
+/* ================= OPTIONS ================= */
 
 .options{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:12px;
 }
 
 .option{
     padding:15px;
-    border:2px solid #eee;
+
+    border:2px solid #353449;
+
     border-radius:12px;
-    background:white;
+
+    background:#171725;
+
+    color:#e5e5eb;
+
     cursor:pointer;
+
     font-size:16px;
+
     font-weight:bold;
+
+    transition:.2s;
 }
 
 .option:hover{
-    border-color:#ff6b6b;
-    background:#fff1e6;
+    border-color:#a855f7;
+    background:#25203a;
+    transform:translateY(-2px);
+}
+
+.option:disabled{
+    cursor:not-allowed;
 }
 
 .correct{
-    background:#d4edda !important;
-    border-color:#28a745 !important;
+    background:#123524 !important;
+    border-color:#22c55e !important;
+    color:#86efac;
 }
 
 .wrong{
-    background:#f8d7da !important;
-    border-color:#dc3545 !important;
+    background:#3a171c !important;
+    border-color:#ef4444 !important;
+    color:#fca5a5;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 .btn{
     padding:13px 25px;
+
     margin-top:25px;
+
     border:none;
-    border-radius:25px;
-    background:#ff6b6b;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(135deg,#7c3aed,#a855f7);
+
     color:white;
+
     font-weight:bold;
+
     cursor:pointer;
+
     font-size:16px;
+
+    transition:.25s;
+
+    box-shadow:0 7px 20px rgba(124,58,237,.25);
 }
 
 .btn:hover{
-    background:#ff5252;
+    background:
+        linear-gradient(135deg,#8b5cf6,#c084fc);
+
+    transform:translateY(-2px);
 }
 
-/* RESULT */
+/* ================= RESULT ================= */
 
 .result{
     text-align:center;
 }
 
 .result h2{
-    color:#ff6b6b;
+    color:#c084fc;
     margin:15px;
 }
 
 .result p{
-    margin:10px;
+    margin:12px;
     font-size:17px;
+    color:#cfcfd8;
 }
 
-/* RESPONSIVE */
+.result-score{
+    font-size:42px !important;
+    font-weight:bold;
+    color:#c084fc !important;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -236,6 +345,14 @@ nav a{
         font-size:32px;
     }
 
+    #question{
+        font-size:19px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
 }
 
 </style>
@@ -245,79 +362,103 @@ nav a{
 <body>
 
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
 
-<h2>🌈 Maahi Ki Funshala</h2>
+    <h2>🌈 Maahi Ki Funshala</h2>
 
-<a href="games.html">
-🎮 Back to Games
-</a>
+    <a href="games.html">
+        🎮 Back to Games
+    </a>
 
 </nav>
 
 
+<!-- ================= PAGE ================= -->
+
 <div class="page">
 
-<h1 class="title">
-🧠 Memory Game
-</h1>
+    <h1 class="title">
+        🧠 Memory Game
+    </h1>
 
 
-<div class="box" id="box">
-
-<div class="info">
-
-<span>
-Round:
-<span id="round">1</span>/10
-</span>
-
-<span>
-🏆 Score:
-<span id="score">0</span>
-</span>
-
-</div>
+    <div class="box" id="box">
 
 
-<div class="level" id="level">
-Level: Easy
-</div>
+        <!-- ================= INFO ================= -->
+
+        <div class="info">
+
+            <span>
+                Round:
+                <span id="round">1</span>/10
+            </span>
+
+            <span>
+                🏆 Score:
+                <span id="score">0</span>
+            </span>
+
+        </div>
 
 
-<div class="message" id="message">
-Remember these objects!
-</div>
+        <!-- ================= LEVEL ================= -->
+
+        <div class="level" id="level">
+            Level: Easy
+        </div>
 
 
-<div class="timer" id="timer">
-Memorize: 5 seconds
-</div>
+        <!-- ================= MESSAGE ================= -->
+
+        <div class="message" id="message">
+            🧠 Remember these objects!
+        </div>
 
 
-<div class="memory-grid" id="memoryGrid"></div>
+        <!-- ================= TIMER ================= -->
+
+        <div class="timer" id="timer">
+            Memorize: 5 seconds
+        </div>
 
 
-<div id="questionArea" style="display:none;">
+        <!-- ================= MEMORY GRID ================= -->
 
-<h2 id="question"></h2>
+        <div
+            class="memory-grid"
+            id="memoryGrid">
+        </div>
 
-<div class="options" id="options"></div>
 
-</div>
+        <!-- ================= QUESTION ================= -->
+
+        <div
+            id="questionArea"
+            style="display:none;">
+
+            <h2 id="question"></h2>
+
+            <div
+                class="options"
+                id="options">
+            </div>
+
+        </div>
 
 
-</div>
+    </div>
 
 </div>
 
 
 <script>
 
-
-/* =========================
+/* =====================================================
    MEMORY ITEMS
-========================= */
+===================================================== */
 
 const items = [
 
@@ -368,9 +509,9 @@ const items = [
 ];
 
 
-/* =========================
-   GAME SETTINGS
-========================= */
+/* =====================================================
+   LEVEL SETTINGS
+===================================================== */
 
 const levels = {
 
@@ -392,9 +533,9 @@ const levels = {
 };
 
 
-/* =========================
+/* =====================================================
    VARIABLES
-========================= */
+===================================================== */
 
 let currentRound = 0;
 
@@ -408,33 +549,35 @@ let correctAnswer = "";
 
 let timerInterval;
 
+let nextRoundTimeout;
 
-/* =========================
-   GET ELEMENTS
-========================= */
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
 const memoryGrid =
-document.getElementById("memoryGrid");
+    document.getElementById("memoryGrid");
 
 const timer =
-document.getElementById("timer");
+    document.getElementById("timer");
 
 const message =
-document.getElementById("message");
+    document.getElementById("message");
 
 const questionArea =
-document.getElementById("questionArea");
+    document.getElementById("questionArea");
 
 const question =
-document.getElementById("question");
+    document.getElementById("question");
 
 const options =
-document.getElementById("options");
+    document.getElementById("options");
 
 
-/* =========================
+/* =====================================================
    GET LEVEL
-========================= */
+===================================================== */
 
 function getLevel(){
 
@@ -443,11 +586,13 @@ function getLevel(){
         levelName = "easy";
 
     }
+
     else if(currentRound < 7){
 
         levelName = "medium";
 
     }
+
     else{
 
         levelName = "hard";
@@ -457,75 +602,79 @@ function getLevel(){
 }
 
 
-/* =========================
-   SHOW LEVEL
-========================= */
+/* =====================================================
+   UPDATE LEVEL
+===================================================== */
 
 function updateLevel(){
 
     let levelText =
-    levelName.charAt(0).toUpperCase()
-    + levelName.slice(1);
+        levelName.charAt(0).toUpperCase()
+        + levelName.slice(1);
 
     document.getElementById("level")
-    .innerText =
-    "Level: " + levelText;
+        .innerText =
+        "Level: " + levelText;
 
 }
 
 
-/* =========================
+/* =====================================================
    RANDOM ITEMS
-========================= */
+===================================================== */
 
 function getRandomItems(count){
 
     let shuffled =
-    [...items].sort(() => Math.random() - 0.5);
+        [...items].sort(() => Math.random() - 0.5);
 
     return shuffled.slice(0,count);
 
 }
 
 
-/* =========================
+/* =====================================================
    START ROUND
-========================= */
+===================================================== */
 
 function startRound(){
 
     clearInterval(timerInterval);
 
+    clearTimeout(nextRoundTimeout);
+
     getLevel();
 
     updateLevel();
 
-    questionArea.style.display="none";
+    questionArea.style.display = "none";
 
-    memoryGrid.style.display="grid";
+    memoryGrid.style.display = "grid";
 
     message.innerText =
-    "🧠 Remember these objects!";
+        "🧠 Remember these objects!";
 
     const settings =
-    levels[levelName];
+        levels[levelName];
 
     selectedItems =
-    getRandomItems(settings.count);
+        getRandomItems(settings.count);
 
 
-    /* SHOW ITEMS */
+    /* SHOW OBJECTS */
 
-    memoryGrid.innerHTML="";
+    memoryGrid.innerHTML = "";
 
-    selectedItems.forEach(item=>{
+    selectedItems.forEach(item => {
 
         const div =
-        document.createElement("div");
+            document.createElement("div");
 
-        div.className="memory-item";
+        div.className =
+            "memory-item";
 
-        div.innerText=item;
+        div.innerText =
+            item;
 
         memoryGrid.appendChild(div);
 
@@ -535,112 +684,117 @@ function startRound(){
     /* TIMER */
 
     let timeLeft =
-    settings.time;
+        settings.time;
 
     timer.innerText =
-    "Memorize: " + timeLeft + " seconds";
-
-
-    timerInterval =
-    setInterval(()=>{
-
-        timeLeft--;
-
-        timer.innerText =
         "Memorize: " + timeLeft + " seconds";
 
 
-        if(timeLeft<=0){
+    timerInterval =
+        setInterval(() => {
 
-            clearInterval(timerInterval);
+            timeLeft--;
 
-            hideMemory();
+            timer.innerText =
+                "Memorize: " + timeLeft + " seconds";
 
-        }
 
-    },1000);
+            if(timeLeft <= 0){
+
+                clearInterval(timerInterval);
+
+                hideMemory();
+
+            }
+
+        },1000);
 
 }
 
 
-/* =========================
+/* =====================================================
    HIDE MEMORY
-========================= */
+===================================================== */
 
 function hideMemory(){
 
-    memoryGrid.style.display="none";
+    memoryGrid.style.display =
+        "none";
 
-    timer.innerText="";
+    timer.innerText = "";
 
     message.innerText =
-    "🤔 Now test your memory!";
+        "🤔 Now test your memory!";
 
     createQuestion();
 
 }
 
 
-/* =========================
+/* =====================================================
    CREATE QUESTION
-========================= */
+===================================================== */
 
 function createQuestion(){
 
-    questionArea.style.display="block";
+    questionArea.style.display =
+        "block";
 
-    /*
-       Randomly choose one of
-       the remembered objects
-    */
+
+    /* SELECT CORRECT ANSWER */
 
     correctAnswer =
-    selectedItems[
-        Math.floor(
-            Math.random() * selectedItems.length
-        )
-    ];
+        selectedItems[
+            Math.floor(
+                Math.random() *
+                selectedItems.length
+            )
+        ];
 
 
     question.innerText =
-    "Which of these objects was shown?";
+        "Which of these objects was shown?";
 
 
-    /*
-       Create wrong options
-    */
+    /* WRONG OPTIONS */
 
     let wrongOptions =
-    items.filter(item =>
-        !selectedItems.includes(item)
-    );
+        items.filter(item =>
+            !selectedItems.includes(item)
+        );
 
 
     wrongOptions =
-    wrongOptions
-    .sort(() => Math.random() - 0.5)
-    .slice(0,3);
+        wrongOptions
+            .sort(() => Math.random() - 0.5)
+            .slice(0,3);
 
+
+    /* ALL OPTIONS */
 
     let allOptions =
-    [correctAnswer,...wrongOptions]
-    .sort(() => Math.random() - 0.5);
+        [correctAnswer,...wrongOptions]
+            .sort(() => Math.random() - 0.5);
 
 
-    options.innerHTML="";
+    options.innerHTML = "";
 
 
-    allOptions.forEach(option=>{
+    allOptions.forEach(option => {
 
         let button =
-        document.createElement("button");
+            document.createElement("button");
 
-        button.className="option";
+        button.className =
+            "option";
 
-        button.innerText=option;
+        button.innerText =
+            option;
 
-        button.onclick=() =>
-        checkAnswer(button,option);
+
+        button.onclick =
+            () => checkAnswer(button,option);
+
 
         options.appendChild(button);
 
@@ -649,18 +803,24 @@ function createQuestion(){
 }
 
 
-/* =========================
+/* =====================================================
    CHECK ANSWER
-========================= */
+===================================================== */
 
 function checkAnswer(button,answer){
 
-    document
-    .querySelectorAll(".option")
-    .forEach(btn =>
-        btn.disabled=true
-    );
+    /* PREVENT MULTIPLE CLICKS */
 
+    document
+        .querySelectorAll(".option")
+        .forEach(btn => {
+
+            btn.disabled = true;
+
+        });
+
+
+    /* CORRECT */
 
     if(answer === correctAnswer){
 
@@ -669,67 +829,86 @@ function checkAnswer(button,answer){
         score++;
 
         document.getElementById("score")
-        .innerText=score;
+            .innerText = score;
+
+        message.innerText =
+            "✅ Correct!";
 
     }
+
+
+    /* WRONG */
 
     else{
 
         button.classList.add("wrong");
 
+
         document
-        .querySelectorAll(".option")
-        .forEach(btn=>{
+            .querySelectorAll(".option")
+            .forEach(btn => {
 
-            if(btn.innerText === correctAnswer){
+                if(btn.innerText === correctAnswer){
 
-                btn.classList.add("correct");
+                    btn.classList.add("correct");
 
-            }
+                }
 
-        });
+            });
 
+
+        message.innerText =
+            "❌ Wrong answer!";
     }
 
 
-    setTimeout(()=>{
+    /*
+        WAIT 3 SECONDS
+        THEN AUTOMATICALLY
+        MOVE TO NEXT ROUND
+    */
 
-        currentRound++;
+    nextRoundTimeout =
+        setTimeout(() => {
 
-        document.getElementById("round")
-        .innerText =
-        Math.min(currentRound+1,10);
+            currentRound++;
 
+            if(currentRound < 10){
 
-        if(currentRound < 10){
+                document.getElementById("round")
+                    .innerText =
+                    currentRound + 1;
 
-            startRound();
+                startRound();
 
-        }
+            }
 
-        else{
+            else{
 
-            showResult();
+                showResult();
 
-        }
+            }
 
-    },800);
+        },3000);
 
 }
 
 
-/* =========================
+/* =====================================================
    RESULT
-========================= */
+===================================================== */
 
 function showResult(){
 
     clearInterval(timerInterval);
 
+    clearTimeout(nextRoundTimeout);
+
+
     let percentage =
-    Math.round(
-        (score / 10) * 100
-    );
+        Math.round(
+            (score / 10) * 100
+        );
 
 
     let messageText;
@@ -738,44 +917,52 @@ function showResult(){
     if(score >= 9){
 
         messageText =
-        "🧠 Amazing memory!";
+            "🧠 Amazing memory!";
 
     }
 
     else if(score >= 7){
 
         messageText =
-        "🎉 Great memory!";
+            "🎉 Great memory!";
 
     }
 
     else if(score >= 5){
 
         messageText =
-        "👍 Good job! Keep practicing!";
+            "👍 Good job! Keep practicing!";
 
     }
 
     else{
 
         messageText =
-        "💪 Keep practicing your memory!";
+            "💪 Keep practicing your memory!";
 
     }
 
 
     document.getElementById("box")
-    .innerHTML = `
+        .innerHTML = `
 
         <div class="result">
 
-            <h2>🎉 Memory Game Completed!</h2>
+            <h2>
+                🎉 Memory Game Completed!
+            </h2>
 
-            <h2>${score} / 10</h2>
+            <p class="result-score">
+                ${score} / 10
+            </p>
 
-            <p>Your Score: ${percentage}%</p>
+            <p>
+                Your Score: ${percentage}%
+            </p>
 
-            <p>${messageText}</p>
+            <p>
+                ${messageText}
+            </p>
 
             <button
                 class="btn"
@@ -792,9 +979,9 @@ function showResult(){
 }
 
 
-/* =========================
+/* =====================================================
    START GAME
-========================= */
+===================================================== */
 
 startRound();
 
@@ -803,3 +990,4 @@ startRound();
 </body>
 
 </html>
+
