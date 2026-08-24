@@ -1,4 +1,4 @@
-```javascript
+
 /* =========================================================
    MAAHI KI FUNSHALA
    COMPLETE SCRIPT.JS
@@ -1591,4 +1591,4 @@ document.addEventListener("keydown", function (event) {
     }
 
 });
-```
+
