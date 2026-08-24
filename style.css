@@ -20,7 +20,7 @@ body {
 
 nav {
     background: #11111a;
-    padding: 16px 7%;
+    padding: 14px 7%;
 
     display: flex;
     justify-content: space-between;
@@ -35,17 +35,57 @@ nav {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 }
 
-nav h2 {
+
+/* ================= LOGO ================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid #ff4fa3;
+
+    box-shadow:
+        0 0 10px rgba(255, 79, 163, 0.45);
+
+    transition: 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 18px rgba(255, 79, 163, 0.7);
+}
+
+.logo h2 {
     color: #ff4fa3;
+
+    font-size: 22px;
 
     text-shadow:
         0 0 10px rgba(255, 79, 163, 0.45);
 }
 
+
+/* ================= NAV LINKS ================= */
+
 nav ul {
     display: flex;
+
     list-style: none;
+
     gap: 25px;
+
     align-items: center;
 }
 
@@ -56,8 +96,11 @@ nav li {
 
 nav a {
     color: #e7e7ee;
+
     text-decoration: none;
+
     font-weight: bold;
+
     transition: 0.3s ease;
 }
 
@@ -75,6 +118,7 @@ nav a:hover {
     min-height: 55vh;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -88,11 +132,13 @@ nav a:hover {
             rgba(128, 58, 255, 0.30),
             transparent 35%
         ),
+
         radial-gradient(
             circle at bottom right,
             rgba(255, 79, 163, 0.25),
             transparent 35%
         ),
+
         linear-gradient(
             135deg,
             #0b0b12,
@@ -101,11 +147,13 @@ nav a:hover {
         );
 
     position: relative;
+
     overflow: hidden;
 }
 
 .hero h1 {
     font-size: 58px;
+
     color: white;
 
     text-shadow:
@@ -115,26 +163,33 @@ nav a:hover {
 
 .hero p {
     color: #cfcfe0;
+
     font-size: 21px;
+
     margin: 15px 0 28px;
 }
+
+
+/* ================= BUTTON ================= */
 
 .btn {
     display: inline-block;
 
     padding: 13px 28px;
 
-    background: linear-gradient(
-        135deg,
-        #ff4fa3,
-        #8b4dff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff4fa3,
+            #8b4dff
+        );
 
     color: white;
 
     border-radius: 25px;
 
     text-decoration: none;
+
     font-weight: bold;
 
     box-shadow:
@@ -155,12 +210,15 @@ nav a:hover {
 
 section {
     padding: 70px 8%;
+
     text-align: center;
 }
 
 section h2 {
     color: #ff4fa3;
+
     margin-bottom: 25px;
+
     font-size: 30px;
 
     text-shadow:
@@ -176,20 +234,24 @@ section h2 {
 
 .about-box {
     max-width: 850px;
+
     margin: auto;
 
     padding: 30px;
 
-    background: linear-gradient(
-        145deg,
-        #171722,
-        #11111a
-    );
+    background:
+        linear-gradient(
+            145deg,
+            #171722,
+            #11111a
+        );
 
     border: 1px solid #29293a;
+
     border-radius: 15px;
 
     line-height: 1.8;
+
     color: #d8d8e2;
 
     box-shadow:
@@ -209,31 +271,37 @@ section h2 {
 
 .videos {
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
 
     gap: 28px;
+
     margin-top: 30px;
 }
 
 .video-card {
     width: 330px;
 
-    background: linear-gradient(
-        145deg,
-        #181822,
-        #111119
-    );
+    background:
+        linear-gradient(
+            145deg,
+            #181822,
+            #111119
+        );
 
     padding: 12px;
 
     border-radius: 14px;
+
     border: 1px solid #292938;
 
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.45);
 
     opacity: 1;
+
     transform: translateY(0);
 
     transition:
@@ -254,14 +322,17 @@ section h2 {
 
 .video-card.hide {
     opacity: 0;
+
     transform: translateY(-50px);
 }
 
 iframe {
     width: 100%;
+
     height: 185px;
 
     border: none;
+
     border-radius: 9px;
 
     display: block;
@@ -269,6 +340,7 @@ iframe {
 
 .video-card h3 {
     color: #eeeeF5;
+
     font-size: 17px;
 
     padding: 14px 5px 7px;
@@ -278,32 +350,68 @@ iframe {
 /* ================= CONTACT ================= */
 
 .contact {
-    background: linear-gradient(
-        135deg,
-        #171020,
-        #0d0d15
-    );
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 79, 163, 0.10),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #171020,
+            #0d0d15
+        );
 
     color: #eeeeee;
 
     border-top: 1px solid #292938;
+
+    /* Center everything */
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
 }
 
 .contact h2 {
     color: #ff4fa3;
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
 }
 
 .contact p {
     color: #c9c9d5;
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
 }
+
+
+/* ================= SOCIAL BUTTONS ================= */
 
 .social {
     display: flex;
+
     justify-content: center;
+
+    align-items: center;
+
     gap: 15px;
 
     flex-wrap: wrap;
+
     margin-top: 25px;
+
+    max-width: 750px;
 }
 
 .social a {
@@ -318,19 +426,25 @@ iframe {
     border-radius: 25px;
 
     text-decoration: none;
+
     font-weight: bold;
 
     transition: 0.3s ease;
+
+    min-width: 120px;
+
+    text-align: center;
 }
 
 .social a:hover {
     color: white;
 
-    background: linear-gradient(
-        135deg,
-        #ff4fa3,
-        #7b3cff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff4fa3,
+            #7b3cff
+        );
 
     border-color: transparent;
 
@@ -364,22 +478,32 @@ footer {
 
     nav {
         flex-direction: column;
+
         gap: 15px;
+
         padding: 15px 5%;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo h2 {
+        font-size: 20px;
     }
 
     nav ul {
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
 
-    nav h2 {
-        font-size: 20px;
+        justify-content: center;
+
+        gap: 15px;
     }
 
     .hero {
         min-height: 50vh;
+
         padding: 50px 6%;
     }
 
@@ -401,11 +525,24 @@ footer {
 
     .video-card {
         width: 100%;
+
         max-width: 350px;
     }
 
     iframe {
         height: 195px;
+    }
+
+    .social {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .social a {
+        width: 100%;
+
+        max-width: 280px;
     }
 }
 
@@ -413,6 +550,15 @@ footer {
 /* ================= SMALL MOBILE ================= */
 
 @media (max-width: 400px) {
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
 
     .hero h1 {
         font-size: 32px;
@@ -428,6 +574,7 @@ footer {
 
     .social a {
         width: 100%;
+
         max-width: 250px;
     }
 }
