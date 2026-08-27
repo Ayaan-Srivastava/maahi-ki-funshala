@@ -18,119 +18,204 @@
 }
 
 body{
-    background:#fff8f0;
-    color:#333;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(139,92,246,.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(236,72,153,.10),
+            transparent 35%
+        ),
+        #0b0b12;
+
+    color:#f5f5f7;
+    min-height:100vh;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav{
-    background:#ff6b6b;
+    background:rgba(17,17,26,.95);
+
+    border-bottom:1px solid rgba(139,92,246,.25);
+
     padding:15px 8%;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.35);
 }
 
 nav h2{
-    color:white;
+    color:#ffffff;
 }
 
 nav a{
-    color:white;
+    color:#c4b5fd;
+
     text-decoration:none;
+
     font-weight:bold;
+
+    transition:.3s;
 }
 
-/* PAGE */
+nav a:hover{
+    color:#f472b6;
+}
+
+/* ================= PAGE ================= */
 
 .page{
     max-width:850px;
+
     margin:45px auto;
+
     padding:20px;
 }
 
+/* ================= TITLE ================= */
+
 .title{
     text-align:center;
-    color:#ff6b6b;
+
+    color:#f472b6;
+
     margin-bottom:30px;
+
+    text-shadow:
+        0 0 18px rgba(244,114,182,.35);
 }
 
-/* QUIZ BOX */
+/* ================= QUIZ BOX ================= */
 
 .quiz-box{
-    background:white;
+    background:rgba(20,20,30,.92);
+
     padding:30px;
+
     border-radius:20px;
 
+    border:1px solid rgba(139,92,246,.25);
+
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.1);
+        0 10px 35px rgba(0,0,0,.5),
+        0 0 30px rgba(139,92,246,.08);
+
+    backdrop-filter:blur(10px);
 }
 
-/* LANGUAGE */
+/* ================= LANGUAGE ================= */
+
+#languageSelection h2{
+    color:#f5f5f7;
+}
+
+#languageSelection > p{
+    color:#a1a1aa;
+}
 
 .languages{
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:12px;
+
     margin-bottom:25px;
 }
 
 .language-btn{
     padding:13px 8px;
 
-    border:2px solid #eee;
+    border:2px solid #29293a;
+
     border-radius:12px;
 
-    background:white;
+    background:#11111a;
+
+    color:#d4d4d8;
 
     cursor:pointer;
+
     font-weight:bold;
 
-    transition:0.25s;
+    transition:.25s;
 }
 
 .language-btn:hover,
 .language-btn.active{
-    background:#ff6b6b;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #ec4899
+    );
+
     color:white;
-    border-color:#ff6b6b;
+
+    border-color:transparent;
+
+    box-shadow:
+        0 5px 18px rgba(139,92,246,.25);
+
+    transform:translateY(-2px);
 }
 
-/* TOP */
+/* ================= TOP ================= */
 
 .top{
     display:flex;
+
     justify-content:space-between;
 
-    color:#ff6b6b;
+    color:#c4b5fd;
+
     font-weight:bold;
 
     margin-bottom:25px;
 }
 
-/* QUESTION */
+#score{
+    color:#f472b6;
+}
+
+/* ================= QUESTION ================= */
 
 #question{
     line-height:1.5;
+
     margin-bottom:20px;
+
+    color:#f4f4f5;
+
+    text-shadow:
+        0 0 8px rgba(167,139,250,.12);
 }
 
-/* OPTIONS */
+/* ================= OPTIONS ================= */
 
 .options{
     display:flex;
+
     flex-direction:column;
+
     gap:12px;
 }
 
 .option{
     padding:15px;
 
-    border:2px solid #eee;
+    border:2px solid #29293a;
 
-    background:white;
+    background:#11111a;
+
+    color:#e4e4e7;
 
     border-radius:12px;
 
@@ -140,45 +225,64 @@ nav a{
 
     font-size:16px;
 
-    transition:0.2s;
+    transition:.2s;
 }
 
-.option:hover{
-    background:#fff1e6;
-    border-color:#ff6b6b;
+.option:hover:not(:disabled){
+
+    background:#191927;
+
+    border-color:#8b5cf6;
+
+    transform:translateX(3px);
+
+    box-shadow:
+        0 5px 15px rgba(139,92,246,.12);
 }
 
 .option.correct{
-    background:#d4edda !important;
-    border-color:#28a745 !important;
-    color:#155724;
+
+    background:rgba(34,197,94,.15) !important;
+
+    border-color:#22c55e !important;
+
+    color:#86efac !important;
+
+    box-shadow:
+        0 0 15px rgba(34,197,94,.15);
 }
 
 .option.wrong{
-    background:#f8d7da !important;
-    border-color:#dc3545 !important;
-    color:#721c24;
+
+    background:rgba(239,68,68,.15) !important;
+
+    border-color:#ef4444 !important;
+
+    color:#fca5a5 !important;
+
+    box-shadow:
+        0 0 15px rgba(239,68,68,.12);
 }
 
 .option:disabled{
     cursor:not-allowed;
 }
 
-/* NEXT INFO */
+/* ================= AUTO NEXT ================= */
 
 .auto-next{
     text-align:center;
 
     margin-top:20px;
 
-    color:#888;
+    color:#a1a1aa;
 
     font-size:14px;
 
     min-height:20px;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 .btn{
     margin-top:25px;
@@ -189,7 +293,11 @@ nav a{
 
     border-radius:25px;
 
-    background:#ff6b6b;
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #ec4899
+    );
 
     color:white;
 
@@ -197,47 +305,68 @@ nav a{
 
     cursor:pointer;
 
-    transition:0.25s;
+    transition:.25s;
+
+    box-shadow:
+        0 5px 15px rgba(139,92,246,.25);
 }
 
 .btn:hover{
-    background:#ff5252;
 
     transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(236,72,153,.3);
 }
 
-/* RESULT */
+.btn:active{
+    transform:scale(.97);
+}
+
+/* ================= RESULT ================= */
 
 .result{
     text-align:center;
 }
 
 .result h2{
-    color:#ff6b6b;
+    color:#f472b6;
+
     margin-bottom:15px;
+
+    text-shadow:
+        0 0 12px rgba(244,114,182,.3);
 }
 
 .result h3{
+    color:#a78bfa;
+
     margin-bottom:15px;
 }
 
 .result p{
     margin:10px;
+
     font-size:17px;
+
+    color:#a1a1aa;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
     nav{
         flex-direction:column;
+
         gap:12px;
+
         text-align:center;
     }
 
     .page{
         margin:25px auto;
+
         padding:15px;
     }
 
@@ -251,7 +380,9 @@ nav a{
 
     .top{
         flex-direction:column;
+
         gap:10px;
+
         text-align:center;
     }
 
@@ -261,6 +392,10 @@ nav a{
 
     .option{
         font-size:15px;
+    }
+
+    .btn{
+        width:100%;
     }
 
 }
@@ -400,8 +535,6 @@ nav a{
             </div>
 
 
-            <!-- AUTO NEXT MESSAGE -->
-
             <div
                 class="auto-next"
                 id="autoNext">
@@ -456,7 +589,6 @@ Python: [
 
 ],
 
-
 C: [
 
     {
@@ -490,7 +622,6 @@ C: [
     }
 
 ],
-
 
 "C++": [
 
@@ -526,7 +657,6 @@ C: [
 
 ],
 
-
 Java: [
 
     {
@@ -561,7 +691,6 @@ Java: [
 
 ],
 
-
 JavaScript: [
 
     {
@@ -595,7 +724,6 @@ JavaScript: [
     }
 
 ],
-
 
 HTML: [
 
@@ -635,7 +763,6 @@ HTML: [
     }
 
 ],
-
 
 CSS: [
 
@@ -684,10 +811,6 @@ CSS: [
 };
 
 
-/* =====================================================
-   VARIABLES
-===================================================== */
-
 let selectedLanguage = "";
 
 let questions = [];
@@ -698,10 +821,6 @@ let score = 0;
 
 let autoNextTimer;
 
-
-/* =====================================================
-   SELECT LANGUAGE
-===================================================== */
 
 function selectLanguage(language,button){
 
@@ -717,10 +836,6 @@ function selectLanguage(language,button){
 }
 
 
-/* =====================================================
-   START QUIZ
-===================================================== */
-
 function startCodingQuiz(){
 
     if(selectedLanguage === ""){
@@ -732,100 +847,74 @@ function startCodingQuiz(){
         return;
     }
 
-
     questions =
         [...codingQuestions[selectedLanguage]];
-
-
-    /* RANDOM QUESTION ORDER */
 
     questions.sort(
         () => Math.random() - 0.5
     );
 
-
     current = 0;
 
     score = 0;
-
 
     document
         .getElementById("languageSelection")
         .style.display = "none";
 
-
     document
         .getElementById("quizArea")
         .style.display = "block";
-
 
     showQuestion();
 }
 
 
-/* =====================================================
-   SHOW QUESTION
-===================================================== */
-
 function showQuestion(){
 
     clearTimeout(autoNextTimer);
 
-
     let q = questions[current];
-
 
     document
         .getElementById("questionNumber")
         .innerText =
         `Question ${current + 1} / ${questions.length}`;
 
-
     document
         .getElementById("score")
         .innerText =
         `Score: ${score}`;
 
-
     document
         .getElementById("question")
         .innerText = q.q;
 
-
     let options =
         document.getElementById("options");
 
-
     options.innerHTML = "";
-
 
     document
         .getElementById("autoNext")
         .innerText = "";
-
-
-    /* RANDOM OPTIONS */
 
     let shuffledOptions =
         [...q.o].sort(
             () => Math.random() - 0.5
         );
 
-
     shuffledOptions.forEach(option => {
 
         let btn =
             document.createElement("button");
 
-
         btn.className = "option";
 
         btn.innerText = option;
 
-
         btn.onclick = () =>
             checkAnswer(btn, option);
-
 
         options.appendChild(btn);
 
@@ -834,15 +923,7 @@ function showQuestion(){
 }
 
 
-/* =====================================================
-   CHECK ANSWER
-===================================================== */
-
 function checkAnswer(button,answer){
-
-    /*
-       Prevent clicking multiple answers
-    */
 
     document
         .querySelectorAll(".option")
@@ -850,11 +931,7 @@ function checkAnswer(button,answer){
             btn.disabled = true
         );
 
-
     let q = questions[current];
-
-
-    /* CORRECT */
 
     if(answer === q.a){
 
@@ -869,13 +946,9 @@ function checkAnswer(button,answer){
 
     }
 
-
-    /* WRONG */
-
     else{
 
         button.classList.add("wrong");
-
 
         document
             .querySelectorAll(".option")
@@ -891,25 +964,17 @@ function checkAnswer(button,answer){
 
     }
 
-
-    /*
-       3 SECOND COUNTDOWN
-    */
-
     let seconds = 3;
-
 
     document
         .getElementById("autoNext")
         .innerText =
         `⏳ Next question in ${seconds}...`;
 
-
     let countdown =
         setInterval(() => {
 
             seconds--;
-
 
             if(seconds > 0){
 
@@ -922,16 +987,10 @@ function checkAnswer(button,answer){
 
         },1000);
 
-
-    /*
-       AFTER 3 SECONDS
-    */
-
     autoNextTimer =
         setTimeout(() => {
 
             clearInterval(countdown);
-
 
             if(current === questions.length - 1){
 
@@ -952,23 +1011,16 @@ function checkAnswer(button,answer){
 }
 
 
-/* =====================================================
-   RESULT
-===================================================== */
-
 function showResult(){
 
     clearTimeout(autoNextTimer);
-
 
     let percentage =
         Math.round(
             (score / questions.length) * 100
         );
 
-
     let resultMessage;
-
 
     if(percentage === 100){
 
@@ -1004,7 +1056,6 @@ function showResult(){
             "💪 Keep practicing! You can do better!";
 
     }
-
 
     document
         .getElementById("quizBox")
@@ -1051,4 +1102,3 @@ function showResult(){
 </body>
 
 </html>
-
