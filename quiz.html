@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,8 +31,6 @@
 
             color: #eeeeee;
         }
-
-        /* NAVBAR */
 
         nav {
             background: rgba(10, 13, 24, 0.94);
@@ -72,8 +71,6 @@
             color: white;
         }
 
-        /* PAGE */
-
         .page {
             max-width: 850px;
             margin: 55px auto;
@@ -86,8 +83,6 @@
             margin-bottom: 30px;
             font-size: 34px;
         }
-
-        /* QUIZ BOX */
 
         .quiz-box {
             background:
@@ -105,8 +100,6 @@
             box-shadow:
                 0 20px 55px rgba(0,0,0,0.45);
         }
-
-        /* SUBJECT */
 
         .subject-selection {
             text-align: center;
@@ -161,8 +154,6 @@
             color: white;
         }
 
-        /* SCIENCE LEVEL */
-
         #scienceLevelSelection {
             display: none;
 
@@ -210,8 +201,6 @@
             color: white;
         }
 
-        /* QUIZ */
-
         #quizArea {
             display: none;
         }
@@ -247,8 +236,6 @@
             color: #f3f3f5;
             font-size: 23px;
         }
-
-        /* OPTIONS */
 
         #options {
             display: flex;
@@ -293,8 +280,6 @@
             cursor: not-allowed;
         }
 
-        /* TIMER MESSAGE */
-
         #answerMessage {
             text-align: center;
 
@@ -305,7 +290,21 @@
             font-weight: bold;
         }
 
-        /* BUTTONS */
+        /* COUNTDOWN */
+
+        #countdown {
+            text-align: center;
+
+            min-height: 42px;
+
+            margin-top: 10px;
+
+            color: #c084fc;
+
+            font-size: 24px;
+
+            font-weight: bold;
+        }
 
         .quiz-buttons {
             display: flex;
@@ -345,8 +344,6 @@
             cursor: not-allowed;
         }
 
-        /* RESULT */
-
         .result {
             text-align: center;
         }
@@ -378,8 +375,6 @@
             color: #c084fc;
             margin: 18px;
         }
-
-        /* MOBILE */
 
         @media(max-width:700px) {
 
@@ -419,6 +414,10 @@
             .btn {
                 width: 100%;
             }
+
+            #countdown {
+                font-size: 21px;
+            }
         }
 
     </style>
@@ -451,7 +450,6 @@
 
 
     <div class="quiz-box">
-
 
         <!-- SUBJECT SELECTION -->
 
@@ -581,6 +579,11 @@
             <div id="answerMessage"></div>
 
 
+            <!-- 3-2-1 COUNTDOWN -->
+
+            <div id="countdown"></div>
+
+
             <div class="quiz-buttons">
 
                 <button
@@ -612,3 +615,4 @@
 </body>
 
 </html>
+

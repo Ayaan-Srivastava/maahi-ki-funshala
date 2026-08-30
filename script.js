@@ -1,8 +1,9 @@
+
 /* =========================================================
    MAAHI KI FUNSHALA
    QUIZ SCRIPT.JS
    Quiz + Science Levels
-   Auto Next After 3 Seconds
+   Auto Next With 3-2-1 Countdown
    Previous Question
 ========================================================= */
 
@@ -84,53 +85,45 @@ const quizQuestions = {
         {
             question:
                 "Choose the correct pronoun: 'Riya is a student. ___ is intelligent.'",
-
             options: [
                 "He",
                 "She",
                 "It",
                 "They"
             ],
-
             answer: 1
         },
 
         {
             question: "What is the opposite of 'Happy'?",
-
             options: [
                 "Joyful",
                 "Sad",
                 "Excited",
                 "Cheerful"
             ],
-
             answer: 1
         },
 
         {
             question: "Which is a verb?",
-
             options: [
                 "Beautiful",
                 "Run",
                 "Blue",
                 "Chair"
             ],
-
             answer: 1
         },
 
         {
             question: "Choose the correct spelling.",
-
             options: [
                 "Beautifull",
                 "Beutiful",
                 "Beautiful",
                 "Beautifol"
             ],
-
             answer: 2
         }
 
@@ -142,139 +135,119 @@ const quizQuestions = {
         {
             question:
                 "हिंदी वर्णमाला में कितने स्वर माने जाते हैं?",
-
             options: [
                 "10",
                 "11",
                 "12",
                 "13"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "'जल' का पर्यायवाची शब्द क्या है?",
-
             options: [
                 "अग्नि",
                 "पानी",
                 "वायु",
                 "धरती"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "'दिन' का विलोम शब्द क्या है?",
-
             options: [
                 "सुबह",
                 "शाम",
                 "रात",
                 "दोपहर"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "'सुंदर' का विलोम क्या है?",
-
             options: [
                 "अच्छा",
                 "कुरूप",
                 "मीठा",
                 "साफ"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "'विद्यालय' का अर्थ क्या है?",
-
             options: [
                 "घर",
                 "बाजार",
                 "स्कूल",
                 "अस्पताल"
             ],
-
             answer: 2
         },
 
         {
             question: "'कमल' क्या है?",
-
             options: [
                 "पक्षी",
                 "फूल",
                 "फल",
                 "जानवर"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "'गाय' का बहुवचन क्या है?",
-
             options: [
                 "गायों",
                 "गाय",
                 "गाया",
                 "गायें"
             ],
-
             answer: 3
         },
 
         {
             question:
                 "'सूर्य' का पर्यायवाची क्या है?",
-
             options: [
                 "चंद्रमा",
                 "रवि",
                 "बादल",
                 "तारा"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "'बड़ा' का विलोम क्या है?",
-
             options: [
                 "लंबा",
                 "छोटा",
                 "ऊँचा",
                 "मोटा"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "हिंदी भाषा की लिपि कौन-सी है?",
-
             options: [
                 "रोमन",
                 "देवनागरी",
                 "गुरुमुखी",
                 "उर्दू"
             ],
-
             answer: 1
         }
 
@@ -316,66 +289,56 @@ const quizQuestions = {
         {
             question:
                 "How many sides does a triangle have?",
-
             options: [
                 "2",
                 "3",
                 "4",
                 "5"
             ],
-
             answer: 1
         },
 
         {
             question: "What is half of 50?",
-
             options: [
                 "20",
                 "25",
                 "30",
                 "35"
             ],
-
             answer: 1
         },
 
         {
             question: "What is 12 × 12?",
-
             options: [
                 "124",
                 "134",
                 "144",
                 "154"
             ],
-
             answer: 2
         },
 
         {
             question: "Which number is even?",
-
             options: [
                 "17",
                 "21",
                 "29",
                 "24"
             ],
-
             answer: 3
         },
 
         {
             question: "What is 50% of 100?",
-
             options: [
                 "25",
                 "40",
                 "50",
                 "75"
             ],
-
             answer: 2
         }
 
@@ -398,125 +361,107 @@ const quizQuestions = {
         {
             question:
                 "Who is known as the Father of the Nation in India?",
-
             options: [
                 "Jawaharlal Nehru",
                 "Mahatma Gandhi",
                 "Sardar Patel",
                 "Subhash Chandra Bose"
             ],
-
             answer: 1
         },
 
         {
             question: "Which is the largest continent?",
-
             options: [
                 "Africa",
                 "Europe",
                 "Asia",
                 "Australia"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "How many states are there in India?",
-
             options: [
                 "26",
                 "27",
                 "28",
                 "29"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which is the longest river in India?",
-
             options: [
                 "Yamuna",
                 "Ganga",
                 "Godavari",
                 "Narmada"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Who was the first Prime Minister of India?",
-
             options: [
                 "Mahatma Gandhi",
                 "Sardar Patel",
                 "Jawaharlal Nehru",
                 "Rajendra Prasad"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which ocean is south of India?",
-
             options: [
                 "Atlantic Ocean",
                 "Pacific Ocean",
                 "Indian Ocean",
                 "Arctic Ocean"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "What is the national animal of India?",
-
             options: [
                 "Lion",
                 "Tiger",
                 "Elephant",
                 "Peacock"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which planet is known as the Red Planet?",
-
             options: [
                 "Earth",
                 "Mars",
                 "Jupiter",
                 "Venus"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "What is the currency of India?",
-
             options: [
                 "Dollar",
                 "Pound",
                 "Rupee",
                 "Euro"
             ],
-
             answer: 2
         }
 
@@ -528,140 +473,120 @@ const quizQuestions = {
         {
             question:
                 "Which is the largest planet in our Solar System?",
-
             options: [
                 "Earth",
                 "Mars",
                 "Jupiter",
                 "Saturn"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "How many days are there in a leap year?",
-
             options: [
                 "365",
                 "366",
                 "364",
                 "360"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which gas do humans need to breathe?",
-
             options: [
                 "Carbon dioxide",
                 "Oxygen",
                 "Nitrogen",
                 "Hydrogen"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "How many continents are there?",
-
             options: [
                 "5",
                 "6",
                 "7",
                 "8"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which is the fastest land animal?",
-
             options: [
                 "Lion",
                 "Tiger",
                 "Cheetah",
                 "Horse"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which organ pumps blood in the human body?",
-
             options: [
                 "Brain",
                 "Heart",
                 "Lungs",
                 "Kidney"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which is the smallest prime number?",
-
             options: [
                 "0",
                 "1",
                 "2",
                 "3"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "How many colors are there in a rainbow?",
-
             options: [
                 "5",
                 "6",
                 "7",
                 "8"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which device is used to type on a computer?",
-
             options: [
                 "Monitor",
                 "Keyboard",
                 "Speaker",
                 "Printer"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which is the nearest star to Earth?",
-
             options: [
                 "Moon",
                 "Sun",
                 "Mars",
                 "Sirius"
             ],
-
             answer: 1
         }
 
@@ -681,140 +606,120 @@ const scienceQuestions = {
         {
             question:
                 "Which organ helps us to breathe?",
-
             options: [
                 "Heart",
                 "Lungs",
                 "Brain",
                 "Stomach"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "What do plants need to make food?",
-
             options: [
                 "Sunlight",
                 "Plastic",
                 "Iron",
                 "Stone"
             ],
-
             answer: 0
         },
 
         {
             question:
                 "Which is a source of light?",
-
             options: [
                 "Sun",
                 "Table",
                 "Chair",
                 "Book"
             ],
-
             answer: 0
         },
 
         {
             question:
                 "Water freezes at:",
-
             options: [
                 "0°C",
                 "10°C",
                 "50°C",
                 "100°C"
             ],
-
             answer: 0
         },
 
         {
             question:
                 "Which planet do we live on?",
-
             options: [
                 "Mars",
                 "Venus",
                 "Earth",
                 "Jupiter"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which sense organ helps us see?",
-
             options: [
                 "Ear",
                 "Eye",
                 "Nose",
                 "Skin"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which gas do plants release during photosynthesis?",
-
             options: [
                 "Oxygen",
                 "Carbon dioxide",
                 "Hydrogen",
                 "Nitrogen"
             ],
-
             answer: 0
         },
 
         {
             question:
                 "Which animal is a mammal?",
-
             options: [
                 "Cow",
                 "Frog",
                 "Fish",
                 "Snake"
             ],
-
             answer: 0
         },
 
         {
             question:
                 "What is the natural satellite of Earth?",
-
             options: [
                 "Sun",
                 "Moon",
                 "Mars",
                 "Venus"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which part of a plant absorbs water?",
-
             options: [
                 "Flower",
                 "Leaf",
                 "Root",
                 "Fruit"
             ],
-
             answer: 2
         }
 
@@ -826,140 +731,120 @@ const scienceQuestions = {
         {
             question:
                 "Which process helps plants make food?",
-
             options: [
                 "Respiration",
                 "Photosynthesis",
                 "Digestion",
                 "Evaporation"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which blood cells fight infections?",
-
             options: [
                 "Red blood cells",
                 "White blood cells",
                 "Platelets",
                 "Plasma"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "What is the boiling point of water at normal pressure?",
-
             options: [
                 "50°C",
                 "75°C",
                 "100°C",
                 "150°C"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which force pulls objects toward Earth?",
-
             options: [
                 "Friction",
                 "Gravity",
                 "Magnetic force",
                 "Electric force"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which vitamin is mainly produced by sunlight exposure?",
-
             options: [
                 "Vitamin A",
                 "Vitamin B",
                 "Vitamin C",
                 "Vitamin D"
             ],
-
             answer: 3
         },
 
         {
             question:
                 "Which organ filters waste from the blood?",
-
             options: [
                 "Heart",
                 "Kidney",
                 "Lungs",
                 "Brain"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "What is the basic unit of life?",
-
             options: [
                 "Tissue",
                 "Organ",
                 "Cell",
                 "Bone"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which gas is most abundant in Earth's atmosphere?",
-
             options: [
                 "Oxygen",
                 "Nitrogen",
                 "Carbon dioxide",
                 "Hydrogen"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "What type of energy does a moving object have?",
-
             options: [
                 "Potential energy",
                 "Kinetic energy",
                 "Chemical energy",
                 "Solar energy"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which metal is liquid at room temperature?",
-
             options: [
                 "Iron",
                 "Copper",
                 "Mercury",
                 "Aluminium"
             ],
-
             answer: 2
         }
 
@@ -971,140 +856,120 @@ const scienceQuestions = {
         {
             question:
                 "What is the SI unit of force?",
-
             options: [
                 "Joule",
                 "Newton",
                 "Watt",
                 "Pascal"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which organelle is called the powerhouse of the cell?",
-
             options: [
                 "Nucleus",
                 "Ribosome",
                 "Mitochondria",
                 "Vacuole"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "What is the chemical formula of water?",
-
             options: [
                 "CO₂",
                 "H₂O",
                 "O₂",
                 "H₂"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which law explains action and reaction?",
-
             options: [
                 "Newton's First Law",
                 "Newton's Second Law",
                 "Newton's Third Law",
                 "Law of Gravitation"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "What is the pH of pure water?",
-
             options: [
                 "5",
                 "6",
                 "7",
                 "8"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which particle has a negative charge?",
-
             options: [
                 "Proton",
                 "Neutron",
                 "Electron",
                 "Nucleus"
             ],
-
             answer: 2
         },
 
         {
             question:
                 "Which blood group is commonly called the universal donor?",
-
             options: [
                 "A+",
                 "B+",
                 "AB+",
                 "O−"
             ],
-
             answer: 3
         },
 
         {
             question:
                 "What is the approximate speed of light in vacuum?",
-
             options: [
                 "3 × 10⁶ m/s",
                 "3 × 10⁸ m/s",
                 "3 × 10¹⁰ m/s",
                 "3 × 10⁴ m/s"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which part of the brain controls balance?",
-
             options: [
                 "Cerebrum",
                 "Cerebellum",
                 "Medulla",
                 "Hypothalamus"
             ],
-
             answer: 1
         },
 
         {
             question:
                 "Which type of bond involves sharing electrons?",
-
             options: [
                 "Ionic bond",
                 "Covalent bond",
                 "Metallic bond",
                 "Hydrogen bond"
             ],
-
             answer: 1
         }
 
@@ -1191,7 +1056,7 @@ function selectScienceLevel(level, button) {
 
 function startQuiz(subject, scienceLevel = null) {
 
-    clearTimeout(autoNextTimer);
+    clearInterval(autoNextTimer);
 
     currentQuestionIndex = 0;
 
@@ -1255,7 +1120,7 @@ function startQuiz(subject, scienceLevel = null) {
 
 function showQuestion() {
 
-    clearTimeout(autoNextTimer);
+    clearInterval(autoNextTimer);
 
     selectedAnswer = false;
 
@@ -1315,6 +1180,16 @@ function showQuestion() {
         .innerText = "";
 
 
+    /* Reset countdown */
+
+    const countdownBox =
+        document.getElementById("countdown");
+
+    if (countdownBox) {
+        countdownBox.innerText = "";
+    }
+
+
     updateNavigationButtons();
 }
 
@@ -1354,10 +1229,11 @@ function selectOption(index, button) {
 
         quizScore++;
 
+
         document
             .getElementById("answerMessage")
             .innerText =
-            "✅ Correct! Next question in 3 seconds...";
+            "✅ Correct!";
 
     } else {
 
@@ -1375,7 +1251,8 @@ function selectOption(index, button) {
         document
             .getElementById("answerMessage")
             .innerText =
-            "❌ Wrong answer! Next question in 3 seconds...";
+            "❌ Wrong answer!";
+
     }
 
 
@@ -1385,74 +1262,83 @@ function selectOption(index, button) {
         `Score: ${quizScore}`;
 
 
-    /*
-       AUTO NEXT AFTER 3 SECONDS
-    */
+    /* Start countdown */
+
+    startCountdown();
+}
+
+
+/* =========================================================
+   START 3-2-1 COUNTDOWN
+========================================================= */
+
+function startCountdown() {
+
+    clearInterval(autoNextTimer);
+
+
+    const countdownBox =
+        document.getElementById("countdown");
+
+
+    if (!countdownBox) {
+
+        /*
+           Fallback:
+           If countdown element is missing,
+           automatically continue after 3 seconds.
+        */
+
+        autoNextTimer =
+            setTimeout(() => {
+
+                moveToNextQuestion();
+
+            }, 3000);
+
+        return;
+    }
+
+
+    let countdown = 3;
+
+
+    countdownBox.innerText =
+        `Next question in ${countdown}...`;
+
 
     autoNextTimer =
-        setTimeout(() => {
+        setInterval(() => {
 
-            if (
-                currentQuestionIndex <
-                currentQuestions.length - 1
-            ) {
+            countdown--;
 
-                currentQuestionIndex++;
 
-                showQuestion();
+            if (countdown > 0) {
+
+                countdownBox.innerText =
+                    `Next question in ${countdown}...`;
 
             } else {
 
-                finishQuiz();
+                clearInterval(autoNextTimer);
+
+                countdownBox.innerText = "";
+
+                moveToNextQuestion();
 
             }
 
-        }, 3000);
+        }, 1000);
 }
 
 
 /* =========================================================
-   PREVIOUS QUESTION
+   MOVE TO NEXT QUESTION
 ========================================================= */
 
-function previousQuestion() {
+function moveToNextQuestion() {
 
-    /*
-       Previous button will not work
-       while answer is waiting for auto-next.
-    */
-
-    if (!selectedAnswer) {
-        return;
-    }
-
-
-    clearTimeout(autoNextTimer);
-
-
-    if (currentQuestionIndex > 0) {
-
-        currentQuestionIndex--;
-
-        showQuestion();
-
-    }
-}
-
-
-/* =========================================================
-   NEXT QUESTION
-========================================================= */
-
-function nextQuestion() {
-
-    if (!selectedAnswer) {
-
-        return;
-    }
-
-
-    clearTimeout(autoNextTimer);
+    clearInterval(autoNextTimer);
 
 
     if (
@@ -1473,6 +1359,65 @@ function nextQuestion() {
 
 
 /* =========================================================
+   PREVIOUS QUESTION
+========================================================= */
+
+function previousQuestion() {
+
+    if (!selectedAnswer) {
+        return;
+    }
+
+
+    clearInterval(autoNextTimer);
+
+
+    const countdownBox =
+        document.getElementById("countdown");
+
+    if (countdownBox) {
+        countdownBox.innerText = "";
+    }
+
+
+    if (currentQuestionIndex > 0) {
+
+        currentQuestionIndex--;
+
+        showQuestion();
+
+    }
+
+}
+
+
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
+
+function nextQuestion() {
+
+    if (!selectedAnswer) {
+        return;
+    }
+
+
+    clearInterval(autoNextTimer);
+
+
+    const countdownBox =
+        document.getElementById("countdown");
+
+    if (countdownBox) {
+        countdownBox.innerText = "";
+    }
+
+
+    moveToNextQuestion();
+}
+
+
+/* =========================================================
    NAVIGATION BUTTONS
 ========================================================= */
 
@@ -1480,6 +1425,7 @@ function updateNavigationButtons() {
 
     const prevBtn =
         document.getElementById("prevBtn");
+
 
     if (prevBtn) {
 
@@ -1492,6 +1438,7 @@ function updateNavigationButtons() {
     const nextBtn =
         document.getElementById("nextBtn");
 
+
     if (nextBtn) {
 
         nextBtn.innerText =
@@ -1501,7 +1448,9 @@ function updateNavigationButtons() {
                 ? "Finish ➡️"
 
                 : "Next ➡️";
+
     }
+
 }
 
 
@@ -1511,7 +1460,7 @@ function updateNavigationButtons() {
 
 function finishQuiz() {
 
-    clearTimeout(autoNextTimer);
+    clearInterval(autoNextTimer);
 
 
     const total =
@@ -1645,7 +1594,7 @@ function finishQuiz() {
 
 function restartQuiz() {
 
-    clearTimeout(autoNextTimer);
+    clearInterval(autoNextTimer);
 
 
     currentQuestionIndex = 0;
@@ -1686,6 +1635,14 @@ function restartQuiz() {
             btn.classList.remove("active");
 
         });
+
+
+    const countdownBox =
+        document.getElementById("countdown");
+
+    if (countdownBox) {
+        countdownBox.innerText = "";
+    }
 }
 
 
@@ -1713,9 +1670,7 @@ document.addEventListener(
         }
 
 
-        /*
-           1 - 4 = select option
-        */
+        /* 1 - 4 = Select Option */
 
         if (
             ["1", "2", "3", "4"]
@@ -1741,12 +1696,11 @@ document.addEventListener(
                 );
 
             }
+
         }
 
 
-        /*
-           Arrow Right = Next
-        */
+        /* Arrow Right = Next */
 
         if (
             event.key === "ArrowRight" &&
@@ -1758,9 +1712,7 @@ document.addEventListener(
         }
 
 
-        /*
-           Arrow Left = Previous
-        */
+        /* Arrow Left = Previous */
 
         if (
             event.key === "ArrowLeft" &&
@@ -1773,3 +1725,4 @@ document.addEventListener(
 
     }
 );
+
